@@ -1,0 +1,7 @@
+{
+    "parent": "embellishcraft:block/furniture/terrace_table",
+    "textures": {
+        "material": "embellishcraft-bop:block/furniture/table/dead_terrace_table",
+        "particle": "embellishcraft-bop:block/furniture/table/dead_terrace_table"
+    }
+}
