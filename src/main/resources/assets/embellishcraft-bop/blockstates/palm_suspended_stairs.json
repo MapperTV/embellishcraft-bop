@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "embellishcraft-bop:block/stairs/palm_suspended_stairs",
+            "y": 180
+        },
+        "facing=east": {
+            "model": "embellishcraft-bop:block/stairs/palm_suspended_stairs",
+            "y": 270
+        },
+        "facing=south": {
+            "model": "embellishcraft-bop:block/stairs/palm_suspended_stairs"
+        },
+        "facing=west": {
+            "model": "embellishcraft-bop:block/stairs/palm_suspended_stairs",
+            "y": 90
+        }
+    }
+}

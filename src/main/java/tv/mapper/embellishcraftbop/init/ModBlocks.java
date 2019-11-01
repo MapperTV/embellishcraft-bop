@@ -3,6 +3,7 @@ package tv.mapper.embellishcraftbop.init;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
@@ -12,6 +13,8 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
 import tv.mapper.embellishcraft.Constants;
 import tv.mapper.embellishcraft.block.ChairBlock;
+import tv.mapper.embellishcraft.block.CustomDoorBlock;
+import tv.mapper.embellishcraft.block.SuspendedStairsBlock;
 import tv.mapper.embellishcraft.block.TableBlock;
 import tv.mapper.embellishcraft.block.TerraceChairBlock;
 import tv.mapper.embellishcraft.block.TerraceTableBlock;
@@ -156,31 +159,31 @@ public class ModBlocks
         event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("umbran_terrace_table"));
         event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("willow_terrace_table"));
 
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("cherry_fancy_door"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("dead_fancy_door"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("ethereal_fancy_door"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("fir_fancy_door"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("hellbark_fancy_door"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("jacaranda_fancy_door"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("magic_fancy_door"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("mahogany_fancy_door"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("palm_fancy_door"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("redwood_fancy_door"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("umbran_fancy_door"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("willow_fancy_door"));
+        event.getRegistry().register(new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("cherry_fancy_door"));
+        event.getRegistry().register(new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("dead_fancy_door"));
+        event.getRegistry().register(new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("ethereal_fancy_door"));
+        event.getRegistry().register(new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("fir_fancy_door"));
+        event.getRegistry().register(new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("hellbark_fancy_door"));
+        event.getRegistry().register(new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("jacaranda_fancy_door"));
+        event.getRegistry().register(new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("magic_fancy_door"));
+        event.getRegistry().register(new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("mahogany_fancy_door"));
+        event.getRegistry().register(new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("palm_fancy_door"));
+        event.getRegistry().register(new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("redwood_fancy_door"));
+        event.getRegistry().register(new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("umbran_fancy_door"));
+        event.getRegistry().register(new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("willow_fancy_door"));
 
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("cherry_suspended_stairs"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("dead_suspended_stairs"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("ethereal_suspended_stairs"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("fir_suspended_stairs"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("hellbark_suspended_stairs"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("jacaranda_suspended_stairs"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("magic_suspended_stairs"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("mahogany_suspended_stairs"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("palm_suspended_stairs"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("redwood_suspended_stairs"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("umbran_suspended_stairs"));
-        event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("willow_suspended_stairs"));
+        event.getRegistry().register(new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("cherry_suspended_stairs"));
+        event.getRegistry().register(new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("dead_suspended_stairs"));
+        event.getRegistry().register(new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("ethereal_suspended_stairs"));
+        event.getRegistry().register(new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("fir_suspended_stairs"));
+        event.getRegistry().register(new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("hellbark_suspended_stairs"));
+        event.getRegistry().register(new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("jacaranda_suspended_stairs"));
+        event.getRegistry().register(new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("magic_suspended_stairs"));
+        event.getRegistry().register(new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("mahogany_suspended_stairs"));
+        event.getRegistry().register(new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("palm_suspended_stairs"));
+        event.getRegistry().register(new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("redwood_suspended_stairs"));
+        event.getRegistry().register(new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("umbran_suspended_stairs"));
+        event.getRegistry().register(new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName("willow_suspended_stairs"));
 
     }
 
@@ -239,31 +242,31 @@ public class ModBlocks
         event.getRegistry().register(new FuelBlockItem(UMBRAN_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(UMBRAN_TERRACE_TABLE.getRegistryName()));
         event.getRegistry().register(new FuelBlockItem(WILLOW_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(WILLOW_TERRACE_TABLE.getRegistryName()));
 
-        event.getRegistry().register(new FuelBlockItem(CHERRY_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(CHERRY_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(DEAD_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(DEAD_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(ETHEREAL_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(ETHEREAL_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(FIR_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(FIR_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(HELLBARK_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(HELLBARK_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(JACARANDA_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(JACARANDA_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAGIC_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(MAGIC_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAHOGANY_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(MAHOGANY_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(PALM_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(PALM_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(REDWOOD_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(REDWOOD_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(UMBRAN_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(UMBRAN_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(WILLOW_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(WILLOW_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new BlockItem(CHERRY_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(CHERRY_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new BlockItem(DEAD_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(DEAD_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new BlockItem(ETHEREAL_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(ETHEREAL_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new BlockItem(FIR_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(FIR_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new BlockItem(HELLBARK_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(HELLBARK_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new BlockItem(JACARANDA_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(JACARANDA_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new BlockItem(MAGIC_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(MAGIC_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new BlockItem(MAHOGANY_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(MAHOGANY_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new BlockItem(PALM_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(PALM_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new BlockItem(REDWOOD_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(REDWOOD_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new BlockItem(UMBRAN_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(UMBRAN_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new BlockItem(WILLOW_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(WILLOW_FANCY_DOOR.getRegistryName()));
 
-        event.getRegistry().register(new FuelBlockItem(CHERRY_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(CHERRY_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(DEAD_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(DEAD_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(ETHEREAL_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(ETHEREAL_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(FIR_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(FIR_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(HELLBARK_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(HELLBARK_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(JACARANDA_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(JACARANDA_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAGIC_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(MAGIC_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAHOGANY_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(MAHOGANY_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(PALM_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(PALM_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(REDWOOD_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(REDWOOD_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(UMBRAN_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(UMBRAN_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(WILLOW_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(WILLOW_SUSPENDED_STAIRS.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(CHERRY_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(CHERRY_SUSPENDED_STAIRS.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(DEAD_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(DEAD_SUSPENDED_STAIRS.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(ETHEREAL_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(ETHEREAL_SUSPENDED_STAIRS.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(FIR_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(FIR_SUSPENDED_STAIRS.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(HELLBARK_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(HELLBARK_SUSPENDED_STAIRS.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(JACARANDA_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(JACARANDA_SUSPENDED_STAIRS.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(MAGIC_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(MAGIC_SUSPENDED_STAIRS.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(MAHOGANY_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(MAHOGANY_SUSPENDED_STAIRS.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(PALM_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(PALM_SUSPENDED_STAIRS.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(REDWOOD_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(REDWOOD_SUSPENDED_STAIRS.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(UMBRAN_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(UMBRAN_SUSPENDED_STAIRS.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(WILLOW_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(WILLOW_SUSPENDED_STAIRS.getRegistryName()));
 
     }
 }
