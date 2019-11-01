@@ -9,9 +9,10 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod(Constants.MODID)
+@Mod(EmbellishCraftBOP.MODID)
 public class EmbellishCraftBOP
 {
+    public static final String MODID = "embellishcraft-bop";
     public static final Logger LOGGER = LogManager.getLogger();
 
     public EmbellishCraftBOP()
