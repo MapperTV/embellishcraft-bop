@@ -3,7 +3,6 @@ package tv.mapper.embellishcraftbop.init;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
@@ -242,18 +241,18 @@ public class ModBlocks
         event.getRegistry().register(new FuelBlockItem(UMBRAN_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(UMBRAN_TERRACE_TABLE.getRegistryName()));
         event.getRegistry().register(new FuelBlockItem(WILLOW_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(WILLOW_TERRACE_TABLE.getRegistryName()));
 
-        event.getRegistry().register(new BlockItem(CHERRY_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(CHERRY_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new BlockItem(DEAD_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(DEAD_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new BlockItem(ETHEREAL_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(ETHEREAL_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new BlockItem(FIR_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(FIR_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new BlockItem(HELLBARK_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(HELLBARK_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new BlockItem(JACARANDA_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(JACARANDA_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new BlockItem(MAGIC_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(MAGIC_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new BlockItem(MAHOGANY_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(MAHOGANY_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new BlockItem(PALM_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(PALM_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new BlockItem(REDWOOD_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(REDWOOD_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new BlockItem(UMBRAN_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(UMBRAN_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new BlockItem(WILLOW_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT)).setRegistryName(WILLOW_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(CHERRY_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(CHERRY_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(DEAD_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(DEAD_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(ETHEREAL_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(ETHEREAL_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(FIR_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(FIR_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(HELLBARK_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(HELLBARK_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(JACARANDA_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(JACARANDA_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(MAGIC_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(MAGIC_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(MAHOGANY_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(MAHOGANY_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(PALM_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(PALM_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(REDWOOD_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(REDWOOD_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(UMBRAN_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(UMBRAN_FANCY_DOOR.getRegistryName()));
+        event.getRegistry().register(new FuelBlockItem(WILLOW_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(WILLOW_FANCY_DOOR.getRegistryName()));
 
         event.getRegistry().register(new FuelBlockItem(CHERRY_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(CHERRY_SUSPENDED_STAIRS.getRegistryName()));
         event.getRegistry().register(new FuelBlockItem(DEAD_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(DEAD_SUSPENDED_STAIRS.getRegistryName()));
