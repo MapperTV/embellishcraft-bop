@@ -1,6 +1,8 @@
 package tv.mapper.embellishcraftbop.init;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -106,100 +108,43 @@ public class ModBlocks
     public static final Block UMBRAN_SUSPENDED_STAIRS = null;
     public static final Block WILLOW_SUSPENDED_STAIRS = null;
 
+    private static List<Block> CHAIRS = new ArrayList<>();
+    private static List<Block> DOORS = new ArrayList<>();
+    private static List<Block> SUSPENDED_STAIRS = new ArrayList<>();
+
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event)
     {
+        Block block;
+
         for(int i = 0; i < Arrays.stream(BoPWoodType.values()).count(); i++)
         {
-            event.getRegistry().register(new ChairBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_chair"));
-            event.getRegistry().register(new TerraceChairBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_terrace_chair"));
-            event.getRegistry().register(new TableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_table"));
-            event.getRegistry().register(new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_terrace_table"));
-            event.getRegistry().register(new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_fancy_door"));
-            event.getRegistry().register(new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_suspended_stairs"));
+            event.getRegistry().register(block = new ChairBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_chair"));
+            CHAIRS.add(block);
+            event.getRegistry().register(block = new TerraceChairBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_terrace_chair"));
+            CHAIRS.add(block);
+            event.getRegistry().register(block = new TableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_table"));
+            CHAIRS.add(block);
+            event.getRegistry().register(block = new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_terrace_table"));
+            CHAIRS.add(block);
+            event.getRegistry().register(block = new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_fancy_door"));
+            DOORS.add(block);
+            event.getRegistry().register(block = new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_suspended_stairs"));
+            SUSPENDED_STAIRS.add(block);
         }
     }
 
     @SubscribeEvent
     public static void registerBlockItems(RegistryEvent.Register<Item> event)
     {
-        event.getRegistry().register(new FuelBlockItem(CHERRY_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(CHERRY_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(DEAD_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(DEAD_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(ETHEREAL_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(ETHEREAL_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(FIR_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(FIR_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(HELLBARK_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(HELLBARK_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(JACARANDA_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(JACARANDA_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAGIC_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(MAGIC_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAHOGANY_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(MAHOGANY_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(PALM_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(PALM_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(REDWOOD_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(REDWOOD_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(UMBRAN_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(UMBRAN_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(WILLOW_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(WILLOW_CHAIR.getRegistryName()));
+        for(Block block : CHAIRS)
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(block.getRegistryName()));
 
-        event.getRegistry().register(new FuelBlockItem(CHERRY_TERRACE_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(CHERRY_TERRACE_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(DEAD_TERRACE_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(DEAD_TERRACE_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(ETHEREAL_TERRACE_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(ETHEREAL_TERRACE_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(FIR_TERRACE_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(FIR_TERRACE_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(HELLBARK_TERRACE_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(HELLBARK_TERRACE_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(JACARANDA_TERRACE_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(JACARANDA_TERRACE_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAGIC_TERRACE_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(MAGIC_TERRACE_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAHOGANY_TERRACE_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(MAHOGANY_TERRACE_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(PALM_TERRACE_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(PALM_TERRACE_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(REDWOOD_TERRACE_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(REDWOOD_TERRACE_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(UMBRAN_TERRACE_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(UMBRAN_TERRACE_CHAIR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(WILLOW_TERRACE_CHAIR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(WILLOW_TERRACE_CHAIR.getRegistryName()));
+        for(Block block : DOORS)
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(block.getRegistryName()));
 
-        event.getRegistry().register(new FuelBlockItem(CHERRY_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(CHERRY_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(DEAD_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(DEAD_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(ETHEREAL_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(ETHEREAL_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(FIR_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(FIR_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(HELLBARK_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(HELLBARK_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(JACARANDA_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(JACARANDA_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAGIC_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(MAGIC_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAHOGANY_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(MAHOGANY_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(PALM_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(PALM_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(REDWOOD_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(REDWOOD_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(UMBRAN_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(UMBRAN_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(WILLOW_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(WILLOW_TABLE.getRegistryName()));
-
-        event.getRegistry().register(new FuelBlockItem(CHERRY_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(CHERRY_TERRACE_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(DEAD_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(DEAD_TERRACE_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(ETHEREAL_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(ETHEREAL_TERRACE_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(FIR_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(FIR_TERRACE_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(HELLBARK_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(HELLBARK_TERRACE_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(JACARANDA_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(JACARANDA_TERRACE_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAGIC_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(MAGIC_TERRACE_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAHOGANY_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(MAHOGANY_TERRACE_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(PALM_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(PALM_TERRACE_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(REDWOOD_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(REDWOOD_TERRACE_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(UMBRAN_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(UMBRAN_TERRACE_TABLE.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(WILLOW_TERRACE_TABLE, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(WILLOW_TERRACE_TABLE.getRegistryName()));
-
-        event.getRegistry().register(new FuelBlockItem(CHERRY_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(CHERRY_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(DEAD_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(DEAD_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(ETHEREAL_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(ETHEREAL_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(FIR_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(FIR_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(HELLBARK_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(HELLBARK_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(JACARANDA_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(JACARANDA_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAGIC_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(MAGIC_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAHOGANY_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(MAHOGANY_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(PALM_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(PALM_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(REDWOOD_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(REDWOOD_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(UMBRAN_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(UMBRAN_FANCY_DOOR.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(WILLOW_FANCY_DOOR, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(WILLOW_FANCY_DOOR.getRegistryName()));
-
-        event.getRegistry().register(new FuelBlockItem(CHERRY_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(CHERRY_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(DEAD_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(DEAD_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(ETHEREAL_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(ETHEREAL_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(FIR_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(FIR_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(HELLBARK_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(HELLBARK_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(JACARANDA_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(JACARANDA_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAGIC_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(MAGIC_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(MAHOGANY_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(MAHOGANY_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(PALM_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(PALM_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(REDWOOD_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(REDWOOD_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(UMBRAN_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(UMBRAN_SUSPENDED_STAIRS.getRegistryName()));
-        event.getRegistry().register(new FuelBlockItem(WILLOW_SUSPENDED_STAIRS, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(WILLOW_SUSPENDED_STAIRS.getRegistryName()));
+        for(Block block : SUSPENDED_STAIRS)
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(block.getRegistryName()));
 
     }
 }
