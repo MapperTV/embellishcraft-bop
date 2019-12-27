@@ -7,6 +7,7 @@ import java.util.List;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
@@ -16,7 +17,9 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
 import tv.mapper.embellishcraft.Constants;
 import tv.mapper.embellishcraft.block.ChairBlock;
+import tv.mapper.embellishcraft.block.CrateBlock;
 import tv.mapper.embellishcraft.block.CustomDoorBlock;
+import tv.mapper.embellishcraft.block.FancyTableBlock;
 import tv.mapper.embellishcraft.block.SuspendedStairsBlock;
 import tv.mapper.embellishcraft.block.TableBlock;
 import tv.mapper.embellishcraft.block.TerraceChairBlock;
@@ -69,6 +72,19 @@ public class ModBlocks
     public static final Block UMBRAN_TABLE = null;
     public static final Block WILLOW_TABLE = null;
 
+    public static final Block CHERRY_FANCY_TABLE = null;
+    public static final Block DEAD_FANCY_TABLE = null;
+    public static final Block ETHEREAL_FANCY_TABLE = null;
+    public static final Block FIR_FANCY_TABLE = null;
+    public static final Block HELLBARK_FANCY_TABLE = null;
+    public static final Block JACARANDA_FANCY_TABLE = null;
+    public static final Block MAGIC_FANCY_TABLE = null;
+    public static final Block MAHOGANY_FANCY_TABLE = null;
+    public static final Block PALM_FANCY_TABLE = null;
+    public static final Block REDWOOD_FANCY_TABLE = null;
+    public static final Block UMBRAN_FANCY_TABLE = null;
+    public static final Block WILLOW_FANCY_TABLE = null;
+
     public static final Block CHERRY_TERRACE_TABLE = null;
     public static final Block DEAD_TERRACE_TABLE = null;
     public static final Block ETHEREAL_TERRACE_TABLE = null;
@@ -108,9 +124,24 @@ public class ModBlocks
     public static final Block UMBRAN_SUSPENDED_STAIRS = null;
     public static final Block WILLOW_SUSPENDED_STAIRS = null;
 
+    public static final Block CHERRY_WOODEN_CRATE = null;
+    public static final Block DEAD_WOODEN_CRATE = null;
+    public static final Block ETHEREAL_WOODEN_CRATE = null;
+    public static final Block FIR_WOODEN_CRATE = null;
+    public static final Block HELLBARK_WOODEN_CRATE = null;
+    public static final Block JACARANDA_WOODEN_CRATE = null;
+    public static final Block MAGIC_WOODEN_CRATE = null;
+    public static final Block MAHOGANY_WOODEN_CRATE = null;
+    public static final Block PALM_WOODEN_CRATE = null;
+    public static final Block REDWOOD_WOODEN_CRATE = null;
+    public static final Block UMBRAN_WOODEN_CRATE = null;
+    public static final Block WILLOW_WOODEN_CRATE = null;
+
     private static List<Block> CHAIRS = new ArrayList<>();
     private static List<Block> DOORS = new ArrayList<>();
     private static List<Block> SUSPENDED_STAIRS = new ArrayList<>();
+    private static List<Block> CRATES = new ArrayList<>();
+    private static List<Block> FANCY_TABLES = new ArrayList<>();
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event)
@@ -131,6 +162,10 @@ public class ModBlocks
             DOORS.add(block);
             event.getRegistry().register(block = new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_suspended_stairs"));
             SUSPENDED_STAIRS.add(block);
+            event.getRegistry().register(block = new CrateBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5F).sound(SoundType.WOOD)).setRegistryName(BoPWoodType.byId(i).getName() + "_wooden_crate"));
+            CRATES.add(block);
+            event.getRegistry().register(block = new FancyTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_fancy_table"));
+            FANCY_TABLES.add(block);
         }
     }
 
@@ -145,6 +180,12 @@ public class ModBlocks
 
         for(Block block : SUSPENDED_STAIRS)
             event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(block.getRegistryName()));
+
+        for(Block block : CRATES)
+            event.getRegistry().register(new BlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT).maxStackSize(1)).setRegistryName(block.getRegistryName()));
+
+        for(Block block : FANCY_TABLES)
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.couchBurnTime).setRegistryName(block.getRegistryName()));
 
     }
 }
