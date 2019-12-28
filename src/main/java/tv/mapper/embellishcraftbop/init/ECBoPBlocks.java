@@ -31,7 +31,7 @@ import tv.mapper.embellishcraftbop.util.BoPWoodType;
 
 @ObjectHolder(EmbellishCraftBOP.MODID)
 @EventBusSubscriber(bus = Bus.MOD)
-public class ModBlocks
+public class ECBoPBlocks
 {
     public static final Block CHERRY_CHAIR = null;
     public static final Block DEAD_CHAIR = null;
@@ -137,11 +137,14 @@ public class ModBlocks
     public static final Block UMBRAN_WOODEN_CRATE = null;
     public static final Block WILLOW_WOODEN_CRATE = null;
 
-    private static List<Block> CHAIRS = new ArrayList<>();
-    private static List<Block> DOORS = new ArrayList<>();
-    private static List<Block> SUSPENDED_STAIRS = new ArrayList<>();
-    private static List<Block> CRATES = new ArrayList<>();
-    private static List<Block> FANCY_TABLES = new ArrayList<>();
+    public static List<Block> CHAIRS = new ArrayList<>();
+    public static List<Block> TERRACE_CHAIRS = new ArrayList<>();
+    public static List<Block> TABLES = new ArrayList<>();
+    public static List<Block> TERRACE_TABLES = new ArrayList<>();
+    public static List<Block> FANCY_TABLES = new ArrayList<>();
+    public static List<Block> FANCY_DOORS = new ArrayList<>();
+    public static List<Block> SUSPENDED_STAIRS = new ArrayList<>();
+    public static List<Block> CRATES = new ArrayList<>();
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event)
@@ -150,21 +153,30 @@ public class ModBlocks
 
         for(int i = 0; i < Arrays.stream(BoPWoodType.values()).count(); i++)
         {
-            event.getRegistry().register(block = new ChairBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_chair"));
+            event.getRegistry().register(block = new ChairBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
+                BoPWoodType.byId(i).getName() + "_chair"));
             CHAIRS.add(block);
-            event.getRegistry().register(block = new TerraceChairBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_terrace_chair"));
-            CHAIRS.add(block);
-            event.getRegistry().register(block = new TableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_table"));
-            CHAIRS.add(block);
-            event.getRegistry().register(block = new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_terrace_table"));
-            CHAIRS.add(block);
-            event.getRegistry().register(block = new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_fancy_door"));
-            DOORS.add(block);
-            event.getRegistry().register(block = new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_suspended_stairs"));
+            event.getRegistry().register(block = new TerraceChairBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
+                BoPWoodType.byId(i).getName() + "_terrace_chair"));
+            TERRACE_CHAIRS.add(block);
+            event.getRegistry().register(block = new TableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
+                BoPWoodType.byId(i).getName() + "_table"));
+            TABLES.add(block);
+            event.getRegistry().register(block = new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
+                BoPWoodType.byId(i).getName() + "_terrace_table"));
+            TERRACE_TABLES.add(block);
+            event.getRegistry().register(block = new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
+                BoPWoodType.byId(i).getName() + "_fancy_door"));
+            FANCY_DOORS.add(block);
+            event.getRegistry().register(
+                block = new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
+                    BoPWoodType.byId(i).getName() + "_suspended_stairs"));
             SUSPENDED_STAIRS.add(block);
-            event.getRegistry().register(block = new CrateBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5F).sound(SoundType.WOOD)).setRegistryName(BoPWoodType.byId(i).getName() + "_wooden_crate"));
+            event.getRegistry().register(
+                block = new CrateBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5F).sound(SoundType.WOOD)).setRegistryName(BoPWoodType.byId(i).getName() + "_wooden_crate"));
             CRATES.add(block);
-            event.getRegistry().register(block = new FancyTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(BoPWoodType.byId(i).getName() + "_fancy_table"));
+            event.getRegistry().register(block = new FancyTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
+                BoPWoodType.byId(i).getName() + "_fancy_table"));
             FANCY_TABLES.add(block);
         }
     }
@@ -175,11 +187,21 @@ public class ModBlocks
         for(Block block : CHAIRS)
             event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(block.getRegistryName()));
 
-        for(Block block : DOORS)
+        for(Block block : TERRACE_CHAIRS)
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(block.getRegistryName()));
+
+        for(Block block : TABLES)
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(block.getRegistryName()));
+
+        for(Block block : TERRACE_TABLES)
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(block.getRegistryName()));
+
+        for(Block block : FANCY_DOORS)
             event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(block.getRegistryName()));
 
         for(Block block : SUSPENDED_STAIRS)
-            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(block.getRegistryName()));
+            event.getRegistry().register(
+                new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(block.getRegistryName()));
 
         for(Block block : CRATES)
             event.getRegistry().register(new BlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT).maxStackSize(1)).setRegistryName(block.getRegistryName()));

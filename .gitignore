@@ -26,3 +26,6 @@
 
 # Explicit ignores
 Thumbs.db
+
+#Excludes generated json folder
+src/generated/

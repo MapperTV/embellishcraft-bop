@@ -1,7 +1,8 @@
 package tv.mapper.embellishcraftbop.data.gen;
 
+import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
-import tv.mapper.embellishcraftbop.init.ModBlocks;
+import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
 
 public class LootTables extends BaseLootTableProvider
 {
@@ -14,6 +15,7 @@ public class LootTables extends BaseLootTableProvider
     @Override
     protected void addTables()
     {
-        lootTables.put(ModBlocks.CHERRY_CHAIR, createStandardTable("cherry_chair", ModBlocks.CHERRY_CHAIR));
+        for(Block block : ECBoPBlocks.CHAIRS)
+            lootTables.put(block, createStandardTable(block.getTranslationKey(), block));
     }
 }
