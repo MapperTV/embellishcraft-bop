@@ -2,7 +2,6 @@ package tv.mapper.embellishcraftbop.data.gen;
 
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.BlockModelProvider;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
@@ -31,8 +30,7 @@ public class ECBoPBlockModels extends BlockModelProvider
         {
             name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
             wood = name.replace("_chair", "");
-            getBuilder(name).parent(getExistingFile(mcLoc("block/cube_all"))).texture("all", new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
-            // mcLoc("biomesoplenty:block/" + wood + "_planks")
+            getBuilder(name).parent(getExistingFile(mcLoc("block/cube_all"))).texture("all", "biomesoplenty:block/" + wood + "_planks");
         }
     }
 }

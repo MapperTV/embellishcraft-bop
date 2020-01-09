@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tables",
+  "pattern": [
+    "PP",
+    "PB",
+    "PP"
+  ],
+  "key": {
+    "B": {
+      "item": "biomesoplenty:redwood_button"
+    },
+    "P": {
+      "item": "biomesoplenty:redwood_planks"
+    }
+  },
+  "result": {
+    "item": "embellishcraft-bop:redwood_fancy_door",
+    "count": 3
+  }
+}

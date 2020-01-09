@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stairs",
+  "pattern": [
+    "  P",
+    " PR",
+    "PR "
+  ],
+  "key": {
+    "R": {
+      "tag": "forge:rods/wooden"
+    },
+    "P": {
+      "item": "biomesoplenty:redwood_planks"
+    }
+  },
+  "result": {
+    "item": "embellishcraft-bop:redwood_suspended_stairs",
+    "count": 6
+  }
+}

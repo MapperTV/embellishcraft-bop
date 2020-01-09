@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tables",
+  "pattern": [
+    "PP",
+    "PB",
+    "PP"
+  ],
+  "key": {
+    "B": {
+      "item": "biomesoplenty:fir_button"
+    },
+    "P": {
+      "item": "biomesoplenty:fir_planks"
+    }
+  },
+  "result": {
+    "item": "embellishcraft-bop:fir_fancy_door",
+    "count": 3
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "tables",
+  "pattern": [
+    "WWW",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "biomesoplenty:willow_pressure_plate"
+    }
+  },
+  "result": {
+    "item": "embellishcraft-bop:willow_terrace_table"
+  }
+}

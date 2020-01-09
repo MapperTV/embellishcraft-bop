@@ -27,5 +27,5 @@
 # Explicit ignores
 Thumbs.db
 
-#Excludes generated json folder
-src/generated/
+#Temp BOP textures for data gen
+src/main/resources/assets/biomesoplenty/
