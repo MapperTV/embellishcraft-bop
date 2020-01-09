@@ -14,10 +14,10 @@ import net.minecraftforge.common.Tags;
 import tv.mapper.embellishcraft.init.ModItems;
 import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
 
-public class Recipes extends RecipeProvider
+public class ECBoPRecipes extends RecipeProvider
 {
 
-    public Recipes(DataGenerator generatorIn)
+    public ECBoPRecipes(DataGenerator generatorIn)
     {
         super(generatorIn);
     }

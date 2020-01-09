@@ -29,7 +29,7 @@ import net.minecraft.world.storage.loot.functions.CopyName;
 import net.minecraft.world.storage.loot.functions.CopyNbt;
 import net.minecraft.world.storage.loot.functions.SetContents;
 
-public abstract class BaseLootTableProvider extends LootTableProvider
+public abstract class ECBoPLootTableProvider extends LootTableProvider
 {
 
     private static final Logger LOGGER = LogManager.getLogger();
@@ -40,7 +40,7 @@ public abstract class BaseLootTableProvider extends LootTableProvider
 
     private final DataGenerator generator;
 
-    public BaseLootTableProvider(DataGenerator dataGeneratorIn)
+    public ECBoPLootTableProvider(DataGenerator dataGeneratorIn)
     {
         super(dataGeneratorIn);
         this.generator = dataGeneratorIn;
