@@ -1,0 +1,7 @@
+{
+  "parent": "embellishcraft:block/furniture/table/table_top",
+  "textures": {
+    "material": "biomesoplenty:block/dead_planks",
+    "particle": "biomesoplenty:block/dead_planks"
+  }
+}

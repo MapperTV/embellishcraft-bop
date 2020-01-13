@@ -1,6 +1,7 @@
 {
-  "parent": "block/cube_all",
+  "parent": "embellishcraft:block/furniture/chair",
   "textures": {
-    "all": "biomesoplenty:block/palm_planks"
+    "1": "biomesoplenty:block/palm_planks",
+    "particle": "biomesoplenty:block/palm_planks"
   }
 }

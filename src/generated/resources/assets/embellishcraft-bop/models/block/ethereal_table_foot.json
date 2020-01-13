@@ -1,0 +1,7 @@
+{
+  "parent": "embellishcraft:block/furniture/table/table_foot",
+  "textures": {
+    "material": "biomesoplenty:block/ethereal_planks",
+    "particle": "biomesoplenty:block/ethereal_planks"
+  }
+}

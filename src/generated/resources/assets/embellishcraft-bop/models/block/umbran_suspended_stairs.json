@@ -1,0 +1,6 @@
+{
+  "parent": "embellishcraft:block/stairs/base/suspended_stairs",
+  "textures": {
+    "all": "biomesoplenty:block/umbran_planks"
+  }
+}
