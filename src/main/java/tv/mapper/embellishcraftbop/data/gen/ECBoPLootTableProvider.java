@@ -19,6 +19,7 @@ import net.minecraft.data.LootTableProvider;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.ConstantRange;
+import net.minecraft.world.storage.loot.DynamicLootEntry;
 import net.minecraft.world.storage.loot.ItemLootEntry;
 import net.minecraft.world.storage.loot.LootParameterSets;
 import net.minecraft.world.storage.loot.LootPool;
@@ -26,6 +27,10 @@ import net.minecraft.world.storage.loot.LootTable;
 import net.minecraft.world.storage.loot.LootTableManager;
 import net.minecraft.world.storage.loot.conditions.BlockStateProperty;
 import net.minecraft.world.storage.loot.conditions.SurvivesExplosion;
+import net.minecraft.world.storage.loot.functions.CopyName;
+import net.minecraft.world.storage.loot.functions.CopyNbt;
+import net.minecraft.world.storage.loot.functions.SetContents;
+import tv.mapper.embellishcraft.block.CrateBlock;
 import tv.mapper.embellishcraft.block.CustomDoorBlock;
 
 public abstract class ECBoPLootTableProvider extends LootTableProvider
@@ -34,7 +39,6 @@ public abstract class ECBoPLootTableProvider extends LootTableProvider
     private static final Logger LOGGER = LogManager.getLogger();
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 
-    // Filled by subclasses
     protected final Map<Block, LootTable.Builder> lootTables = new HashMap<>();
 
     private final DataGenerator generator;
@@ -45,7 +49,6 @@ public abstract class ECBoPLootTableProvider extends LootTableProvider
         this.generator = dataGeneratorIn;
     }
 
-    // Subclasses can override this to fill the 'lootTables' map.
     protected abstract void addTables();
 
     protected LootTable.Builder createStandardTable(String name, Block block)
@@ -64,8 +67,18 @@ public abstract class ECBoPLootTableProvider extends LootTableProvider
         return LootTable.builder().addLootPool(builder);
     }
 
+    protected LootTable.Builder createCrateTable(String name, Block block)
+    {
+        name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
+            ItemLootEntry.builder(block).acceptFunction(CopyName.builder(CopyName.Source.BLOCK_ENTITY)).acceptFunction(
+                CopyNbt.func_215881_a(CopyNbt.Source.BLOCK_ENTITY).func_216056_a("Lock", "BlockEntityTag.Lock").func_216056_a("LootTable", "BlockEntityTag.LootTable").func_216056_a("LootTableSeed",
+                    "BlockEntityTag.LootTableSeed")).acceptFunction(SetContents.func_215920_b().func_216075_a(DynamicLootEntry.func_216162_a(CrateBlock.CONTENTS))));
+        return LootTable.builder().addLootPool(builder);
+
+    }
+
     @Override
-    // Entry point
     public void act(DirectoryCache cache)
     {
         addTables();
@@ -78,7 +91,6 @@ public abstract class ECBoPLootTableProvider extends LootTableProvider
         writeTables(cache, tables);
     }
 
-    // Actually write out the tables in the output folder
     private void writeTables(DirectoryCache cache, Map<ResourceLocation, LootTable> tables)
     {
         Path outputFolder = this.generator.getOutputFolder();

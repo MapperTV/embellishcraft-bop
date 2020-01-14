@@ -36,5 +36,8 @@ public class ECBoPLootTables extends ECBoPLootTableProvider
         for(Block block : ECBoPBlocks.SUSPENDED_STAIRS)
             lootTables.put(block, createStandardTable(block.getTranslationKey(), block));
 
+        for(Block block : ECBoPBlocks.CRATES)
+            lootTables.put(block, createCrateTable(block.getTranslationKey(), block));
+
     }
 }
