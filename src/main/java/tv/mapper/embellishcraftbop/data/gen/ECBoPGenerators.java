@@ -34,6 +34,7 @@ public class ECBoPGenerators
 
         generator.addProvider(new ECBoPRecipes(generator));
         generator.addProvider(new ECBoPLootTables(generator));
+        generator.addProvider(new ECBoPBlockStates(generator, helper));
         generator.addProvider(new ECBoPBlockModels(generator, helper));
         generator.addProvider(new ECBoPItemModels(generator, helper));
     }
