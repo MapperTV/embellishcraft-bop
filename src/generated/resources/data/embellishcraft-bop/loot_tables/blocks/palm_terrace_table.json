@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "block.embellishcraft-bop.palm_terrace_table",
+      "name": "palm_terrace_table",
       "rolls": 1,
       "entries": [
         {

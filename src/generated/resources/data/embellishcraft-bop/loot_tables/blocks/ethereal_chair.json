@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "block.embellishcraft-bop.ethereal_chair",
+      "name": "ethereal_chair",
       "rolls": 1,
       "entries": [
         {

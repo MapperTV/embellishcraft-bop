@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "block.embellishcraft-bop.redwood_terrace_chair",
+      "name": "redwood_terrace_chair",
       "rolls": 1,
       "entries": [
         {

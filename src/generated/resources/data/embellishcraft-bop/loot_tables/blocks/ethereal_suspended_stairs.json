@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "block.embellishcraft-bop.ethereal_suspended_stairs",
+      "name": "ethereal_suspended_stairs",
       "rolls": 1,
       "entries": [
         {

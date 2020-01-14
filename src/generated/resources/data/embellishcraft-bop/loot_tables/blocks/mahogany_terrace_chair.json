@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "block.embellishcraft-bop.mahogany_terrace_chair",
+      "name": "mahogany_terrace_chair",
       "rolls": 1,
       "entries": [
         {

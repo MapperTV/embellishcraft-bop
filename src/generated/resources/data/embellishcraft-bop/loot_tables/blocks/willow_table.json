@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "block.embellishcraft-bop.willow_table",
+      "name": "willow_table",
       "rolls": 1,
       "entries": [
         {

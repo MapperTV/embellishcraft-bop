@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "block.embellishcraft-bop.magic_table",
+      "name": "magic_table",
       "rolls": 1,
       "entries": [
         {

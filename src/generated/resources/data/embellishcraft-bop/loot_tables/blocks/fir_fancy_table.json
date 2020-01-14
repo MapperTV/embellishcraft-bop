@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "block.embellishcraft-bop.fir_fancy_table",
+      "name": "fir_fancy_table",
       "rolls": 1,
       "entries": [
         {

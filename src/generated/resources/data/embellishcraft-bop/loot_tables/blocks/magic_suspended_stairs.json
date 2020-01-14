@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "block.embellishcraft-bop.magic_suspended_stairs",
+      "name": "magic_suspended_stairs",
       "rolls": 1,
       "entries": [
         {

@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "block.embellishcraft-bop.magic_chair",
+      "name": "magic_chair",
       "rolls": 1,
       "entries": [
         {

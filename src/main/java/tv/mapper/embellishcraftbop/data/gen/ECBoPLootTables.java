@@ -30,6 +30,9 @@ public class ECBoPLootTables extends ECBoPLootTableProvider
         for(Block block : ECBoPBlocks.FANCY_TABLES)
             lootTables.put(block, createStandardTable(block.getTranslationKey(), block));
 
+        for(Block block : ECBoPBlocks.FANCY_DOORS)
+            lootTables.put(block, createDoorTable(block.getTranslationKey(), block));
+
         for(Block block : ECBoPBlocks.SUSPENDED_STAIRS)
             lootTables.put(block, createStandardTable(block.getTranslationKey(), block));
 

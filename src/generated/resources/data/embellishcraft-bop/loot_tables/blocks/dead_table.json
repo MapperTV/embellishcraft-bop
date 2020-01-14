@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "block.embellishcraft-bop.dead_table",
+      "name": "dead_table",
       "rolls": 1,
       "entries": [
         {

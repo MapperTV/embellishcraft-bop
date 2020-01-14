@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "block.embellishcraft-bop.mahogany_table",
+      "name": "mahogany_table",
       "rolls": 1,
       "entries": [
         {

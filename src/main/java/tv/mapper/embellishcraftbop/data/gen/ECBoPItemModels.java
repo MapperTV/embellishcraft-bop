@@ -24,8 +24,6 @@ public class ECBoPItemModels extends ItemModelProvider
     @Override
     protected void registerModels()
     {
-        getBuilder("steel_block").parent(new UncheckedModelFile(modid + ":block/steel_block"));
-
         String name;
 
         for(Block block : ECBoPBlocks.CHAIRS)

@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "block.embellishcraft-bop.dead_terrace_chair",
+      "name": "dead_terrace_chair",
       "rolls": 1,
       "entries": [
         {
