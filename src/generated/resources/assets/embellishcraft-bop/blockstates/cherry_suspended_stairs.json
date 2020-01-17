@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "embellishcraft-bop:block/cherry_suspended_stairs",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "embellishcraft-bop:block/cherry_suspended_stairs"
+    },
+    "facing=west": {
+      "model": "embellishcraft-bop:block/cherry_suspended_stairs",
+      "y": 90
+    },
+    "facing=east": {
+      "model": "embellishcraft-bop:block/cherry_suspended_stairs",
+      "y": 270
+    }
+  }
+}
