@@ -7,18 +7,18 @@ import net.minecraft.util.IStringSerializable;
 
 public enum BoPWoodType implements IStringSerializable
 {
-    CHERRY(0, "cherry"),
-    DEAD(1, "dead"),
-    ETHEREAL(2, "ethereal"),
-    FIR(3, "fir"),
-    HELLBARK(4, "hellbark"),
-    JACARANDA(5, "jacaranda"),
-    MAGIC(6, "magic"),
-    MAHOGANY(7, "mahogany"),
-    PALM(8, "palm"),
-    REDWOOD(9, "redwood"),
-    UMBRAN(10, "umbran"),
-    WILLOW(11, "willow");
+    CHERRY(0, "cherry", "cerisier"),
+    DEAD(1, "dead", "bois mort"),
+    ETHEREAL(2, "ethereal", "bois ethere"),
+    FIR(3, "fir", "sapin"),
+    HELLBARK(4, "hellbark", "ecorce infernale"),
+    JACARANDA(5, "jacaranda", "jacaranda"),
+    MAGIC(6, "magic", "bois magique"),
+    MAHOGANY(7, "mahogany", "acajou"),
+    PALM(8, "palm", "palmier"),
+    REDWOOD(9, "redwood", "sequoia"),
+    UMBRAN(10, "umbran", "bois sinistre"),
+    WILLOW(11, "willow", "saule");
 
     private static final BoPWoodType[] VALUES = Arrays.stream(values()).sorted(Comparator.comparingInt(BoPWoodType::getId)).toArray((map) ->
     {
@@ -26,17 +26,19 @@ public enum BoPWoodType implements IStringSerializable
     });
 
     private final int id;
-    private final String name;
+    private final String en_us;
+    private final String fr_fr;
 
-    private BoPWoodType(int idIn, String name)
+    private BoPWoodType(int idIn, String en_us, String fr_fr)
     {
         this.id = idIn;
-        this.name = name;
+        this.en_us = en_us;
+        this.fr_fr = fr_fr;
     }
 
-    public String getName()
+    public String getName(String lang)
     {
-        return this.name;
+        return lang.equals("fr_fr") ? this.fr_fr : this.en_us;
     }
 
     public int getId()
@@ -54,14 +56,20 @@ public enum BoPWoodType implements IStringSerializable
         return VALUES[id];
     }
 
-    public static String getWoodByID(int id)
+    public static String getWoodByID(int id, String lang)
     {
         for(BoPWoodType wood : values())
         {
             if(wood.getId() == id)
-                return wood.getName();
+                return wood.getName(lang);
         }
         return null;
+    }
+
+    @Override
+    public String getName()
+    {
+        return getName("en_us");
     }
 
 }
