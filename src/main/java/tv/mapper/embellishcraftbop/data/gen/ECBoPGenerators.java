@@ -38,6 +38,9 @@ public class ECBoPGenerators
         generator.addProvider(new ECBoPBlockModels(generator, helper));
         generator.addProvider(new ECBoPItemModels(generator, helper));
 
+        generator.addProvider(new ECBoPBlockTags(generator));
+        generator.addProvider(new ECBoPItemTags(generator));
+
         generator.addProvider(new ECBoPLang(generator, "en_us"));
         generator.addProvider(new ECBoPLang(generator, "fr_fr"));
     }
