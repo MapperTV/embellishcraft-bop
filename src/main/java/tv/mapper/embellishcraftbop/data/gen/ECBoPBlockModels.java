@@ -97,5 +97,25 @@ public class ECBoPBlockModels extends BlockModelProvider
             name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
             getBuilder(name).parent(getExistingFile(mcLoc("block/cube_all"))).texture("all", modLoc("block/" + name));
         }
+
+        for(Block block : ECBoPBlocks.FANCY_BEDS)
+        {
+            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+
+            String check[] = name.split("_");
+            if(check[0].equals("light"))
+            {
+                wood = check[2];
+                if(wood.equals("dark"))
+                    wood = wood + "_" + check[3];
+            }
+            else
+            {
+                wood = check[1];
+                if(wood.equals("dark"))
+                    wood = wood + "_" + check[2];
+            }
+            getBuilder(name).texture("particle", new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
+        }
     }
 }

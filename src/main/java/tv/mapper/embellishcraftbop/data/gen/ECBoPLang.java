@@ -3,9 +3,9 @@ package tv.mapper.embellishcraftbop.data.gen;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
+import tv.mapper.embellishcraft.util.WoodType;
 import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
 import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
-import tv.mapper.embellishcraftbop.util.BoPWoodType;
 
 public class ECBoPLang extends LanguageProvider
 {
@@ -20,7 +20,7 @@ public class ECBoPLang extends LanguageProvider
     @Override
     protected void addTranslations()
     {
-        int i = 0;
+        int i = 6;
 
         switch(lang)
         {
@@ -28,98 +28,98 @@ public class ECBoPLang extends LanguageProvider
             case "en_us":
                 for(Block block : ECBoPBlocks.CHAIRS)
                 {
-                    add(block, capitalize(BoPWoodType.byId(i).getName()) + " Chair");
+                    add(block, capitalize(WoodType.byId(i).getName()) + " Chair");
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.TERRACE_CHAIRS)
                 {
-                    add(block, capitalize(BoPWoodType.byId(i).getName()) + " Terrace Chair");
+                    add(block, capitalize(WoodType.byId(i).getName()) + " Terrace Chair");
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.TABLES)
                 {
-                    add(block, capitalize(BoPWoodType.byId(i).getName()) + " Table");
+                    add(block, capitalize(WoodType.byId(i).getName()) + " Table");
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.TERRACE_TABLES)
                 {
-                    add(block, capitalize(BoPWoodType.byId(i).getName()) + " Terrace Table");
+                    add(block, capitalize(WoodType.byId(i).getName()) + " Terrace Table");
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.FANCY_TABLES)
                 {
-                    add(block, capitalize(BoPWoodType.byId(i).getName()) + " Fancy Table");
+                    add(block, capitalize(WoodType.byId(i).getName()) + " Fancy Table");
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.FANCY_DOORS)
                 {
-                    add(block, capitalize(BoPWoodType.byId(i).getName()) + " Fancy Door");
+                    add(block, capitalize(WoodType.byId(i).getName()) + " Fancy Door");
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.SUSPENDED_STAIRS)
                 {
-                    add(block, capitalize(BoPWoodType.byId(i).getName()) + " Suspended Stairs");
+                    add(block, capitalize(WoodType.byId(i).getName()) + " Suspended Stairs");
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.CRATES)
                 {
-                    add(block, capitalize(BoPWoodType.byId(i).getName()) + " Wooden Crate");
+                    add(block, capitalize(WoodType.byId(i).getName()) + " Wooden Crate");
                     i++;
                 }
                 break;
             case "fr_fr":
                 for(Block block : ECBoPBlocks.CHAIRS)
                 {
-                    add(block, "Chaise en " + BoPWoodType.byId(i).getName("fr_fr"));
+                    add(block, "Chaise en " + WoodType.byId(i).getName("fr_fr"));
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.TERRACE_CHAIRS)
                 {
-                    add(block, "Chaise de terrasse en " + BoPWoodType.byId(i).getName("fr_fr"));
+                    add(block, "Chaise de terrasse en " + WoodType.byId(i).getName("fr_fr"));
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.TABLES)
                 {
-                    add(block, "Table en " + BoPWoodType.byId(i).getName("fr_fr"));
+                    add(block, "Table en " + WoodType.byId(i).getName("fr_fr"));
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.TERRACE_TABLES)
                 {
-                    add(block, "Table de terrasse en " + BoPWoodType.byId(i).getName("fr_fr"));
+                    add(block, "Table de terrasse en " + WoodType.byId(i).getName("fr_fr"));
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.FANCY_TABLES)
                 {
-                    add(block, "Table massive en " + BoPWoodType.byId(i).getName("fr_fr"));
+                    add(block, "Table massive en " + WoodType.byId(i).getName("fr_fr"));
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.FANCY_DOORS)
                 {
-                    add(block, "Porte en " + BoPWoodType.byId(i).getName("fr_fr"));
+                    add(block, "Porte en " + WoodType.byId(i).getName("fr_fr"));
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.SUSPENDED_STAIRS)
                 {
-                    add(block, "Escaliers suspendus en " + BoPWoodType.byId(i).getName("fr_fr"));
+                    add(block, "Escaliers suspendus en " + WoodType.byId(i).getName("fr_fr"));
                     i++;
                 }
-                i = 0;
+                i = 6;
                 for(Block block : ECBoPBlocks.CRATES)
                 {
-                    add(block, "Caisse en " + BoPWoodType.byId(i).getName("fr_fr"));
+                    add(block, "Caisse en " + WoodType.byId(i).getName("fr_fr"));
                     i++;
                 }
                 break;

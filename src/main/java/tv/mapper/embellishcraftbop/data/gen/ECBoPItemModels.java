@@ -73,5 +73,19 @@ public class ECBoPItemModels extends ItemModelProvider
             name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
             getBuilder(name).parent(new UncheckedModelFile(modid + ":block/" + name));
         }
+
+        for(Block block : ECBoPBlocks.FANCY_BEDS)
+        {
+            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+            String wool;
+            String check[] = name.split("_");
+
+            if(check[0].equals("light"))
+                wool = check[0] + "_" + check[1];
+            else
+                wool = check[0];
+
+            getBuilder(name).parent(new UncheckedModelFile("item/template_bed")).texture("particle", mcLoc("block/" + wool + "_wool"));
+        }
     }
 }
