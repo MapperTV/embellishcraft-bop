@@ -3,6 +3,7 @@ package tv.mapper.embellishcraftbop.data.gen;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
+import tv.mapper.embellishcraft.block.CustomBedBlock;
 import tv.mapper.embellishcraft.util.WoodType;
 import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
 import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
@@ -73,6 +74,27 @@ public class ECBoPLang extends LanguageProvider
                     add(block, capitalize(WoodType.byId(i).getName()) + " Wooden Crate");
                     i++;
                 }
+                i = 6;
+                for(Block block : ECBoPBlocks.FANCY_BEDS)
+                {
+                    String color = ((CustomBedBlock)block).getColor().getName();
+                    String wood = ((CustomBedBlock)block).getWood().getName();
+
+                    String check[] = color.split("_");
+                    if(check.length > 1)
+                        color = capitalize(check[0]) + " " + capitalize(check[1]);
+                    else
+                        color = capitalize(check[0]);
+
+                    check = wood.split("_");
+                    if(check.length > 1)
+                        wood = capitalize(check[0]) + " " + capitalize(check[1]);
+                    else
+                        wood = capitalize(check[0]);
+
+                    add(block, color + " " + wood + " Fancy Bed");
+                    i++;
+                }
                 break;
             case "fr_fr":
                 for(Block block : ECBoPBlocks.CHAIRS)
@@ -122,6 +144,31 @@ public class ECBoPLang extends LanguageProvider
                     add(block, "Caisse en " + WoodType.byId(i).getName("fr_fr"));
                     i++;
                 }
+                i = 6;
+                for(Block block : ECBoPBlocks.FANCY_BEDS)
+                {
+
+                    String color = ((CustomBedBlock)block).getColor().getName();
+                    String wood = ((CustomBedBlock)block).getWood().getName("fr_fr");
+
+                    String check[] = color.split("_");
+                    if(check.length > 1)
+                        color = check[0] + " " + check[1];
+                    else
+                        color = check[0];
+
+                    check = wood.split("_");
+                    if(check.length > 1)
+                        wood = check[0] + " " + check[1];
+                    else
+                        wood = check[0];
+
+                    color = translateColor(color);
+
+                    add(block, "Lit massif " + color + " en " + wood);
+
+                    i++;
+                }
                 break;
         }
     }
@@ -134,5 +181,46 @@ public class ECBoPLang extends LanguageProvider
         }
 
         return str.substring(0, 1).toUpperCase() + str.substring(1);
+    }
+
+    private static String translateColor(String color)
+    {
+        switch(color)
+        {
+            case "black":
+                return "noir";
+            case "blue":
+                return "bleu";
+            case "brown":
+                return "marron";
+            case "cyan":
+                return "cyan";
+            case "gray":
+                return "gris";
+            case "light gray":
+                return "gris clair";
+            case "light blue":
+                return "bleu clair";
+            case "lime":
+                return "vert clair";
+            case "magenta":
+                return "magenta";
+            case "orange":
+                return "orange";
+            case "purple":
+                return "violet";
+            case "pink":
+                return "rose";
+            case "red":
+                return "rouge";
+            case "white":
+                return "blanc";
+            case "yellow":
+                return "jaune";
+            case "green":
+                return "vert";
+            default:
+                return "error";
+        }
     }
 }
