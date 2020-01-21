@@ -55,6 +55,13 @@ public class ECBoPBlockTags extends BlockTagsProvider
             getBuilder(ECTags.Blocks.WOODEN_CRATES).add(block);
         }
 
+        for(Block block : ECBoPBlocks.FANCY_BEDS)
+        {
+            getBuilder(ECTags.Blocks.FANCY_BEDS).add(block);
+        }
+
         getBuilder(BlockTags.WOODEN_DOORS).add(ECTags.Blocks.WOODEN_DOORS);
+        getBuilder(BlockTags.BEDS).add(ECTags.Blocks.FANCY_BEDS);
+        getBuilder(ECTags.ForgeBlocks.CRATES).add(ECTags.Blocks.WOODEN_CRATES);
     }
 }
