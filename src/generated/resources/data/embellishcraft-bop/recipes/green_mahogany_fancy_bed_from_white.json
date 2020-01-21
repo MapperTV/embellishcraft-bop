@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "beds",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/green"
+    },
+    {
+      "item": "embellishcraft-bop:white_mahogany_fancy_bed"
+    }
+  ],
+  "result": {
+    "item": "embellishcraft-bop:green_mahogany_fancy_bed"
+  }
+}

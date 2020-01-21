@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "beds",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/purple"
+    },
+    {
+      "item": "embellishcraft-bop:white_dead_fancy_bed"
+    }
+  ],
+  "result": {
+    "item": "embellishcraft-bop:purple_dead_fancy_bed"
+  }
+}

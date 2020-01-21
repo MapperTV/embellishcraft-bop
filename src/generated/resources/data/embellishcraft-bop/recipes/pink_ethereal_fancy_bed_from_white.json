@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "beds",
+  "ingredients": [
+    {
+      "tag": "forge:dyes/pink"
+    },
+    {
+      "item": "embellishcraft-bop:white_ethereal_fancy_bed"
+    }
+  ],
+  "result": {
+    "item": "embellishcraft-bop:pink_ethereal_fancy_bed"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft-bop:blue_umbran_fancy_bed_from_white"
+    ]
+  },
+  "criteria": {
+    "fancy_bed": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "embellishcraft-bop:white_umbran_fancy_bed"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft-bop:blue_umbran_fancy_bed_from_white"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "fancy_bed",
+      "has_the_recipe"
+    ]
+  ]
+}

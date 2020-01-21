@@ -10,11 +10,15 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
+import net.minecraft.data.ShapelessRecipeBuilder;
 import net.minecraft.item.DyeColor;
+import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.tags.Tag;
 import net.minecraftforge.common.Tags;
 import tv.mapper.embellishcraft.block.CustomBedBlock;
 import tv.mapper.embellishcraft.init.ModItems;
+import tv.mapper.embellishcraft.util.WoodType;
 import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
 
 public class ECBoPRecipes extends RecipeProvider
@@ -102,10 +106,46 @@ public class ECBoPRecipes extends RecipeProvider
         for(Block block : ECBoPBlocks.FANCY_BEDS)
         {
             DyeColor color = ((CustomBedBlock)block).getColor();
+            WoodType wood = ((CustomBedBlock)block).getWood();
 
             ShapedRecipeBuilder.shapedRecipe(block).patternLine("P P").patternLine("WWW").patternLine("PPP").key('W', getWoolFromColor(color)).key('P', bopPlanks[i / 16]).setGroup(
-                "beds").addCriterion("wood", InventoryChangeTrigger.Instance.forItems(bopPlanks[i/16])).build(consumer);
+                "beds").addCriterion("wood", InventoryChangeTrigger.Instance.forItems(bopPlanks[i / 16])).build(consumer);
             i++;
+
+            ShapelessRecipeBuilder.shapelessRecipe(block).addIngredient(getDyeTagFromColor(color)).addIngredient(getWhiteBedFromWood(wood)).setGroup("beds").addCriterion("fancy_bed",
+                InventoryChangeTrigger.Instance.forItems(getWhiteBedFromWood(wood))).build(consumer, block.getRegistryName().toString() + "_from_white");
+        }
+    }
+
+    private Block getWhiteBedFromWood(WoodType wood)
+    {
+        switch(wood)
+        {
+            default:
+            case CHERRY:
+                return ECBoPBlocks.WHITE_CHERRY_FANCY_BED;
+            case DEAD:
+                return ECBoPBlocks.WHITE_DEAD_FANCY_BED;
+            case ETHEREAL:
+                return ECBoPBlocks.WHITE_ETHEREAL_FANCY_BED;
+            case FIR:
+                return ECBoPBlocks.WHITE_FIR_FANCY_BED;
+            case HELLBARK:
+                return ECBoPBlocks.WHITE_HELLBARK_FANCY_BED;
+            case JACARANDA:
+                return ECBoPBlocks.WHITE_JACARANDA_FANCY_BED;
+            case MAGIC:
+                return ECBoPBlocks.WHITE_MAGIC_FANCY_BED;
+            case MAHOGANY:
+                return ECBoPBlocks.WHITE_MAHOGANY_FANCY_BED;
+            case PALM:
+                return ECBoPBlocks.WHITE_PALM_FANCY_BED;
+            case REDWOOD:
+                return ECBoPBlocks.WHITE_REDWOOD_FANCY_BED;
+            case UMBRAN:
+                return ECBoPBlocks.WHITE_UMBRAN_FANCY_BED;
+            case WILLOW:
+                return ECBoPBlocks.WHITE_WILLOW_FANCY_BED;
         }
     }
 
@@ -146,6 +186,46 @@ public class ECBoPRecipes extends RecipeProvider
                 return Blocks.WHITE_WOOL;
             case YELLOW:
                 return Blocks.YELLOW_WOOL;
+        }
+    }
+
+    private Tag<Item> getDyeTagFromColor(DyeColor color)
+    {
+        switch(color)
+        {
+            default:
+            case BLACK:
+                return Tags.Items.DYES_BLACK;
+            case BLUE:
+                return Tags.Items.DYES_BLUE;
+            case BROWN:
+                return Tags.Items.DYES_BROWN;
+            case CYAN:
+                return Tags.Items.DYES_CYAN;
+            case GRAY:
+                return Tags.Items.DYES_GRAY;
+            case GREEN:
+                return Tags.Items.DYES_GREEN;
+            case LIGHT_BLUE:
+                return Tags.Items.DYES_LIGHT_BLUE;
+            case LIGHT_GRAY:
+                return Tags.Items.DYES_LIGHT_GRAY;
+            case LIME:
+                return Tags.Items.DYES_LIME;
+            case MAGENTA:
+                return Tags.Items.DYES_MAGENTA;
+            case ORANGE:
+                return Tags.Items.DYES_ORANGE;
+            case PINK:
+                return Tags.Items.DYES_PINK;
+            case PURPLE:
+                return Tags.Items.DYES_PURPLE;
+            case RED:
+                return Tags.Items.DYES_RED;
+            case WHITE:
+                return Tags.Items.DYES_WHITE;
+            case YELLOW:
+                return Tags.Items.DYES_YELLOW;
         }
     }
 }
