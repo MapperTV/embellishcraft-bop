@@ -5,12 +5,15 @@ import java.util.function.Consumer;
 import biomesoplenty.api.block.BOPBlocks;
 import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
+import net.minecraft.item.DyeColor;
 import net.minecraft.item.Items;
 import net.minecraftforge.common.Tags;
+import tv.mapper.embellishcraft.block.CustomBedBlock;
 import tv.mapper.embellishcraft.init.ModItems;
 import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
 
@@ -78,15 +81,15 @@ public class ECBoPRecipes extends RecipeProvider
                 InventoryChangeTrigger.Instance.forItems(bopPlanks[i])).build(consumer);
             i++;
         }
-        
+
         i = 0;
         for(Block block : ECBoPBlocks.SUSPENDED_STAIRS)
         {
-            ShapedRecipeBuilder.shapedRecipe(block, 6).patternLine("  P").patternLine(" PR").patternLine("PR ").key('R', Tags.Items.RODS_WOODEN).key('P', bopPlanks[i]).setGroup("stairs").addCriterion("wood",
-                InventoryChangeTrigger.Instance.forItems(bopPlanks[i])).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(block, 6).patternLine("  P").patternLine(" PR").patternLine("PR ").key('R', Tags.Items.RODS_WOODEN).key('P', bopPlanks[i]).setGroup("stairs").addCriterion(
+                "wood", InventoryChangeTrigger.Instance.forItems(bopPlanks[i])).build(consumer);
             i++;
         }
-        
+
         i = 0;
         for(Block block : ECBoPBlocks.CRATES)
         {
@@ -95,5 +98,54 @@ public class ECBoPRecipes extends RecipeProvider
             i++;
         }
 
+        i = 0;
+        for(Block block : ECBoPBlocks.FANCY_BEDS)
+        {
+            DyeColor color = ((CustomBedBlock)block).getColor();
+
+            ShapedRecipeBuilder.shapedRecipe(block).patternLine("P P").patternLine("WWW").patternLine("PPP").key('W', getWoolFromColor(color)).key('P', bopPlanks[i / 16]).setGroup(
+                "beds").addCriterion("wood", InventoryChangeTrigger.Instance.forItems(bopPlanks[i/16])).build(consumer);
+            i++;
+        }
+    }
+
+    private Block getWoolFromColor(DyeColor color)
+    {
+        switch(color)
+        {
+            default:
+            case BLACK:
+                return Blocks.BLACK_WOOL;
+            case BLUE:
+                return Blocks.BLUE_WOOL;
+            case BROWN:
+                return Blocks.BROWN_WOOL;
+            case CYAN:
+                return Blocks.CYAN_WOOL;
+            case GRAY:
+                return Blocks.GRAY_WOOL;
+            case GREEN:
+                return Blocks.GREEN_WOOL;
+            case LIGHT_BLUE:
+                return Blocks.LIGHT_BLUE_WOOL;
+            case LIGHT_GRAY:
+                return Blocks.LIGHT_GRAY_WOOL;
+            case LIME:
+                return Blocks.LIME_WOOL;
+            case MAGENTA:
+                return Blocks.MAGENTA_WOOL;
+            case ORANGE:
+                return Blocks.ORANGE_WOOL;
+            case PINK:
+                return Blocks.PINK_WOOL;
+            case PURPLE:
+                return Blocks.PURPLE_WOOL;
+            case RED:
+                return Blocks.RED_WOOL;
+            case WHITE:
+                return Blocks.WHITE_WOOL;
+            case YELLOW:
+                return Blocks.YELLOW_WOOL;
+        }
     }
 }

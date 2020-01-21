@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft-bop:pink_ethereal_fancy_bed"
+    ]
+  },
+  "criteria": {
+    "wood": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "biomesoplenty:ethereal_planks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft-bop:pink_ethereal_fancy_bed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "wood",
+      "has_the_recipe"
+    ]
+  ]
+}
