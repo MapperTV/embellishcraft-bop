@@ -11,11 +11,13 @@ import org.apache.logging.log4j.Logger;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import net.minecraft.block.BedBlock;
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DirectoryCache;
 import net.minecraft.data.IDataProvider;
 import net.minecraft.data.LootTableProvider;
+import net.minecraft.state.properties.BedPart;
 import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.ConstantRange;
@@ -64,6 +66,14 @@ public abstract class ECBoPLootTableProvider extends LootTableProvider
         name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
         LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
             ItemLootEntry.builder(block).acceptCondition(BlockStateProperty.builder(block).with(CustomDoorBlock.HALF, DoubleBlockHalf.LOWER))).acceptCondition(SurvivesExplosion.builder());
+        return LootTable.builder().addLootPool(builder);
+    }
+    
+    protected LootTable.Builder createBedTable(String name, Block block)
+    {
+        name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
+            ItemLootEntry.builder(block).acceptCondition(BlockStateProperty.builder(block).with(BedBlock.PART, BedPart.HEAD))).acceptCondition(SurvivesExplosion.builder());
         return LootTable.builder().addLootPool(builder);
     }
 
