@@ -61,6 +61,10 @@ minecraft {
     }
 }
 
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
+}
+
 repositories {
     maven {
        name = "Progwml6 maven"
@@ -118,4 +122,3 @@ publishing {
         }
     }
 }
-
