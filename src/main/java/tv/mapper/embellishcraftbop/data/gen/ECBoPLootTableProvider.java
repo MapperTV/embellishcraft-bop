@@ -68,7 +68,7 @@ public abstract class ECBoPLootTableProvider extends LootTableProvider
             ItemLootEntry.builder(block).acceptCondition(BlockStateProperty.builder(block).with(CustomDoorBlock.HALF, DoubleBlockHalf.LOWER))).acceptCondition(SurvivesExplosion.builder());
         return LootTable.builder().addLootPool(builder);
     }
-    
+
     protected LootTable.Builder createBedTable(String name, Block block)
     {
         name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
@@ -85,7 +85,14 @@ public abstract class ECBoPLootTableProvider extends LootTableProvider
                 CopyNbt.func_215881_a(CopyNbt.Source.BLOCK_ENTITY).func_216056_a("Lock", "BlockEntityTag.Lock").func_216056_a("LootTable", "BlockEntityTag.LootTable").func_216056_a("LootTableSeed",
                     "BlockEntityTag.LootTableSeed")).acceptFunction(SetContents.func_215920_b().func_216075_a(DynamicLootEntry.func_216162_a(CrateBlock.CONTENTS))));
         return LootTable.builder().addLootPool(builder);
+    }
 
+    protected LootTable.Builder createChestTable(String name, Block block)
+    {
+        name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+        LootPool.Builder builder = LootPool.builder().name(name).rolls(ConstantRange.of(1)).addEntry(
+            ItemLootEntry.builder(block).acceptFunction(CopyName.builder(CopyName.Source.BLOCK_ENTITY))).acceptCondition(SurvivesExplosion.builder());
+        return LootTable.builder().addLootPool(builder);
     }
 
     @Override

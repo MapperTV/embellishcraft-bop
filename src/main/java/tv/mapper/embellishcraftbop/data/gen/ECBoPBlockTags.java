@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.data.BlockTagsProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.tags.BlockTags;
+import net.minecraftforge.common.Tags;
 import tv.mapper.embellishcraft.init.ECTags;
 import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
 
@@ -59,9 +60,15 @@ public class ECBoPBlockTags extends BlockTagsProvider
         {
             getBuilder(ECTags.Blocks.FANCY_BEDS).add(block);
         }
+        
+        for(Block block : ECBoPBlocks.FANCY_CHESTS)
+        {
+            getBuilder(Tags.Blocks.CHESTS_WOODEN).add(block);
+        }
 
         getBuilder(BlockTags.WOODEN_DOORS).add(ECTags.Blocks.WOODEN_DOORS);
         getBuilder(BlockTags.BEDS).add(ECTags.Blocks.FANCY_BEDS);
         getBuilder(ECTags.ForgeBlocks.CRATES).add(ECTags.Blocks.WOODEN_CRATES);
+
     }
 }

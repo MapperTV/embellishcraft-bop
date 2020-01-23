@@ -95,6 +95,12 @@ public class ECBoPLang extends LanguageProvider
                     add(block, color + " " + wood + " Fancy Bed");
                     i++;
                 }
+                i = 6;
+                for(Block block : ECBoPBlocks.FANCY_CHESTS)
+                {
+                    add(block, capitalize(WoodType.byId(i).getName()) + " Fancy Chest");
+                    i++;
+                }
                 break;
             case "fr_fr":
                 for(Block block : ECBoPBlocks.CHAIRS)
@@ -167,6 +173,12 @@ public class ECBoPLang extends LanguageProvider
 
                     add(block, "Lit massif " + color + " en " + wood);
 
+                    i++;
+                }
+                i = 6;
+                for(Block block : ECBoPBlocks.FANCY_CHESTS)
+                {
+                    add(block, "Coffre massif en " + WoodType.byId(i).getName("fr_fr"));
                     i++;
                 }
                 break;

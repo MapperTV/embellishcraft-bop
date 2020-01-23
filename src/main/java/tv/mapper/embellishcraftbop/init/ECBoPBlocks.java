@@ -20,6 +20,7 @@ import tv.mapper.embellishcraft.Constants;
 import tv.mapper.embellishcraft.block.ChairBlock;
 import tv.mapper.embellishcraft.block.CrateBlock;
 import tv.mapper.embellishcraft.block.CustomBedBlock;
+import tv.mapper.embellishcraft.block.CustomChestBlock;
 import tv.mapper.embellishcraft.block.CustomDoorBlock;
 import tv.mapper.embellishcraft.block.FancyTableBlock;
 import tv.mapper.embellishcraft.block.SuspendedStairsBlock;
@@ -27,9 +28,11 @@ import tv.mapper.embellishcraft.block.TableBlock;
 import tv.mapper.embellishcraft.block.TerraceChairBlock;
 import tv.mapper.embellishcraft.block.TerraceTableBlock;
 import tv.mapper.embellishcraft.client.renderer.CustomBedItemStackTileEntityRenderer;
+import tv.mapper.embellishcraft.client.renderer.CustomChestItemStackTileEntityRenderer;
 import tv.mapper.embellishcraft.init.ModBlocks;
 import tv.mapper.embellishcraft.item.FuelBlockItem;
 import tv.mapper.embellishcraft.item.ModItemGroups;
+import tv.mapper.embellishcraft.util.CustomChestType;
 import tv.mapper.embellishcraft.util.WoodType;
 import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
 
@@ -345,6 +348,19 @@ public class ECBoPBlocks
     public static final Block WHITE_WILLOW_FANCY_BED = null;
     public static final Block YELLOW_WILLOW_FANCY_BED = null;
 
+    public static final Block CHERRY_FANCY_CHEST = null;
+    public static final Block DEAD_FANCY_CHEST = null;
+    public static final Block ETHEREAL_FANCY_CHEST = null;
+    public static final Block FIR_FANCY_CHEST = null;
+    public static final Block HELLBARK_FANCY_CHEST = null;
+    public static final Block JACARANDA_FANCY_CHEST = null;
+    public static final Block MAGIC_FANCY_CHEST = null;
+    public static final Block MAHOGANY_FANCY_CHEST = null;
+    public static final Block PALM_FANCY_CHEST = null;
+    public static final Block REDWOOD_FANCY_CHEST = null;
+    public static final Block UMBRAN_FANCY_CHEST = null;
+    public static final Block WILLOW_FANCY_CHEST = null;
+
     public static List<Block> CHAIRS = new ArrayList<>();
     public static List<Block> TERRACE_CHAIRS = new ArrayList<>();
     public static List<Block> TABLES = new ArrayList<>();
@@ -354,6 +370,7 @@ public class ECBoPBlocks
     public static List<Block> SUSPENDED_STAIRS = new ArrayList<>();
     public static List<Block> CRATES = new ArrayList<>();
     public static List<Block> FANCY_BEDS = new ArrayList<>();
+    public static List<Block> FANCY_CHESTS = new ArrayList<>();
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event)
@@ -395,6 +412,13 @@ public class ECBoPBlocks
                 FANCY_BEDS.add(block);
                 ModBlocks.FANCY_BEDS.add(block);
             }
+
+            event.getRegistry().register(
+                block = new CustomChestBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5F).sound(SoundType.WOOD), CustomChestType.OAK_FANCY, WoodType.byId(i)).setRegistryName(
+                    WoodType.byId(i).getName() + "_fancy_chest"));
+            FANCY_CHESTS.add(block);
+            ModBlocks.FANCY_CHESTS.add(block);
+
         }
     }
 
@@ -431,5 +455,8 @@ public class ECBoPBlocks
                 new FuelBlockItem(block, new Item.Properties().setTEISR(() -> CustomBedItemStackTileEntityRenderer::new).group(ModItemGroups.EMBELLISHCRAFT), Constants.bedBurnTime).setRegistryName(
                     block.getRegistryName()));
 
+        for(Block block : FANCY_CHESTS)
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().setTEISR(() -> CustomChestItemStackTileEntityRenderer::new).group(
+                ModItemGroups.EMBELLISHCRAFT), Constants.chestBurnTime).setRegistryName(block.getRegistryName()));
     }
 }

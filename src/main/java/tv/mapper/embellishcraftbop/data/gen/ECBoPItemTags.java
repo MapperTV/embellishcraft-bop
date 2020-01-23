@@ -4,6 +4,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.data.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraftforge.common.Tags;
 import tv.mapper.embellishcraft.init.ECTags;
 
 public class ECBoPItemTags extends ItemTagsProvider
@@ -29,5 +30,8 @@ public class ECBoPItemTags extends ItemTagsProvider
         copy(BlockTags.BEDS, ItemTags.BEDS);
 
         getBuilder(ItemTags.WOODEN_DOORS).add(ECTags.Items.WOODEN_DOORS);
+
+        copy(Tags.Blocks.CHESTS_WOODEN, Tags.Items.CHESTS_WOODEN);
+
     }
 }

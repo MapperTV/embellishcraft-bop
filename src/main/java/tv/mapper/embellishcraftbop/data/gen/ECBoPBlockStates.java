@@ -80,6 +80,12 @@ public class ECBoPBlockStates extends BlockStateProvider
             name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
             simpleBlock(block, new UncheckedModelFile(modid + ":block/" + name));
         }
+
+        for(Block block : ECBoPBlocks.FANCY_CHESTS)
+        {
+            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+            simpleBlock(block, new UncheckedModelFile(modid + ":block/" + name));
+        }
     }
 
     /**

@@ -2,6 +2,7 @@ package tv.mapper.embellishcraftbop.data.gen;
 
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
@@ -86,6 +87,20 @@ public class ECBoPItemModels extends ItemModelProvider
                 wool = check[0];
 
             getBuilder(name).parent(new UncheckedModelFile("item/template_bed")).texture("particle", mcLoc("block/" + wool + "_wool"));
+        }
+
+        for(Block block : ECBoPBlocks.FANCY_CHESTS)
+        {
+            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+            String wood;
+            String check[] = name.split("_");
+
+            if(check[0].equals("dark"))
+                wood = check[0] + "_" + check[1];
+            else
+                wood = check[0];
+
+            getBuilder(name).parent(new UncheckedModelFile("embellishcraft:item/template_chest")).texture("particle", new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
         }
     }
 }

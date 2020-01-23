@@ -115,6 +115,14 @@ public class ECBoPRecipes extends RecipeProvider
             ShapelessRecipeBuilder.shapelessRecipe(block).addIngredient(getDyeTagFromColor(color)).addIngredient(getWhiteBedFromWood(wood)).setGroup("beds").addCriterion("fancy_bed",
                 InventoryChangeTrigger.Instance.forItems(getWhiteBedFromWood(wood))).build(consumer, block.getRegistryName().toString() + "_from_white");
         }
+
+        i = 0;
+        for(Block block : ECBoPBlocks.FANCY_CHESTS)
+        {
+            ShapedRecipeBuilder.shapedRecipe(block).patternLine(" S ").patternLine("SCS").patternLine(" S ").key('C', Blocks.CHEST).key('S', bopSlabs[i]).setGroup("fancy_chests").addCriterion("chest",
+                InventoryChangeTrigger.Instance.forItems(Blocks.CHEST)).build(consumer);
+            i++;
+        }
     }
 
     private Block getWhiteBedFromWood(WoodType wood)

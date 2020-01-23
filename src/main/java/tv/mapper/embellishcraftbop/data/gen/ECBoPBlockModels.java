@@ -117,5 +117,18 @@ public class ECBoPBlockModels extends BlockModelProvider
             }
             getBuilder(name).texture("particle", new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
         }
+
+        for(Block block : ECBoPBlocks.FANCY_CHESTS)
+        {
+            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
+
+            String check[] = name.split("_");
+
+            wood = check[0];
+            if(wood.equals("dark"))
+                wood = wood + "_" + check[1];
+
+            getBuilder(name).texture("particle", new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
+        }
     }
 }
