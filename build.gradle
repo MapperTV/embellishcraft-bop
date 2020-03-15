@@ -88,7 +88,9 @@ dependencies {
     
     compile "com.github.glitchfiend.biomesoplenty:BiomesOPlenty:${bop_version}:deobf"
     
-    deobf files("dependencies/embellishcraft-${ec_version}-deobf.jar")
+    deobf files("dep/mapperbase-${lib_mc_version}-${base_version}-deobf.jar")
+    deobf files("dep/embellishcraft-${ec_version}-deobf.jar")
+    
 }
 
 jar {
