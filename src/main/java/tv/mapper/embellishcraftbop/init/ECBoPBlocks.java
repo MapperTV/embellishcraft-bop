@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import biomesoplenty.init.ModBlocks;
+import mezz.jei.config.Constants;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -16,12 +18,11 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
-import tv.mapper.embellishcraft.Constants;
+import tv.mapper.embellishcraft.ECConstants;
 import tv.mapper.embellishcraft.block.ChairBlock;
 import tv.mapper.embellishcraft.block.CrateBlock;
 import tv.mapper.embellishcraft.block.CustomBedBlock;
 import tv.mapper.embellishcraft.block.CustomChestBlock;
-import tv.mapper.embellishcraft.block.CustomDoorBlock;
 import tv.mapper.embellishcraft.block.FancyTableBlock;
 import tv.mapper.embellishcraft.block.SuspendedStairsBlock;
 import tv.mapper.embellishcraft.block.TableBlock;
@@ -29,12 +30,12 @@ import tv.mapper.embellishcraft.block.TerraceChairBlock;
 import tv.mapper.embellishcraft.block.TerraceTableBlock;
 import tv.mapper.embellishcraft.client.renderer.CustomBedItemStackTileEntityRenderer;
 import tv.mapper.embellishcraft.client.renderer.CustomChestItemStackTileEntityRenderer;
-import tv.mapper.embellishcraft.init.ModBlocks;
 import tv.mapper.embellishcraft.item.FuelBlockItem;
 import tv.mapper.embellishcraft.item.ModItemGroups;
 import tv.mapper.embellishcraft.util.CustomChestType;
-import tv.mapper.embellishcraft.util.WoodType;
+import tv.mapper.embellishcraft.util.WoodsType;
 import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
+import tv.mapper.mapperbase.block.CustomDoorBlock;
 
 @ObjectHolder(EmbellishCraftBOP.MODID)
 @EventBusSubscriber(bus = Bus.MOD)
@@ -379,43 +380,42 @@ public class ECBoPBlocks
 
         for(int i = 6; i < 18; i++)
         {
-            event.getRegistry().register(block = new ChairBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
-                WoodType.byId(i).getName() + "_chair"));
+            event.getRegistry().register(
+                block = new ChairBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(WoodsType.byId(i).getName() + "_chair"));
             CHAIRS.add(block);
             event.getRegistry().register(block = new TerraceChairBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
-                WoodType.byId(i).getName() + "_terrace_chair"));
+                WoodsType.byId(i).getName() + "_terrace_chair"));
             TERRACE_CHAIRS.add(block);
-            event.getRegistry().register(block = new TableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
-                WoodType.byId(i).getName() + "_table"));
+            event.getRegistry().register(
+                block = new TableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(WoodsType.byId(i).getName() + "_table"));
             TABLES.add(block);
             event.getRegistry().register(block = new TerraceTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
-                WoodType.byId(i).getName() + "_terrace_table"));
+                WoodsType.byId(i).getName() + "_terrace_table"));
             TERRACE_TABLES.add(block);
             event.getRegistry().register(block = new CustomDoorBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
-                WoodType.byId(i).getName() + "_fancy_door"));
+                WoodsType.byId(i).getName() + "_fancy_door"));
             FANCY_DOORS.add(block);
-            event.getRegistry().register(
-                block = new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
-                    WoodType.byId(i).getName() + "_suspended_stairs"));
+            event.getRegistry().register(block = new SuspendedStairsBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
+                WoodsType.byId(i).getName() + "_suspended_stairs"));
             SUSPENDED_STAIRS.add(block);
             event.getRegistry().register(
-                block = new CrateBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5F).sound(SoundType.WOOD)).setRegistryName(WoodType.byId(i).getName() + "_wooden_crate"));
+                block = new CrateBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5F).sound(SoundType.WOOD)).setRegistryName(WoodsType.byId(i).getName() + "_wooden_crate"));
             CRATES.add(block);
             event.getRegistry().register(block = new FancyTableBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(0.75F, 0.5F).sound(SoundType.WOOD), ToolType.AXE).setRegistryName(
-                WoodType.byId(i).getName() + "_fancy_table"));
+                WoodsType.byId(i).getName() + "_fancy_table"));
             FANCY_TABLES.add(block);
             for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)
             {
-                block = new CustomBedBlock(DyeColor.byId(j), WoodType.byId(i), Block.Properties.create(Material.WOOL).sound(SoundType.WOOD).hardnessAndResistance(0.2F)).setRegistryName(
-                    DyeColor.byId(j).getName() + "_" + WoodType.byId(i).getName() + "_fancy_bed");
+                block = new CustomBedBlock(DyeColor.byId(j), WoodsType.byId(i), Block.Properties.create(Material.WOOL).sound(SoundType.WOOD).hardnessAndResistance(0.2F)).setRegistryName(
+                    DyeColor.byId(j).getName() + "_" + WoodsType.byId(i).getName() + "_fancy_bed");
                 event.getRegistry().register(block);
                 FANCY_BEDS.add(block);
                 ModBlocks.FANCY_BEDS.add(block);
             }
 
             event.getRegistry().register(
-                block = new CustomChestBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5F).sound(SoundType.WOOD), CustomChestType.OAK_FANCY, WoodType.byId(i)).setRegistryName(
-                    WoodType.byId(i).getName() + "_fancy_chest"));
+                block = new CustomChestBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.5F).sound(SoundType.WOOD), null, CustomChestType.OAK_FANCY, WoodsType.byId(i)).setRegistryName(
+                    WoodsType.byId(i).getName() + "_fancy_chest"));
             FANCY_CHESTS.add(block);
             ModBlocks.FANCY_CHESTS.add(block);
 
@@ -426,37 +426,37 @@ public class ECBoPBlocks
     public static void registerBlockItems(RegistryEvent.Register<Item> event)
     {
         for(Block block : CHAIRS)
-            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(block.getRegistryName()));
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), ECConstants.chairBurnTime).setRegistryName(block.getRegistryName()));
 
         for(Block block : TERRACE_CHAIRS)
-            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(block.getRegistryName()));
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), ECConstants.chairBurnTime).setRegistryName(block.getRegistryName()));
 
         for(Block block : TABLES)
-            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(block.getRegistryName()));
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), ECConstants.chairBurnTime).setRegistryName(block.getRegistryName()));
 
         for(Block block : TERRACE_TABLES)
-            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.chairBurnTime).setRegistryName(block.getRegistryName()));
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), ECConstants.chairBurnTime).setRegistryName(block.getRegistryName()));
 
         for(Block block : FANCY_DOORS)
-            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.doorBurnTime).setRegistryName(block.getRegistryName()));
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), ECConstants.doorBurnTime).setRegistryName(block.getRegistryName()));
 
         for(Block block : SUSPENDED_STAIRS)
-            event.getRegistry().register(
-                new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.suspendedStairBurnTime).setRegistryName(block.getRegistryName()));
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), ECConstants.suspendedStairBurnTime).setRegistryName(block.getRegistryName()));
 
         for(Block block : CRATES)
             event.getRegistry().register(new BlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT).maxStackSize(1)).setRegistryName(block.getRegistryName()));
 
         for(Block block : FANCY_TABLES)
-            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), Constants.couchBurnTime).setRegistryName(block.getRegistryName()));
+            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), ECConstants.couchBurnTime).setRegistryName(block.getRegistryName()));
 
         for(Block block : FANCY_BEDS)
             event.getRegistry().register(
-                new FuelBlockItem(block, new Item.Properties().setTEISR(() -> CustomBedItemStackTileEntityRenderer::new).group(ModItemGroups.EMBELLISHCRAFT), Constants.bedBurnTime).setRegistryName(
+                new FuelBlockItem(block, new Item.Properties().setTEISR(() -> CustomBedItemStackTileEntityRenderer::new).group(ModItemGroups.EMBELLISHCRAFT), ECConstants.bedBurnTime).setRegistryName(
                     block.getRegistryName()));
 
         for(Block block : FANCY_CHESTS)
-            event.getRegistry().register(new FuelBlockItem(block, new Item.Properties().setTEISR(() -> CustomChestItemStackTileEntityRenderer::new).group(
-                ModItemGroups.EMBELLISHCRAFT), Constants.chestBurnTime).setRegistryName(block.getRegistryName()));
+            event.getRegistry().register(
+                new FuelBlockItem(block, new Item.Properties().setTEISR(() -> CustomChestItemStackTileEntityRenderer::new).group(ModItemGroups.EMBELLISHCRAFT), Constants.chestBurnTime).setRegistryName(
+                    block.getRegistryName()));
     }
 }
