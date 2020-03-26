@@ -1,9 +1,13 @@
 package tv.mapper.embellishcraftbop.data.gen;
 
-import net.minecraft.block.Block;
+import java.util.Arrays;
+
 import net.minecraft.data.DataGenerator;
+import net.minecraft.item.DyeColor;
 import tv.mapper.embellishcraft.data.gen.ECLootTables;
+import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
 import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
+import tv.mapper.embellishcraftbop.util.BoPWoods;
 
 public class ECBoPLootTables extends ECLootTables
 {
@@ -16,35 +20,35 @@ public class ECBoPLootTables extends ECLootTables
     @Override
     protected void addTables()
     {
-        for(Block block : ECBoPBlocks.CHAIRS)
-            lootTables.put(block, createStandardTable(block.getTranslationKey(), block));
+        for(int j = 0; j < Arrays.stream(BoPWoods.values()).count(); j++)
+        {
+            lootTables.put(ECBoPBlocks.BOP_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get(), createStandardTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.BOP_TERRACE_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get(), createStandardTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_TERRACE_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.BOP_TABLE_BLOCKS.get(BoPWoods.byId(j)).get(), createStandardTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_TABLE_BLOCKS.get(BoPWoods.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.BOP_FANCY_TABLE_BLOCKS.get(BoPWoods.byId(j)).get(), createStandardTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_FANCY_TABLE_BLOCKS.get(BoPWoods.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), createDoorTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.BOP_TERRACE_TABLE_BLOCKS.get(BoPWoods.byId(j)).get(), createStandardTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_TERRACE_TABLE_BLOCKS.get(BoPWoods.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get(),
+                createStandardTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)).get(),
+                createCrateTable(BoPWoods.byId(j).getName() + "_wooden_crate", ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get(),
+                createChestTable(BoPWoods.byId(j).getName() + "_wooden_chest", ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get()));
+        }
 
-        for(Block block : ECBoPBlocks.TERRACE_CHAIRS)
-            lootTables.put(block, createStandardTable(block.getTranslationKey(), block));
-
-        for(Block block : ECBoPBlocks.TABLES)
-            lootTables.put(block, createStandardTable(block.getTranslationKey(), block));
-
-        for(Block block : ECBoPBlocks.TERRACE_TABLES)
-            lootTables.put(block, createStandardTable(block.getTranslationKey(), block));
-
-        for(Block block : ECBoPBlocks.FANCY_TABLES)
-            lootTables.put(block, createStandardTable(block.getTranslationKey(), block));
-
-        for(Block block : ECBoPBlocks.FANCY_DOORS)
-            lootTables.put(block, createDoorTable(block.getTranslationKey(), block));
-
-        for(Block block : ECBoPBlocks.SUSPENDED_STAIRS)
-            lootTables.put(block, createStandardTable(block.getTranslationKey(), block));
-
-        for(Block block : ECBoPBlocks.CRATES)
-            lootTables.put(block, createCrateTable(block.getTranslationKey(), block));
-
-        for(Block block : ECBoPBlocks.FANCY_BEDS)
-            lootTables.put(block, createBedTable(block.getTranslationKey(), block));
-
-        for(Block block : ECBoPBlocks.FANCY_CHESTS)
-            lootTables.put(block, createChestTable(block.getTranslationKey(), block));
-
+        for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)
+        {
+            lootTables.put(ECBoPBlocks.CHERRY_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), createBedTable(EmbellishCraftBOP.MODID, ECBoPBlocks.CHERRY_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.DEAD_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), createBedTable(EmbellishCraftBOP.MODID, ECBoPBlocks.DEAD_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.FIR_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), createBedTable(EmbellishCraftBOP.MODID, ECBoPBlocks.FIR_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.HELLBARK_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), createBedTable(EmbellishCraftBOP.MODID, ECBoPBlocks.HELLBARK_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.JACARANDA_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), createBedTable(EmbellishCraftBOP.MODID, ECBoPBlocks.JACARANDA_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.MAGIC_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), createBedTable(EmbellishCraftBOP.MODID, ECBoPBlocks.MAGIC_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.MAHOGANY_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), createBedTable(EmbellishCraftBOP.MODID, ECBoPBlocks.MAHOGANY_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.PALM_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), createBedTable(EmbellishCraftBOP.MODID, ECBoPBlocks.PALM_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.REDWOOD_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), createBedTable(EmbellishCraftBOP.MODID, ECBoPBlocks.REDWOOD_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.UMBRAN_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), createBedTable(EmbellishCraftBOP.MODID, ECBoPBlocks.UMBRAN_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.WILLOW_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), createBedTable(EmbellishCraftBOP.MODID, ECBoPBlocks.WILLOW_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()));
+        }
     }
 }

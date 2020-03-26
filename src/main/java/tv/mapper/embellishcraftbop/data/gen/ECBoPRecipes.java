@@ -1,21 +1,19 @@
 package tv.mapper.embellishcraftbop.data.gen;
 
+import java.util.Arrays;
 import java.util.function.Consumer;
 
-import net.minecraft.advancements.criterion.InventoryChangeTrigger;
-import net.minecraft.block.Block;
+import biomesoplenty.api.block.BOPBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.data.ShapedRecipeBuilder;
-import net.minecraft.data.ShapelessRecipeBuilder;
 import net.minecraft.item.DyeColor;
-import net.minecraft.item.Items;
 import net.minecraftforge.common.Tags;
-import tv.mapper.embellishcraft.block.CustomBedBlock;
-import tv.mapper.embellishcraft.util.WoodsType;
+import tv.mapper.embellishcraft.ECConstants;
 import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
+import tv.mapper.embellishcraftbop.util.BoPWoods;
 import tv.mapper.embellishcraftbop.util.ECBoPBlockUtils;
 import tv.mapper.mapperbase.item.BaseItems;
 
@@ -30,91 +28,55 @@ public class ECBoPRecipes extends RecipeProvider
     @Override
     protected void registerRecipes(Consumer<IFinishedRecipe> consumer)
     {
-        int i = 0;
-
-        for(Block block : ECBoPBlocks.CHAIRS)
+        for(int j = 0; j < Arrays.stream(BoPWoods.values()).count(); j++)
         {
-            ShapedRecipeBuilder.shapedRecipe(block).patternLine("S  ").patternLine("SWS").patternLine("S S").key('S', Items.STICK).key('W', ECBoPBlockUtils.bopSlabs[i]).setGroup("chairs").addCriterion("wood",
-                InventoryChangeTrigger.Instance.forItems(ECBoPBlockUtils.bopPlanks[i])).build(consumer);
-            i++;
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.BOP_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get()).key('W', ECBoPBlockUtils.bopSlabs[j]).key('S', Tags.Items.RODS_WOODEN).patternLine("S  ").patternLine(
+                "SWS").patternLine("S S").setGroup("chairs").addCriterion("has_" + BoPWoods.byId(j).getName() + "_slab", this.hasItem(ECBoPBlockUtils.bopSlabs[j])).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.BOP_TERRACE_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get()).key('W', ECBoPBlockUtils.bopPressure[j]).key('S', Tags.Items.RODS_WOODEN).patternLine(
+                "S  ").patternLine("SWS").patternLine("S S").setGroup("terrace_chairs").addCriterion("has_" + BoPWoods.byId(j).getName() + "_pressure_plate", this.hasItem(ECBoPBlockUtils.bopPressure[j])).build(
+                    consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.BOP_TABLE_BLOCKS.get(BoPWoods.byId(j)).get()).key('W', ECBoPBlockUtils.bopSlabs[j]).key('S', Tags.Items.RODS_WOODEN).patternLine("SWS").patternLine(
+                "S S").patternLine("S S").setGroup("tables").addCriterion("has_" + BoPWoods.byId(j).getName() + "_slab", this.hasItem(ECBoPBlockUtils.bopSlabs[j])).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.BOP_TERRACE_TABLE_BLOCKS.get(BoPWoods.byId(j)).get()).key('W', ECBoPBlockUtils.bopPressure[j]).key('S', Tags.Items.RODS_WOODEN).patternLine(
+                "WWW").patternLine(" S ").patternLine(" S ").setGroup("terrace_tables").addCriterion("has_" + BoPWoods.byId(j).getName() + "_pressure_plate", this.hasItem(ECBoPBlockUtils.bopPressure[j])).build(
+                    consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.BOP_FANCY_TABLE_BLOCKS.get(BoPWoods.byId(j)).get(), 2).key('W', ECBoPBlockUtils.bopPlanks[j]).key('S', ECBoPBlockUtils.bopLogs[j]).patternLine(
+                "WWW").patternLine("S S").patternLine("S S").setGroup("fancy_tables").addCriterion("has_" + BoPWoods.byId(j).getName() + "_planks", this.hasItem(ECBoPBlockUtils.bopPlanks[j])).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), 3).key('P', ECBoPBlockUtils.bopPlanks[j]).key('B', ECBoPBlockUtils.bopButtons[j]).patternLine(
+                "PP").patternLine("PB").patternLine("PP").setGroup("fancy_doors").addCriterion("has_" + BoPWoods.byId(j).getName() + "_planks", this.hasItem(ECBoPBlockUtils.bopPlanks[j])).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get(), 6).key('P', ECBoPBlockUtils.bopPlanks[j]).key('S', Tags.Items.RODS_WOODEN).patternLine(
+                "  P").patternLine(" PS").patternLine("PS ").setGroup("suspended_stairs").addCriterion("has_" + BoPWoods.byId(j).getName() + "_planks", this.hasItem(ECBoPBlockUtils.bopPlanks[j])).build(
+                    consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)).get()).key('B', BaseItems.BOLT.get()).key('W', ECBoPBlockUtils.bopPlanks[j]).patternLine(
+                "BWB").patternLine("W W").patternLine("BWB").setGroup("wooden_crates").addCriterion("has_" + BoPWoods.byId(j).getName() + "_planks", this.hasItem(ECBoPBlockUtils.bopPlanks[j])).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get()).key('C', Blocks.CHEST).key('W', ECBoPBlockUtils.bopSlabs[j]).patternLine(" W ").patternLine(
+                "WCW").patternLine(" W ").setGroup("fancy_chests").addCriterion("has_chest", this.hasItem(Blocks.CHEST)).build(consumer);
         }
 
-        i = 0;
-        for(Block block : ECBoPBlocks.TERRACE_CHAIRS)
+        for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)
         {
-            ShapedRecipeBuilder.shapedRecipe(block).patternLine("S  ").patternLine("SWS").patternLine("S S").key('S', Items.STICK).key('W', ECBoPBlockUtils.bopPressure[i]).setGroup("chairs").addCriterion(
-                "wood", InventoryChangeTrigger.Instance.forItems(ECBoPBlockUtils.bopPlanks[i])).build(consumer);
-            i++;
-        }
-
-        i = 0;
-        for(Block block : ECBoPBlocks.TABLES)
-        {
-            ShapedRecipeBuilder.shapedRecipe(block).patternLine("SWS").patternLine("S S").patternLine("S S").key('S', Items.STICK).key('W', ECBoPBlockUtils.bopSlabs[i]).setGroup("tables").addCriterion("wood",
-                InventoryChangeTrigger.Instance.forItems(ECBoPBlockUtils.bopPlanks[i])).build(consumer);
-            i++;
-        }
-
-        i = 0;
-        for(Block block : ECBoPBlocks.TERRACE_TABLES)
-        {
-            ShapedRecipeBuilder.shapedRecipe(block).patternLine("WWW").patternLine(" S ").patternLine(" S ").key('S', Items.STICK).key('W', ECBoPBlockUtils.bopPressure[i]).setGroup("tables").addCriterion(
-                "wood", InventoryChangeTrigger.Instance.forItems(ECBoPBlockUtils.bopPlanks[i])).build(consumer);
-            i++;
-        }
-
-        i = 0;
-        for(Block block : ECBoPBlocks.FANCY_TABLES)
-        {
-            ShapedRecipeBuilder.shapedRecipe(block, 2).patternLine("PPP").patternLine("W W").patternLine("W W").key('W', ECBoPBlockUtils.bopLogs[i]).key('P', ECBoPBlockUtils.bopPlanks[i]).setGroup(
-                "tables").addCriterion("wood", InventoryChangeTrigger.Instance.forItems(ECBoPBlockUtils.bopPlanks[i])).build(consumer);
-            i++;
-        }
-
-        i = 0;
-        for(Block block : ECBoPBlocks.FANCY_DOORS)
-        {
-            ShapedRecipeBuilder.shapedRecipe(block, 3).patternLine("PP").patternLine("PB").patternLine("PP").key('B', ECBoPBlockUtils.bopButtons[i]).key('P', ECBoPBlockUtils.bopPlanks[i]).setGroup(
-                "tables").addCriterion("wood", InventoryChangeTrigger.Instance.forItems(ECBoPBlockUtils.bopPlanks[i])).build(consumer);
-            i++;
-        }
-
-        i = 0;
-        for(Block block : ECBoPBlocks.SUSPENDED_STAIRS)
-        {
-            ShapedRecipeBuilder.shapedRecipe(block, 6).patternLine("  P").patternLine(" PR").patternLine("PR ").key('R', Tags.Items.RODS_WOODEN).key('P', ECBoPBlockUtils.bopPlanks[i]).setGroup(
-                "stairs").addCriterion("wood", InventoryChangeTrigger.Instance.forItems(ECBoPBlockUtils.bopPlanks[i])).build(consumer);
-            i++;
-        }
-
-        i = 0;
-        for(Block block : ECBoPBlocks.CRATES)
-        {
-            ShapedRecipeBuilder.shapedRecipe(block).patternLine("BPB").patternLine("P P").patternLine("BPB").key('B', BaseItems.BOLT.get()).key('P', ECBoPBlockUtils.bopPlanks[i]).setGroup(
-                "crates").addCriterion("wood", InventoryChangeTrigger.Instance.forItems(ECBoPBlockUtils.bopPlanks[i])).build(consumer);
-            i++;
-        }
-
-        i = 0;
-        for(Block block : ECBoPBlocks.FANCY_BEDS)
-        {
-            DyeColor color = ((CustomBedBlock)block).getColor();
-            WoodsType wood = ((CustomBedBlock)block).getWood();
-
-            ShapedRecipeBuilder.shapedRecipe(block).patternLine("P P").patternLine("WWW").patternLine("PPP").key('W', ECBoPBlockUtils.getWoolFromColor(color)).key('P',
-                ECBoPBlockUtils.bopPlanks[i / 16]).setGroup("beds").addCriterion("wood", InventoryChangeTrigger.Instance.forItems(ECBoPBlockUtils.bopPlanks[i / 16])).build(consumer);
-            i++;
-
-            ShapelessRecipeBuilder.shapelessRecipe(block).addIngredient(ECBoPBlockUtils.getDyeTagFromColor(color)).addIngredient(ECBoPBlockUtils.getWhiteBedFromWood(wood)).setGroup("beds").addCriterion(
-                "fancy_bed", InventoryChangeTrigger.Instance.forItems(ECBoPBlockUtils.getWhiteBedFromWood(wood))).build(consumer, block.getRegistryName().toString() + "_from_white");
-        }
-
-        i = 0;
-        for(Block block : ECBoPBlocks.FANCY_CHESTS)
-        {
-            ShapedRecipeBuilder.shapedRecipe(block).patternLine(" S ").patternLine("SCS").patternLine(" S ").key('C', Blocks.CHEST).key('S', ECBoPBlockUtils.bopSlabs[i]).setGroup("fancy_chests").addCriterion(
-                "chest", InventoryChangeTrigger.Instance.forItems(Blocks.CHEST)).build(consumer);
-            i++;
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.CHERRY_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()).key('P', BOPBlocks.cherry_planks).key('W', ECConstants.McWools[j]).patternLine("P P").patternLine(
+                "WWW").patternLine("PPP").setGroup("fancy_beds").addCriterion("has_cherry_planks", this.hasItem(BOPBlocks.cherry_planks)).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.DEAD_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()).key('P', BOPBlocks.dead_planks).key('W', ECConstants.McWools[j]).patternLine("P P").patternLine(
+                "WWW").patternLine("PPP").setGroup("fancy_beds").addCriterion("has_dead_planks", this.hasItem(BOPBlocks.dead_planks)).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.FIR_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()).key('P', BOPBlocks.fir_planks).key('W', ECConstants.McWools[j]).patternLine("P P").patternLine(
+                "WWW").patternLine("PPP").setGroup("fancy_beds").addCriterion("has_fir_planks", this.hasItem(BOPBlocks.fir_planks)).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.HELLBARK_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()).key('P', BOPBlocks.hellbark_planks).key('W', ECConstants.McWools[j]).patternLine(
+                "P P").patternLine("WWW").patternLine("PPP").setGroup("fancy_beds").addCriterion("has_hellbark_planks", this.hasItem(BOPBlocks.hellbark_planks)).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.JACARANDA_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()).key('P', BOPBlocks.jacaranda_planks).key('W', ECConstants.McWools[j]).patternLine(
+                "P P").patternLine("WWW").patternLine("PPP").setGroup("fancy_beds").addCriterion("has_jacaranda_planks", this.hasItem(BOPBlocks.jacaranda_planks)).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.MAGIC_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()).key('P', BOPBlocks.magic_planks).key('W', ECConstants.McWools[j]).patternLine("P P").patternLine(
+                "WWW").patternLine("PPP").setGroup("fancy_beds").addCriterion("has_magic_planks", this.hasItem(BOPBlocks.magic_planks)).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.MAHOGANY_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()).key('P', BOPBlocks.mahogany_planks).key('W', ECConstants.McWools[j]).patternLine(
+                "P P").patternLine("WWW").patternLine("PPP").setGroup("fancy_beds").addCriterion("has_mahogany_planks", this.hasItem(BOPBlocks.mahogany_planks)).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.PALM_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()).key('P', BOPBlocks.palm_planks).key('W', ECConstants.McWools[j]).patternLine("P P").patternLine(
+                "WWW").patternLine("PPP").setGroup("fancy_beds").addCriterion("has_palm_planks", this.hasItem(BOPBlocks.palm_planks)).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.REDWOOD_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()).key('P', BOPBlocks.redwood_planks).key('W', ECConstants.McWools[j]).patternLine("P P").patternLine(
+                "WWW").patternLine("PPP").setGroup("fancy_beds").addCriterion("has_redwood_planks", this.hasItem(BOPBlocks.redwood_planks)).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.UMBRAN_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()).key('P', BOPBlocks.umbran_planks).key('W', ECConstants.McWools[j]).patternLine("P P").patternLine(
+                "WWW").patternLine("PPP").setGroup("fancy_beds").addCriterion("has_umbran_planks", this.hasItem(BOPBlocks.umbran_planks)).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.WILLOW_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()).key('P', BOPBlocks.willow_planks).key('W', ECConstants.McWools[j]).patternLine("P P").patternLine(
+                "WWW").patternLine("PPP").setGroup("fancy_beds").addCriterion("has_willow_planks", this.hasItem(BOPBlocks.willow_planks)).build(consumer);
         }
     }
 }

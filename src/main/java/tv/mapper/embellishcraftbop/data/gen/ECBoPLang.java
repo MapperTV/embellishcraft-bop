@@ -1,12 +1,15 @@
 package tv.mapper.embellishcraftbop.data.gen;
 
-import net.minecraft.block.Block;
+import java.util.Arrays;
+
+import org.codehaus.plexus.util.StringUtils;
+
 import net.minecraft.data.DataGenerator;
+import net.minecraft.item.DyeColor;
 import net.minecraftforge.common.data.LanguageProvider;
-import tv.mapper.embellishcraft.block.CustomBedBlock;
-import tv.mapper.embellishcraft.util.WoodType;
 import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
 import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
+import tv.mapper.embellishcraftbop.util.BoPWoods;
 
 public class ECBoPLang extends LanguageProvider
 {
@@ -21,178 +24,88 @@ public class ECBoPLang extends LanguageProvider
     @Override
     protected void addTranslations()
     {
-        int i = 6;
+        String name, color;
 
         switch(lang)
         {
             default:
             case "en_us":
-                for(Block block : ECBoPBlocks.CHAIRS)
+                for(int j = 0; j < Arrays.stream(BoPWoods.values()).count(); j++)
                 {
-                    add(block, capitalize(WoodType.byId(i).getName()) + " Chair");
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.TERRACE_CHAIRS)
-                {
-                    add(block, capitalize(WoodType.byId(i).getName()) + " Terrace Chair");
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.TABLES)
-                {
-                    add(block, capitalize(WoodType.byId(i).getName()) + " Table");
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.TERRACE_TABLES)
-                {
-                    add(block, capitalize(WoodType.byId(i).getName()) + " Terrace Table");
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.FANCY_TABLES)
-                {
-                    add(block, capitalize(WoodType.byId(i).getName()) + " Fancy Table");
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.FANCY_DOORS)
-                {
-                    add(block, capitalize(WoodType.byId(i).getName()) + " Fancy Door");
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.SUSPENDED_STAIRS)
-                {
-                    add(block, capitalize(WoodType.byId(i).getName()) + " Suspended Stairs");
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.CRATES)
-                {
-                    add(block, capitalize(WoodType.byId(i).getName()) + " Wooden Crate");
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.FANCY_BEDS)
-                {
-                    String color = ((CustomBedBlock)block).getColor().getName();
-                    String wood = ((CustomBedBlock)block).getWood().getName();
+                    name = BoPWoods.byId(j).getName("en_us");
 
-                    String check[] = color.split("_");
-                    if(check.length > 1)
-                        color = capitalize(check[0]) + " " + capitalize(check[1]);
+                    addBlock(ECBoPBlocks.BOP_CHAIR_BLOCKS.get(BoPWoods.byId(j)), name + " Chair");
+                    addBlock(ECBoPBlocks.BOP_TERRACE_CHAIR_BLOCKS.get(BoPWoods.byId(j)), name + " Terrace Chair");
+                    addBlock(ECBoPBlocks.BOP_TABLE_BLOCKS.get(BoPWoods.byId(j)), name + " Table");
+                    addBlock(ECBoPBlocks.BOP_FANCY_TABLE_BLOCKS.get(BoPWoods.byId(j)), name + " Fancy Table");
+                    addBlock(ECBoPBlocks.BOP_TERRACE_TABLE_BLOCKS.get(BoPWoods.byId(j)), name + " Terrace Table");
+                    addBlock(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)), name + " Fancy Door");
+                    addBlock(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)), name + " Suspended Stairs");
+                    addBlock(ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)), name + " Wooden Crate");
+                    addBlock(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)), name + " Fancy Chest");
+                }
+
+                for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)
+                {
+                    String raw[] = DyeColor.byId(j).getName().split("_");
+                    if(raw[0].equals("light"))
+                        color = StringUtils.capitalise(raw[0]) + " " + StringUtils.capitalise(raw[1]);
                     else
-                        color = capitalize(check[0]);
+                        color = StringUtils.capitalise(raw[0]);
 
-                    check = wood.split("_");
-                    if(check.length > 1)
-                        wood = capitalize(check[0]) + " " + capitalize(check[1]);
-                    else
-                        wood = capitalize(check[0]);
-
-                    add(block, color + " " + wood + " Fancy Bed");
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.FANCY_CHESTS)
-                {
-                    add(block, capitalize(WoodType.byId(i).getName()) + " Fancy Chest");
-                    i++;
+                    addBlock(ECBoPBlocks.CHERRY_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), color + " Cherry Fancy Bed");
+                    addBlock(ECBoPBlocks.DEAD_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), color + " Dead Fancy Bed");
+                    addBlock(ECBoPBlocks.FIR_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), color + " Fir Fancy Bed");
+                    addBlock(ECBoPBlocks.HELLBARK_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), color + " Hellbark Fancy Bed");
+                    addBlock(ECBoPBlocks.JACARANDA_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), color + " Jacaranda Fancy Bed");
+                    addBlock(ECBoPBlocks.MAGIC_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), color + " Magic Fancy Bed");
+                    addBlock(ECBoPBlocks.MAHOGANY_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), color + " Mahogany Fancy Bed");
+                    addBlock(ECBoPBlocks.PALM_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), color + " Palm Fancy Bed");
+                    addBlock(ECBoPBlocks.REDWOOD_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), color + " Redwood Fancy Bed");
+                    addBlock(ECBoPBlocks.UMBRAN_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), color + " Umbran Fancy Bed");
+                    addBlock(ECBoPBlocks.WILLOW_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), color + " Willow Fancy Bed");
                 }
                 break;
             case "fr_fr":
-                for(Block block : ECBoPBlocks.CHAIRS)
+                for(int j = 0; j < Arrays.stream(BoPWoods.values()).count(); j++)
                 {
-                    add(block, "Chaise en " + WoodType.byId(i).getName("fr_fr"));
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.TERRACE_CHAIRS)
-                {
-                    add(block, "Chaise de terrasse en " + WoodType.byId(i).getName("fr_fr"));
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.TABLES)
-                {
-                    add(block, "Table en " + WoodType.byId(i).getName("fr_fr"));
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.TERRACE_TABLES)
-                {
-                    add(block, "Table de terrasse en " + WoodType.byId(i).getName("fr_fr"));
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.FANCY_TABLES)
-                {
-                    add(block, "Table massive en " + WoodType.byId(i).getName("fr_fr"));
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.FANCY_DOORS)
-                {
-                    add(block, "Porte en " + WoodType.byId(i).getName("fr_fr"));
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.SUSPENDED_STAIRS)
-                {
-                    add(block, "Escaliers suspendus en " + WoodType.byId(i).getName("fr_fr"));
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.CRATES)
-                {
-                    add(block, "Caisse en " + WoodType.byId(i).getName("fr_fr"));
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.FANCY_BEDS)
-                {
+                    name = BoPWoods.byId(j).getName("fr_fr");
 
-                    String color = ((CustomBedBlock)block).getColor().getName();
-                    String wood = ((CustomBedBlock)block).getWood().getName("fr_fr");
+                    addBlock(ECBoPBlocks.BOP_CHAIR_BLOCKS.get(BoPWoods.byId(j)), "Chaise en " + name);
+                    addBlock(ECBoPBlocks.BOP_TERRACE_CHAIR_BLOCKS.get(BoPWoods.byId(j)), "Chaise de terrasse en " + name);
+                    addBlock(ECBoPBlocks.BOP_TABLE_BLOCKS.get(BoPWoods.byId(j)), "Table en " + name);
+                    addBlock(ECBoPBlocks.BOP_FANCY_TABLE_BLOCKS.get(BoPWoods.byId(j)), "Table massive en " + name);
+                    addBlock(ECBoPBlocks.BOP_TERRACE_TABLE_BLOCKS.get(BoPWoods.byId(j)), "Table de terrasse en " + name);
+                    addBlock(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)), "Porte massive en " + name);
+                    addBlock(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)), "Escaliers suspendus en " + name);
+                    addBlock(ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)), "Caisse en " + name);
+                    addBlock(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)), "Coffre massif en " + name);
+                }
 
-                    String check[] = color.split("_");
-                    if(check.length > 1)
-                        color = check[0] + " " + check[1];
+                for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)
+                {
+                    String raw[] = DyeColor.byId(j).getName().split("_");
+                    if(raw[0].equals("light"))
+                        name = StringUtils.capitalise(raw[0]) + " " + StringUtils.capitalise(raw[1]);
                     else
-                        color = check[0];
+                        name = StringUtils.capitalise(raw[0]);
 
-                    check = wood.split("_");
-                    if(check.length > 1)
-                        wood = check[0] + " " + check[1];
-                    else
-                        wood = check[0];
+                    color = translateColor(name);
 
-                    color = translateColor(color);
-
-                    add(block, "Lit massif " + color + " en " + wood);
-
-                    i++;
-                }
-                i = 6;
-                for(Block block : ECBoPBlocks.FANCY_CHESTS)
-                {
-                    add(block, "Coffre massif en " + WoodType.byId(i).getName("fr_fr"));
-                    i++;
+                    addBlock(ECBoPBlocks.CHERRY_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), "Lit massif " + color + " en bois de cerisier");
+                    addBlock(ECBoPBlocks.DEAD_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), "Lit massif " + color + " en bois mort");
+                    addBlock(ECBoPBlocks.FIR_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), "Lit massif " + color + " en bois de sapin");
+                    addBlock(ECBoPBlocks.HELLBARK_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), "Lit massif " + color + " en écorce infernale");
+                    addBlock(ECBoPBlocks.JACARANDA_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), "Lit massif " + color + " en jacaranda");
+                    addBlock(ECBoPBlocks.MAGIC_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), "Lit massif " + color + " en bois magique");
+                    addBlock(ECBoPBlocks.MAHOGANY_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), "Lit massif " + color + " en bois d'acajou");
+                    addBlock(ECBoPBlocks.PALM_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), "Lit massif " + color + " en bois de palmier");
+                    addBlock(ECBoPBlocks.REDWOOD_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), "Lit massif " + color + " en bois de sequoia");
+                    addBlock(ECBoPBlocks.UMBRAN_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), "Lit massif " + color + " en bois sinistre");
+                    addBlock(ECBoPBlocks.WILLOW_FANCY_BED_BLOCKS.get(DyeColor.byId(j)), "Lit massif " + color + " en bois de saule");
                 }
                 break;
         }
-    }
-
-    public static String capitalize(String str)
-    {
-        if(str == null || str.isEmpty())
-        {
-            return str;
-        }
-
-        return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 
     private static String translateColor(String color)

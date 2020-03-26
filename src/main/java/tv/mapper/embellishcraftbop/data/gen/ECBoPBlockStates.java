@@ -1,118 +1,56 @@
 package tv.mapper.embellishcraftbop.data.gen;
 
-import java.util.function.Function;
+import java.util.Arrays;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.DoorBlock;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
-import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraft.item.DyeColor;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
-import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
-import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
-import tv.mapper.embellishcraft.block.TableBlock;
+import tv.mapper.embellishcraft.data.gen.ECBlockStates;
 import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
 import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
+import tv.mapper.embellishcraftbop.util.BoPWoods;
 
-public class ECBoPBlockStates extends BlockStateProvider
+public class ECBoPBlockStates extends ECBlockStates
 {
-    public ECBoPBlockStates(DataGenerator gen, ExistingFileHelper exFileHelper)
+    public ECBoPBlockStates(DataGenerator gen, String modid, ExistingFileHelper exFileHelper)
     {
-        super(gen, EmbellishCraftBOP.MODID, exFileHelper);
+        super(gen, modid, exFileHelper);
     }
 
     @Override
     protected void registerStatesAndModels()
     {
-        String name;
-
-        for(Block block : ECBoPBlocks.CHAIRS)
+        for(int j = 0; j < Arrays.stream(BoPWoods.values()).count(); j++)
         {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            orientableBlock(block, new UncheckedModelFile(modid + ":block/" + name), 0);
+            horizontalBlock(ECBoPBlocks.BOP_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get(), new UncheckedModelFile(EmbellishCraftBOP.MODID + ":block/" + BoPWoods.byId(j).getName() + "_chair"), 0);
+            horizontalBlock(ECBoPBlocks.BOP_TERRACE_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get(), new UncheckedModelFile(EmbellishCraftBOP.MODID + ":block/" + BoPWoods.byId(j).getName() + "_terrace_chair"), 0);
+            tableBlock(ECBoPBlocks.BOP_TABLE_BLOCKS.get(BoPWoods.byId(j)).get());
+            tableBlock(ECBoPBlocks.BOP_FANCY_TABLE_BLOCKS.get(BoPWoods.byId(j)).get());
+            simpleBlock(ECBoPBlocks.BOP_TERRACE_TABLE_BLOCKS.get(BoPWoods.byId(j)).get());
+            simpleBlock(ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)).get());
+            // getVariantBuilder(ECBoPBlocks.FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get()).partialState().setModels(
+            // new ConfiguredModel(new UncheckedModelFile(EmbellishCraftBOP.MODID + ":model/" + BoPWoods.byId(j).getName() + "_fancy_chest")));
+            chestBlock(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get(), 0);
+            horizontalBlock(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get(), new UncheckedModelFile(EmbellishCraftBOP.MODID + ":block/" + BoPWoods.byId(j).getName() + "_suspended_stairs"),
+                0);
+            doorBlock(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), modLoc("block/" + BoPWoods.byId(j).getName() + "_fancy_door_bottom"),
+                modLoc("block/" + BoPWoods.byId(j).getName() + "_fancy_door_top"));
         }
 
-        for(Block block : ECBoPBlocks.TERRACE_CHAIRS)
+        for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)
         {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            orientableBlock(block, new UncheckedModelFile(modid + ":block/" + name), 0);
+            bedBlock(ECBoPBlocks.CHERRY_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), 180);
+            bedBlock(ECBoPBlocks.DEAD_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), 180);
+            bedBlock(ECBoPBlocks.FIR_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), 180);
+            bedBlock(ECBoPBlocks.HELLBARK_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), 180);
+            bedBlock(ECBoPBlocks.JACARANDA_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), 180);
+            bedBlock(ECBoPBlocks.MAGIC_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), 180);
+            bedBlock(ECBoPBlocks.MAHOGANY_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), 180);
+            bedBlock(ECBoPBlocks.PALM_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), 180);
+            bedBlock(ECBoPBlocks.REDWOOD_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), 180);
+            bedBlock(ECBoPBlocks.UMBRAN_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), 180);
+            bedBlock(ECBoPBlocks.WILLOW_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), 180);
         }
-
-        for(Block block : ECBoPBlocks.TABLES)
-        {
-            tableBlock(block);
-        }
-
-        for(Block block : ECBoPBlocks.TERRACE_TABLES)
-        {
-            simpleBlock(block);
-        }
-
-        for(Block block : ECBoPBlocks.FANCY_TABLES)
-        {
-            tableBlock(block);
-        }
-
-        for(Block block : ECBoPBlocks.FANCY_DOORS)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            String door = name.replace("_door", "");
-            doorBlock((DoorBlock)block, door, new ResourceLocation(modid + ":block/" + name + "_bottom"), new ResourceLocation(modid + ":block/" + name + "_top"));
-        }
-
-        for(Block block : ECBoPBlocks.SUSPENDED_STAIRS)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            orientableBlock(block, new UncheckedModelFile(modid + ":block/" + name), 0);
-        }
-
-        for(Block block : ECBoPBlocks.CRATES)
-        {
-            simpleBlock(block);
-        }
-
-        for(Block block : ECBoPBlocks.FANCY_BEDS)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            simpleBlock(block, new UncheckedModelFile(modid + ":block/" + name));
-        }
-
-        for(Block block : ECBoPBlocks.FANCY_CHESTS)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            simpleBlock(block, new UncheckedModelFile(modid + ":block/" + name));
-        }
-    }
-
-    /**
-     * Creates a blockstate file for blocks that have 4 orientations depeding of cardinal (north, south etc). e.g. chairs, suspended stairs...
-     */
-    protected void orientableBlock(Block block, ModelFile model, int angleOffset)
-    {
-        orientableBlock(block, $ -> model, angleOffset);
-    }
-
-    protected void orientableBlock(Block block, Function<BlockState, ModelFile> modelFunc, int angleOffset)
-    {
-        getVariantBuilder(block).forAllStatesExcept(
-            state -> ConfiguredModel.builder().modelFile(modelFunc.apply(state)).rotationY(((int)state.get(BlockStateProperties.HORIZONTAL_FACING).getHorizontalAngle() + angleOffset) % 360).build(),
-            BlockStateProperties.WATERLOGGED);
-    }
-
-    /**
-     * Creates a blockstate file for the modular table blocks (noraml and fancy)
-     */
-    protected void tableBlock(Block block)
-    {
-        String name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-        MultiPartBlockStateBuilder builder = getMultipartBuilder(block).part().modelFile(new UncheckedModelFile(modid + ":block/" + name + "_top")).addModel().end();
-        builder.part().modelFile(new UncheckedModelFile(modid + ":block/" + name + "_foot")).uvLock(true).addModel().condition(TableBlock.TABLE_NORTH, true).end();
-        builder.part().modelFile(new UncheckedModelFile(modid + ":block/" + name + "_foot")).rotationY(90).uvLock(true).addModel().condition(TableBlock.TABLE_EAST, true).end();
-        builder.part().modelFile(new UncheckedModelFile(modid + ":block/" + name + "_foot")).rotationY(180).uvLock(true).addModel().condition(TableBlock.TABLE_SOUTH, true).end();
-        builder.part().modelFile(new UncheckedModelFile(modid + ":block/" + name + "_foot")).rotationY(270).uvLock(true).addModel().condition(TableBlock.TABLE_WEST, true).end();
     }
 }

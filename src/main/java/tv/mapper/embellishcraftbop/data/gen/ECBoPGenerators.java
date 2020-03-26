@@ -9,6 +9,7 @@ import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
+import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ECBoPGenerators
@@ -24,19 +25,19 @@ public class ECBoPGenerators
             @Override
             public boolean exists(ResourceLocation loc, ResourcePackType type, String pathSuffix, String pathPrefix)
             {
-                if(loc.getNamespace() == "embellishcraft" || loc.getNamespace() == "biomesoplenty")
+                if(loc.getNamespace() == "embellishcraft" || loc.getNamespace() == "biomesoplenty" || loc.getNamespace() == "mapperbase")
                 {
                     return true;
                 }
                 return delegate.exists(loc, type, pathSuffix, pathPrefix);
             }
-        }; // Temporary to counter the crash when generator can't find files from dependencies
+        };
 
         generator.addProvider(new ECBoPRecipes(generator));
         generator.addProvider(new ECBoPLootTables(generator));
-        generator.addProvider(new ECBoPBlockStates(generator, helper));
-        generator.addProvider(new ECBoPBlockModels(generator, helper));
-        generator.addProvider(new ECBoPItemModels(generator, helper));
+        generator.addProvider(new ECBoPBlockStates(generator, EmbellishCraftBOP.MODID, helper));
+        generator.addProvider(new ECBoPBlockModels(generator, EmbellishCraftBOP.MODID, helper));
+        generator.addProvider(new ECBoPItemModels(generator, EmbellishCraftBOP.MODID, helper));
 
         generator.addProvider(new ECBoPBlockTags(generator));
         generator.addProvider(new ECBoPItemTags(generator));

@@ -24,29 +24,27 @@ public class ECBoPBlockUtils
         {
             default:
             case CHERRY:
-                return ECBoPBlocks.WHITE_CHERRY_FANCY_BED;
+                return ECBoPBlocks.CHERRY_FANCY_BED_BLOCKS.get(DyeColor.byId(0)).get();
             case DEAD:
-                return ECBoPBlocks.WHITE_DEAD_FANCY_BED;
-            case ETHEREAL:
-                return ECBoPBlocks.WHITE_ETHEREAL_FANCY_BED;
+                return ECBoPBlocks.DEAD_FANCY_BED_BLOCKS.get(DyeColor.byId(0)).get();
             case FIR:
-                return ECBoPBlocks.WHITE_FIR_FANCY_BED;
+                return ECBoPBlocks.FIR_FANCY_BED_BLOCKS.get(DyeColor.byId(0)).get();
             case HELLBARK:
-                return ECBoPBlocks.WHITE_HELLBARK_FANCY_BED;
+                return ECBoPBlocks.HELLBARK_FANCY_BED_BLOCKS.get(DyeColor.byId(0)).get();
             case JACARANDA:
-                return ECBoPBlocks.WHITE_JACARANDA_FANCY_BED;
+                return ECBoPBlocks.JACARANDA_FANCY_BED_BLOCKS.get(DyeColor.byId(0)).get();
             case MAGIC:
-                return ECBoPBlocks.WHITE_MAGIC_FANCY_BED;
+                return ECBoPBlocks.MAGIC_FANCY_BED_BLOCKS.get(DyeColor.byId(0)).get();
             case MAHOGANY:
-                return ECBoPBlocks.WHITE_MAHOGANY_FANCY_BED;
+                return ECBoPBlocks.MAHOGANY_FANCY_BED_BLOCKS.get(DyeColor.byId(0)).get();
             case PALM:
-                return ECBoPBlocks.WHITE_PALM_FANCY_BED;
+                return ECBoPBlocks.PALM_FANCY_BED_BLOCKS.get(DyeColor.byId(0)).get();
             case REDWOOD:
-                return ECBoPBlocks.WHITE_REDWOOD_FANCY_BED;
+                return ECBoPBlocks.REDWOOD_FANCY_BED_BLOCKS.get(DyeColor.byId(0)).get();
             case UMBRAN:
-                return ECBoPBlocks.WHITE_UMBRAN_FANCY_BED;
+                return ECBoPBlocks.UMBRAN_FANCY_BED_BLOCKS.get(DyeColor.byId(0)).get();
             case WILLOW:
-                return ECBoPBlocks.WHITE_WILLOW_FANCY_BED;
+                return ECBoPBlocks.WILLOW_FANCY_BED_BLOCKS.get(DyeColor.byId(0)).get();
         }
     }
 

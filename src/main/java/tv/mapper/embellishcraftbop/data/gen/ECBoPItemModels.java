@@ -1,19 +1,19 @@
 package tv.mapper.embellishcraftbop.data.gen;
 
-import net.minecraft.block.Block;
+import java.util.Arrays;
+
 import net.minecraft.data.DataGenerator;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.item.DyeColor;
 import net.minecraftforge.client.model.generators.ExistingFileHelper;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
-import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
-import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
+import tv.mapper.embellishcraftbop.util.BoPWoods;
 
 public class ECBoPItemModels extends ItemModelProvider
 {
-    public ECBoPItemModels(DataGenerator generator, ExistingFileHelper existingFileHelper)
+    public ECBoPItemModels(DataGenerator generator, String modid, ExistingFileHelper existingFileHelper)
     {
-        super(generator, EmbellishCraftBOP.MODID, existingFileHelper);
+        super(generator, modid, existingFileHelper);
     }
 
     @Override
@@ -25,82 +25,23 @@ public class ECBoPItemModels extends ItemModelProvider
     @Override
     protected void registerModels()
     {
-        String name;
-
-        for(Block block : ECBoPBlocks.CHAIRS)
+        for(int j = 0; j < Arrays.stream(BoPWoods.values()).count(); j++)
         {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            getBuilder(name).parent(new UncheckedModelFile(modid + ":block/" + name));
-        }
+            getBuilder(BoPWoods.byId(j).getName() + "_terrace_table").parent(new UncheckedModelFile(modid + ":block/" + BoPWoods.byId(j).getName() + "_terrace_table"));
+            getBuilder(BoPWoods.byId(j).getName() + "_terrace_chair").parent(new UncheckedModelFile(modid + ":block/" + BoPWoods.byId(j).getName() + "_terrace_chair"));
+            getBuilder(BoPWoods.byId(j).getName() + "_chair").parent(new UncheckedModelFile(modid + ":block/" + BoPWoods.byId(j).getName() + "_chair"));
+            getBuilder(BoPWoods.byId(j).getName() + "_table").parent(new UncheckedModelFile(modid + ":block/" + BoPWoods.byId(j).getName() + "_table_inventory"));
+            getBuilder(BoPWoods.byId(j).getName() + "_fancy_table").parent(new UncheckedModelFile(modid + ":block/" + BoPWoods.byId(j).getName() + "_fancy_table_inventory"));
+            getBuilder(BoPWoods.byId(j).getName() + "_suspended_stairs").parent(new UncheckedModelFile(modid + ":block/" + BoPWoods.byId(j).getName() + "_suspended_stairs"));
+            getBuilder(BoPWoods.byId(j).getName() + "_fancy_door").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/" + BoPWoods.byId(j).getName() + "_fancy_door"));
+            getBuilder(BoPWoods.byId(j).getName() + "_wooden_crate").parent(new UncheckedModelFile(modid + ":block/" + BoPWoods.byId(j).getName() + "_wooden_crate"));
+            getBuilder(BoPWoods.byId(j).getName() + "_fancy_chest").parent(new UncheckedModelFile(modid + ":block/" + BoPWoods.byId(j).getName() + "_fancy_chest"));
 
-        for(Block block : ECBoPBlocks.TERRACE_CHAIRS)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            getBuilder(name).parent(new UncheckedModelFile(modid + ":block/" + name));
-        }
-
-        for(Block block : ECBoPBlocks.TABLES)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            getBuilder(name).parent(new UncheckedModelFile(modid + ":block/" + name + "_inventory"));
-        }
-
-        for(Block block : ECBoPBlocks.TERRACE_TABLES)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            getBuilder(name).parent(new UncheckedModelFile(modid + ":block/" + name));
-        }
-
-        for(Block block : ECBoPBlocks.FANCY_TABLES)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            getBuilder(name).parent(new UncheckedModelFile(modid + ":block/" + name + "_inventory"));
-        }
-
-        for(Block block : ECBoPBlocks.FANCY_DOORS)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            getBuilder(name).parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/" + name));
-        }
-
-        for(Block block : ECBoPBlocks.SUSPENDED_STAIRS)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            getBuilder(name).parent(new UncheckedModelFile(modid + ":block/" + name));
-        }
-
-        for(Block block : ECBoPBlocks.CRATES)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            getBuilder(name).parent(new UncheckedModelFile(modid + ":block/" + name));
-        }
-
-        for(Block block : ECBoPBlocks.FANCY_BEDS)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            String wool;
-            String check[] = name.split("_");
-
-            if(check[0].equals("light"))
-                wool = check[0] + "_" + check[1];
-            else
-                wool = check[0];
-
-            getBuilder(name).parent(new UncheckedModelFile("item/template_bed")).texture("particle", mcLoc("block/" + wool + "_wool"));
-        }
-
-        for(Block block : ECBoPBlocks.FANCY_CHESTS)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            String wood;
-            String check[] = name.split("_");
-
-            if(check[0].equals("dark"))
-                wood = check[0] + "_" + check[1];
-            else
-                wood = check[0];
-
-            getBuilder(name).parent(new UncheckedModelFile("embellishcraft:item/template_chest")).texture("particle", new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
+            for(int i = 0; i < Arrays.stream(DyeColor.values()).count(); i++)
+            {
+                getBuilder(DyeColor.byId(i).getName() + "_" + BoPWoods.byId(j).getName() + "_fancy_bed").parent(
+                    new UncheckedModelFile(modid + ":block/" + DyeColor.byId(i).getName() + "_" + BoPWoods.byId(j).getName() + "_fancy_bed_inventory"));
+            }
         }
     }
 }

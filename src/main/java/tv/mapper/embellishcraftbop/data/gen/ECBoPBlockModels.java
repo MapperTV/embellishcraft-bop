@@ -1,19 +1,21 @@
 package tv.mapper.embellishcraftbop.data.gen;
 
-import net.minecraft.block.Block;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.generators.BlockModelProvider;
-import net.minecraftforge.client.model.generators.ExistingFileHelper;
-import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
-import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
+import java.util.Arrays;
 
-public class ECBoPBlockModels extends BlockModelProvider
+import net.minecraft.data.DataGenerator;
+import net.minecraft.item.DyeColor;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.generators.ExistingFileHelper;
+import tv.mapper.embellishcraft.data.gen.ECBlockModels;
+import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
+import tv.mapper.embellishcraftbop.util.BoPWoods;
+
+public class ECBoPBlockModels extends ECBlockModels
 {
 
-    public ECBoPBlockModels(DataGenerator generator, ExistingFileHelper existingFileHelper)
+    public ECBoPBlockModels(DataGenerator generator, String modid, ExistingFileHelper existingFileHelper)
     {
-        super(generator, EmbellishCraftBOP.MODID, existingFileHelper);
+        super(generator, modid, existingFileHelper);
     }
 
     @Override
@@ -25,110 +27,71 @@ public class ECBoPBlockModels extends BlockModelProvider
     @Override
     protected void registerModels()
     {
-        String name, wood;
-
-        for(Block block : ECBoPBlocks.CHAIRS)
+        for(int j = 0; j < Arrays.stream(BoPWoods.values()).count(); j++)
         {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            wood = name.replace("_chair", "");
-            getBuilder(name).parent(getExistingFile(new ResourceLocation("embellishcraft", "block/furniture/chair"))).texture("1",
-                new ResourceLocation("biomesoplenty", "block/" + wood + "_planks")).texture("particle", new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
+            getBuilder(BoPWoods.byId(j).getName() + "_chair").parent(getExistingFile(modLoc("block/chair"))).texture("material", new ResourceLocation("block/" + BoPWoods.byId(j).getName() + "_planks")).texture(
+                "particle", new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(j).getName() + "_planks"));
+            getBuilder(BoPWoods.byId(j).getName() + "_terrace_chair").parent(getExistingFile(modLoc("block/terrace_chair"))).texture("material",
+                new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_terrace_table")).texture("particle",
+                    new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_terrace_table"));
+            getBuilder(BoPWoods.byId(j).getName() + "_terrace_table").parent(getExistingFile(modLoc("block/terrace_table"))).texture("material",
+                new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_terrace_table")).texture("particle",
+                    new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_terrace_table"));
+
+            getBuilder(BoPWoods.byId(j).getName() + "_table_foot").parent(getExistingFile(modLoc("block/table_foot"))).texture("material",
+                new ResourceLocation("block/" + BoPWoods.byId(j).getName() + "_planks")).texture("particle", new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(j).getName() + "_planks"));
+            getBuilder(BoPWoods.byId(j).getName() + "_table_inventory").parent(getExistingFile(modLoc("block/table_inventory"))).texture("material",
+                new ResourceLocation("block/" + BoPWoods.byId(j).getName() + "_planks"));
+            getBuilder(BoPWoods.byId(j).getName() + "_table_top").parent(getExistingFile(modLoc("block/table_top"))).texture("material",
+                new ResourceLocation("block/" + BoPWoods.byId(j).getName() + "_planks")).texture("particle", new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(j).getName() + "_planks"));
+
+            getBuilder(BoPWoods.byId(j).getName() + "_fancy_table_foot").parent(getExistingFile(modLoc("block/fancy_table_foot"))).texture("side",
+                new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_table_side")).texture("top",
+                    new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_table_top")).texture("particle",
+                        new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(j).getName() + "_planks"));
+            getBuilder(BoPWoods.byId(j).getName() + "_fancy_table_inventory").parent(getExistingFile(modLoc("block/fancy_table_inventory"))).texture("side",
+                new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_table_side")).texture("top",
+                    new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_table_top"));
+            getBuilder(BoPWoods.byId(j).getName() + "_fancy_table_top").parent(getExistingFile(modLoc("block/fancy_table_top"))).texture("side",
+                new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_table_side")).texture("top",
+                    new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_table_top")).texture("particle",
+                        new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(j).getName() + "_planks"));
+
+            getBuilder(BoPWoods.byId(j).getName() + "_suspended_stairs").parent(getExistingFile(modLoc("block/suspended_stairs"))).texture("all",
+                new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(j).getName() + "_planks"));
+
+            // getBuilder(BoPWoods.byId(j).getName() + "_fancy_chest").texture("particle", new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(j).getName() + "_planks"));
+            getBuilder(BoPWoods.byId(j).getName() + "_fancy_chest").parent(getExistingFile(modLoc("block/chest"))).texture("particle",
+                new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(j).getName() + "_planks")).texture("front",
+                    new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_front")).texture("side",
+                        new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_side")).texture("top",
+                            new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_top")).texture("bottom",
+                                new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_bottom")).texture("lock",
+                                    new ResourceLocation(EmbellishCraftBOP.MODID, "block/air_duct")).texture("particle", new ResourceLocation("block/" + BoPWoods.byId(j).getName() + "_planks"));
+            getBuilder(BoPWoods.byId(j).getName() + "_fancy_chest_left").parent(getExistingFile(modLoc("block/chest_left"))).texture("particle",
+                new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(j).getName() + "_planks")).texture("front",
+                    new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_front_right")).texture("side",
+                        new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_side")).texture("top",
+                            new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_top_right")).texture("bottom",
+                                new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_bottom_right")).texture("back",
+                                    new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_side_left")).texture("lock",
+                                        new ResourceLocation(EmbellishCraftBOP.MODID, "block/air_duct"));
+            getBuilder(BoPWoods.byId(j).getName() + "_fancy_chest_right").parent(getExistingFile(modLoc("block/chest_right"))).texture("particle",
+                new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(j).getName() + "_planks")).texture("front",
+                    new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_front_left")).texture("side",
+                        new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_side")).texture("top",
+                            new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_top_left")).texture("bottom",
+                                new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_bottom_left")).texture("back",
+                                    new ResourceLocation(EmbellishCraftBOP.MODID, "block/" + BoPWoods.byId(j).getName() + "_fancy_chest_side_right")).texture("lock",
+                                        new ResourceLocation(EmbellishCraftBOP.MODID, "block/air_duct"));
         }
 
-        for(Block block : ECBoPBlocks.TERRACE_CHAIRS)
+        for(int i = 0; i < Arrays.stream(BoPWoods.values()).count(); i++)
         {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            wood = name.replace("_terrace_chair", "");
-            getBuilder(name).parent(getExistingFile(new ResourceLocation("embellishcraft", "block/furniture/terrace_chair"))).texture("material", modLoc("block/" + wood + "_terrace_table")).texture(
-                "particle", modLoc("block/" + wood + "_terrace_table"));
-        }
-
-        for(Block block : ECBoPBlocks.TABLES)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            wood = name.replace("_table", "");
-            getBuilder(name + "_foot").parent(getExistingFile(new ResourceLocation("embellishcraft", "block/furniture/table/table_foot"))).texture("material",
-                new ResourceLocation("biomesoplenty", "block/" + wood + "_planks")).texture("particle", new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
-            getBuilder(name + "_inventory").parent(getExistingFile(new ResourceLocation("embellishcraft", "block/furniture/table/table_inventory"))).texture("material",
-                new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
-            getBuilder(name + "_top").parent(getExistingFile(new ResourceLocation("embellishcraft", "block/furniture/table/table_top"))).texture("material",
-                new ResourceLocation("biomesoplenty", "block/" + wood + "_planks")).texture("particle", new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
-        }
-
-        for(Block block : ECBoPBlocks.TERRACE_TABLES)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            getBuilder(name).parent(getExistingFile(new ResourceLocation("embellishcraft", "block/furniture/terrace_table"))).texture("material", modLoc("block/" + name)).texture("particle",
-                modLoc("block/" + name));
-        }
-
-        for(Block block : ECBoPBlocks.FANCY_TABLES)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            wood = name.replace("_fancy_table", "");
-            getBuilder(name + "_foot").parent(getExistingFile(new ResourceLocation("embellishcraft", "block/furniture/table/fancy/fancy_table_foot"))).texture("side",
-                modLoc("block/" + name + "_side")).texture("top", modLoc("block/" + name + "_top")).texture("particle", new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
-            getBuilder(name + "_inventory").parent(getExistingFile(new ResourceLocation("embellishcraft", "block/furniture/table/fancy/fancy_table_inventory"))).texture("side",
-                modLoc("block/" + name + "_side")).texture("top", modLoc("block/" + name + "_top"));
-            getBuilder(name + "_top").parent(getExistingFile(new ResourceLocation("embellishcraft", "block/furniture/table/fancy/fancy_table_top"))).texture("side",
-                modLoc("block/" + name + "_side")).texture("top", modLoc("block/" + name + "_top")).texture("particle", new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
-        }
-
-        for(Block block : ECBoPBlocks.FANCY_DOORS)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            getBuilder(name + "_bottom").parent(getExistingFile(mcLoc("block/door_bottom"))).texture("bottom", modLoc("block/" + name + "_bottom")).texture("top", modLoc("block/" + name + "_top"));
-            getBuilder(name + "_bottom_hinge").parent(getExistingFile(mcLoc("block/door_bottom_rh"))).texture("bottom", modLoc("block/" + name + "_bottom")).texture("top",
-                modLoc("block/" + name + "_top"));
-            getBuilder(name + "_top").parent(getExistingFile(mcLoc("block/door_top"))).texture("bottom", modLoc("block/" + name + "_bottom")).texture("top", modLoc("block/" + name + "_top"));
-            getBuilder(name + "_top_hinge").parent(getExistingFile(mcLoc("block/door_top_rh"))).texture("bottom", modLoc("block/" + name + "_bottom")).texture("top", modLoc("block/" + name + "_top"));
-        }
-
-        for(Block block : ECBoPBlocks.SUSPENDED_STAIRS)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            wood = name.replace("_suspended_stairs", "");
-            getBuilder(name).parent(getExistingFile(new ResourceLocation("embellishcraft", "block/stairs/base/suspended_stairs"))).texture("all",
-                new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
-        }
-
-        for(Block block : ECBoPBlocks.CRATES)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-            getBuilder(name).parent(getExistingFile(mcLoc("block/cube_all"))).texture("all", modLoc("block/" + name));
-        }
-
-        for(Block block : ECBoPBlocks.FANCY_BEDS)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-
-            String check[] = name.split("_");
-            if(check[0].equals("light"))
+            for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)
             {
-                wood = check[2];
-                if(wood.equals("dark"))
-                    wood = wood + "_" + check[3];
+                buildBed(DyeColor.byId(j).getName(), BoPWoods.byId(i).getName(), "fancy_bed");
             }
-            else
-            {
-                wood = check[1];
-                if(wood.equals("dark"))
-                    wood = wood + "_" + check[2];
-            }
-            getBuilder(name).texture("particle", new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
-        }
-
-        for(Block block : ECBoPBlocks.FANCY_CHESTS)
-        {
-            name = block.getRegistryName().toString().replace("embellishcraft-bop:", "");
-
-            String check[] = name.split("_");
-
-            wood = check[0];
-            if(wood.equals("dark"))
-                wood = wood + "_" + check[1];
-
-            getBuilder(name).texture("particle", new ResourceLocation("biomesoplenty", "block/" + wood + "_planks"));
         }
     }
 }
