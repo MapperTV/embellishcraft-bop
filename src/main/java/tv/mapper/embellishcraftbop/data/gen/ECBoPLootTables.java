@@ -2,9 +2,10 @@ package tv.mapper.embellishcraftbop.data.gen;
 
 import net.minecraft.block.Block;
 import net.minecraft.data.DataGenerator;
+import tv.mapper.embellishcraft.data.gen.ECLootTables;
 import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
 
-public class ECBoPLootTables extends ECBoPLootTableProvider
+public class ECBoPLootTables extends ECLootTables
 {
 
     public ECBoPLootTables(DataGenerator dataGeneratorIn)
