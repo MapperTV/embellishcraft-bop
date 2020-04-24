@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "tables",
+  "group": "fancy_doors",
   "pattern": [
     "PP",
     "PB",
     "PP"
   ],
   "key": {
-    "B": {
-      "item": "biomesoplenty:jacaranda_button"
-    },
     "P": {
       "item": "biomesoplenty:jacaranda_planks"
+    },
+    "B": {
+      "item": "biomesoplenty:jacaranda_button"
     }
   },
   "result": {

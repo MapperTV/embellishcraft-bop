@@ -16,11 +16,12 @@ import net.minecraftforge.registries.ForgeRegistries;
 import tv.mapper.embellishcraft.ECConstants;
 import tv.mapper.embellishcraft.item.FuelBlockItem;
 import tv.mapper.embellishcraft.item.ModItemGroups;
+import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
 import tv.mapper.embellishcraftbop.util.BoPWoods;
 
 public class ECBoPItems
 {
-    private static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, ECConstants.MODID);
+    private static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, EmbellishCraftBOP.MODID);
 
     public static final Map<BoPWoods, RegistryObject<FuelBlockItem>> BOP_CHAIRS_ITEMS = Arrays.stream(BoPWoods.values()).map(type -> Pair.of(type,
         ITEMS.register(type.getName() + "_chair",

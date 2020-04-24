@@ -7,11 +7,11 @@
     "S S"
   ],
   "key": {
-    "S": {
-      "item": "minecraft:stick"
-    },
     "W": {
       "item": "biomesoplenty:jacaranda_slab"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
     }
   },
   "result": {

@@ -1,0 +1,10 @@
+{
+  "parent": "embellishcraft:block/fancy_bed_head",
+  "textures": {
+    "head": "embellishcraft-bop:block/magenta_mahogany_fancy_bed_head",
+    "head_side": "embellishcraft-bop:block/magenta_mahogany_fancy_bed_head_side",
+    "head_end": "embellishcraft-bop:block/mahogany_fancy_bed_head_end",
+    "under": "biomesoplenty:block/mahogany_planks",
+    "particle": "biomesoplenty:block/mahogany_planks"
+  }
+}

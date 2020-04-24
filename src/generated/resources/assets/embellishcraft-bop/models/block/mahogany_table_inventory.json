@@ -1,5 +1,5 @@
 {
-  "parent": "embellishcraft:block/furniture/table/table_inventory",
+  "parent": "embellishcraft:block/table_inventory",
   "textures": {
     "material": "biomesoplenty:block/mahogany_planks"
   }

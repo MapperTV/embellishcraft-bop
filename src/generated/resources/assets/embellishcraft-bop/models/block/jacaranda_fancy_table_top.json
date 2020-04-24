@@ -1,5 +1,5 @@
 {
-  "parent": "embellishcraft:block/furniture/table/fancy/fancy_table_top",
+  "parent": "embellishcraft:block/fancy_table_top",
   "textures": {
     "side": "embellishcraft-bop:block/jacaranda_fancy_table_side",
     "top": "embellishcraft-bop:block/jacaranda_fancy_table_top",

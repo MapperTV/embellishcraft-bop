@@ -51,4 +51,10 @@ public class ECBoPLootTables extends ECLootTables
             lootTables.put(ECBoPBlocks.WILLOW_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), createBedTable(EmbellishCraftBOP.MODID, ECBoPBlocks.WILLOW_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()));
         }
     }
+    
+    @Override
+    public String getName()
+    {
+        return "EmbellishCraft-BOP LootTables";
+    }
 }

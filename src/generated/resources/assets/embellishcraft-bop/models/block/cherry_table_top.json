@@ -1,5 +1,5 @@
 {
-  "parent": "embellishcraft:block/furniture/table/table_top",
+  "parent": "embellishcraft:block/table_top",
   "textures": {
     "material": "biomesoplenty:block/cherry_planks",
     "particle": "biomesoplenty:block/cherry_planks"

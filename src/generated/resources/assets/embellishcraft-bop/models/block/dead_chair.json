@@ -1,7 +1,7 @@
 {
-  "parent": "embellishcraft:block/furniture/chair",
+  "parent": "embellishcraft:block/chair",
   "textures": {
-    "1": "biomesoplenty:block/dead_planks",
+    "material": "biomesoplenty:block/dead_planks",
     "particle": "biomesoplenty:block/dead_planks"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "parent": "embellishcraft:block/fancy_bed_head",
+  "textures": {
+    "head": "embellishcraft-bop:block/black_willow_fancy_bed_head",
+    "head_side": "embellishcraft-bop:block/black_willow_fancy_bed_head_side",
+    "head_end": "embellishcraft-bop:block/willow_fancy_bed_head_end",
+    "under": "biomesoplenty:block/willow_planks",
+    "particle": "biomesoplenty:block/willow_planks"
+  }
+}

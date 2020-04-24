@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "tables",
+  "group": "fancy_doors",
   "pattern": [
     "PP",
     "PB",
     "PP"
   ],
   "key": {
-    "B": {
-      "item": "biomesoplenty:umbran_button"
-    },
     "P": {
       "item": "biomesoplenty:umbran_planks"
+    },
+    "B": {
+      "item": "biomesoplenty:umbran_button"
     }
   },
   "result": {

@@ -1,5 +1,5 @@
 {
-  "parent": "embellishcraft:block/stairs/base/suspended_stairs",
+  "parent": "embellishcraft:block/suspended_stairs",
   "textures": {
     "all": "biomesoplenty:block/willow_planks"
   }

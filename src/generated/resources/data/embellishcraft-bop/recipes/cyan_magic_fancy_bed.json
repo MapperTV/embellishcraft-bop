@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "beds",
+  "group": "fancy_beds",
   "pattern": [
     "P P",
     "WWW",
     "PPP"
   ],
   "key": {
-    "W": {
-      "item": "minecraft:cyan_wool"
-    },
     "P": {
       "item": "biomesoplenty:magic_planks"
+    },
+    "W": {
+      "item": "minecraft:cyan_wool"
     }
   },
   "result": {

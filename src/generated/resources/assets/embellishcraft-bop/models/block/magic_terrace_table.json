@@ -1,5 +1,5 @@
 {
-  "parent": "embellishcraft:block/furniture/terrace_table",
+  "parent": "embellishcraft:block/terrace_table",
   "textures": {
     "material": "embellishcraft-bop:block/magic_terrace_table",
     "particle": "embellishcraft-bop:block/magic_terrace_table"

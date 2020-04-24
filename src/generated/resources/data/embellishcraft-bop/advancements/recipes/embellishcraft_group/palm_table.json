@@ -6,12 +6,12 @@
     ]
   },
   "criteria": {
-    "wood": {
+    "has_palm_slab": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "biomesoplenty:palm_planks"
+            "item": "biomesoplenty:palm_slab"
           }
         ]
       }
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "wood",
+      "has_palm_slab",
       "has_the_recipe"
     ]
   ]

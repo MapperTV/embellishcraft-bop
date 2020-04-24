@@ -1,6 +1,3 @@
 {
-  "parent": "embellishcraft:item/template_chest",
-  "textures": {
-    "particle": "biomesoplenty:block/umbran_planks"
-  }
+  "parent": "embellishcraft-bop:block/umbran_fancy_chest"
 }

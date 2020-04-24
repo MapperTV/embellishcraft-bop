@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "crates",
+  "group": "wooden_crates",
   "pattern": [
-    "BPB",
-    "P P",
-    "BPB"
+    "BWB",
+    "W W",
+    "BWB"
   ],
   "key": {
     "B": {
-      "item": "embellishcraft:bolt"
+      "item": "mapperbase:bolt"
     },
-    "P": {
+    "W": {
       "item": "biomesoplenty:palm_planks"
     }
   },

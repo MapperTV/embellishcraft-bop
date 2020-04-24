@@ -1,7 +1,0 @@
-{
-  "parent": "block/door_bottom_rh",
-  "textures": {
-    "bottom": "embellishcraft-bop:block/ethereal_fancy_door_bottom",
-    "top": "embellishcraft-bop:block/ethereal_fancy_door_top"
-  }
-}

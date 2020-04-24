@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "chairs",
+  "group": "terrace_chairs",
   "pattern": [
     "S  ",
     "SWS",
     "S S"
   ],
   "key": {
-    "S": {
-      "item": "minecraft:stick"
-    },
     "W": {
       "item": "biomesoplenty:willow_pressure_plate"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
     }
   },
   "result": {

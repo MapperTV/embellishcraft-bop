@@ -1,0 +1,12 @@
+{
+  "parent": "embellishcraft:block/chest_left",
+  "textures": {
+    "particle": "biomesoplenty:block/mahogany_planks",
+    "front": "embellishcraft-bop:block/mahogany_fancy_chest_front_right",
+    "side": "embellishcraft-bop:block/mahogany_fancy_chest_side",
+    "top": "embellishcraft-bop:block/mahogany_fancy_chest_top_right",
+    "bottom": "embellishcraft-bop:block/mahogany_fancy_chest_bottom_right",
+    "back": "embellishcraft-bop:block/mahogany_fancy_chest_side_left",
+    "lock": "embellishcraft:block/air_duct"
+  }
+}

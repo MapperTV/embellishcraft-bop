@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "beds",
+  "group": "fancy_beds",
   "pattern": [
     "P P",
     "WWW",
     "PPP"
   ],
   "key": {
-    "W": {
-      "item": "minecraft:orange_wool"
-    },
     "P": {
       "item": "biomesoplenty:mahogany_planks"
+    },
+    "W": {
+      "item": "minecraft:orange_wool"
     }
   },
   "result": {

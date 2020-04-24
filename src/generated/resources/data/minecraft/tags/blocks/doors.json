@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "embellishcraft-bop:cherry_fancy_door",
+    "embellishcraft-bop:dead_fancy_door",
+    "embellishcraft-bop:fir_fancy_door",
+    "embellishcraft-bop:hellbark_fancy_door",
+    "embellishcraft-bop:jacaranda_fancy_door",
+    "embellishcraft-bop:magic_fancy_door",
+    "embellishcraft-bop:mahogany_fancy_door",
+    "embellishcraft-bop:palm_fancy_door",
+    "embellishcraft-bop:redwood_fancy_door",
+    "embellishcraft-bop:umbran_fancy_door",
+    "embellishcraft-bop:willow_fancy_door",
+    "#embellishcraft:wooden_doors"
+  ]
+}

@@ -6,12 +6,12 @@
     ]
   },
   "criteria": {
-    "wood": {
+    "has_dead_slab": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "biomesoplenty:dead_planks"
+            "item": "biomesoplenty:dead_slab"
           }
         ]
       }
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "wood",
+      "has_dead_slab",
       "has_the_recipe"
     ]
   ]

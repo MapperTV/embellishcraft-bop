@@ -16,7 +16,6 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import tv.mapper.embellishcraft.ECConstants;
 import tv.mapper.embellishcraft.block.ChairBlock;
 import tv.mapper.embellishcraft.block.CrateBlock;
 import tv.mapper.embellishcraft.block.CustomBedBlock;
@@ -29,12 +28,13 @@ import tv.mapper.embellishcraft.block.TerraceTableBlock;
 import tv.mapper.embellishcraft.tileentity.ModTileEntityTypes;
 import tv.mapper.embellishcraft.util.CustomChestType;
 import tv.mapper.embellishcraft.util.WoodsType;
+import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
 import tv.mapper.embellishcraftbop.util.BoPWoods;
 import tv.mapper.mapperbase.block.CustomDoorBlock;
 
 public class ECBoPBlocks
 {
-    private static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, ECConstants.MODID);
+    private static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, EmbellishCraftBOP.MODID);
 
     public static final Map<BoPWoods, RegistryObject<ChairBlock>> BOP_CHAIR_BLOCKS = Arrays.stream(BoPWoods.values()).map(type -> Pair.of(type,
         BLOCKS.register(type.getName() + "_chair",

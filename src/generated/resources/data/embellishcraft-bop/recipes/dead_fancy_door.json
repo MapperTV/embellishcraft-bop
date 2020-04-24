@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "tables",
+  "group": "fancy_doors",
   "pattern": [
     "PP",
     "PB",
     "PP"
   ],
   "key": {
-    "B": {
-      "item": "biomesoplenty:dead_button"
-    },
     "P": {
       "item": "biomesoplenty:dead_planks"
+    },
+    "B": {
+      "item": "biomesoplenty:dead_button"
     }
   },
   "result": {

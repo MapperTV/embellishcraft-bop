@@ -8,6 +8,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
+import tv.mapper.embellishcraftbop.init.ECBoPItems;
 
 @Mod(EmbellishCraftBOP.MODID)
 public class EmbellishCraftBOP
@@ -17,20 +19,17 @@ public class EmbellishCraftBOP
 
     public EmbellishCraftBOP()
     {
-        // ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, EmbellishCraftConfig.SERVER_CONFIG);
+        ECBoPBlocks.init();
+        ECBoPItems.init();
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::serverSetup);
-
-        // EmbellishCraftConfig.loadConfig(EmbellishCraftConfig.SERVER_CONFIG, FMLPaths.CONFIGDIR.get().resolve("embellishcraft-server.toml"));
     }
 
     private void setup(final FMLCommonSetupEvent event)
     {
         LOGGER.info("EmbellishCraft-BOP setup");
-
-        // OreGenerator.setupOregen();
     }
 
     private void clientSetup(final FMLClientSetupEvent event)

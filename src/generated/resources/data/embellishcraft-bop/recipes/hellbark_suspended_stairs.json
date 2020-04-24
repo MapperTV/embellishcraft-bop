@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "stairs",
+  "group": "suspended_stairs",
   "pattern": [
     "  P",
-    " PR",
-    "PR "
+    " PS",
+    "PS "
   ],
   "key": {
-    "R": {
-      "tag": "forge:rods/wooden"
-    },
     "P": {
       "item": "biomesoplenty:hellbark_planks"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
     }
   },
   "result": {

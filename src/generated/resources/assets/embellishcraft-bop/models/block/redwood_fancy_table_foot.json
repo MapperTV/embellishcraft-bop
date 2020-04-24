@@ -1,5 +1,5 @@
 {
-  "parent": "embellishcraft:block/furniture/table/fancy/fancy_table_foot",
+  "parent": "embellishcraft:block/fancy_table_foot",
   "textures": {
     "side": "embellishcraft-bop:block/redwood_fancy_table_side",
     "top": "embellishcraft-bop:block/redwood_fancy_table_top",

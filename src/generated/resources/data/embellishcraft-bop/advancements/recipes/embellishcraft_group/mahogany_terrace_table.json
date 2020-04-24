@@ -6,12 +6,12 @@
     ]
   },
   "criteria": {
-    "wood": {
+    "has_mahogany_pressure_plate": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "biomesoplenty:mahogany_planks"
+            "item": "biomesoplenty:mahogany_pressure_plate"
           }
         ]
       }
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "wood",
+      "has_mahogany_pressure_plate",
       "has_the_recipe"
     ]
   ]

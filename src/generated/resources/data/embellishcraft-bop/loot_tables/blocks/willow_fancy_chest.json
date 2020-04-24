@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "willow_fancy_chest",
+      "name": "embellishcraft-bop:willow_fancy_chest",
       "rolls": 1,
       "entries": [
         {

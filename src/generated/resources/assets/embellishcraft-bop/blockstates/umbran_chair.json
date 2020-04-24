@@ -1,17 +1,32 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,waterlogged=false": {
       "model": "embellishcraft-bop:block/umbran_chair",
       "y": 180
     },
-    "facing=south": {
+    "facing=south,waterlogged=false": {
       "model": "embellishcraft-bop:block/umbran_chair"
     },
-    "facing=west": {
+    "facing=west,waterlogged=false": {
       "model": "embellishcraft-bop:block/umbran_chair",
       "y": 90
     },
-    "facing=east": {
+    "facing=east,waterlogged=false": {
+      "model": "embellishcraft-bop:block/umbran_chair",
+      "y": 270
+    },
+    "facing=north,waterlogged=true": {
+      "model": "embellishcraft-bop:block/umbran_chair",
+      "y": 180
+    },
+    "facing=south,waterlogged=true": {
+      "model": "embellishcraft-bop:block/umbran_chair"
+    },
+    "facing=west,waterlogged=true": {
+      "model": "embellishcraft-bop:block/umbran_chair",
+      "y": 90
+    },
+    "facing=east,waterlogged=true": {
       "model": "embellishcraft-bop:block/umbran_chair",
       "y": 270
     }

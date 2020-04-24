@@ -1,0 +1,10 @@
+{
+  "parent": "embellishcraft:block/fancy_bed_foot",
+  "textures": {
+    "foot": "embellishcraft-bop:block/magenta_fir_fancy_bed_foot",
+    "foot_side": "embellishcraft-bop:block/magenta_fir_fancy_bed_foot_side",
+    "foot_end": "embellishcraft-bop:block/fir_fancy_bed_foot_end",
+    "under": "biomesoplenty:block/fir_planks",
+    "particle": "biomesoplenty:block/fir_planks"
+  }
+}

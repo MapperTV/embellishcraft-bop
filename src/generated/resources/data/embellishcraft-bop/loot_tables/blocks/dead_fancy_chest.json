@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "dead_fancy_chest",
+      "name": "embellishcraft-bop:dead_fancy_chest",
       "rolls": 1,
       "entries": [
         {

@@ -1,5 +1,11 @@
 {
+  "parent": "embellishcraft:block/chest",
   "textures": {
-    "particle": "biomesoplenty:block/cherry_planks"
+    "particle": "biomesoplenty:block/cherry_planks",
+    "front": "embellishcraft-bop:block/cherry_fancy_chest_front",
+    "side": "embellishcraft-bop:block/cherry_fancy_chest_side",
+    "top": "embellishcraft-bop:block/cherry_fancy_chest_top",
+    "bottom": "embellishcraft-bop:block/cherry_fancy_chest_bottom",
+    "lock": "embellishcraft:block/air_duct"
   }
 }

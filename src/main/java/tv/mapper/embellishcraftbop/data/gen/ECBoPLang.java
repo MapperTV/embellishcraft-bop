@@ -112,37 +112,37 @@ public class ECBoPLang extends LanguageProvider
     {
         switch(color)
         {
-            case "black":
+            case "Black":
                 return "noir";
-            case "blue":
+            case "Blue":
                 return "bleu";
-            case "brown":
+            case "Brown":
                 return "marron";
-            case "cyan":
+            case "Cyan":
                 return "cyan";
-            case "gray":
+            case "Gray":
                 return "gris";
-            case "light gray":
+            case "Light Gray":
                 return "gris clair";
-            case "light blue":
+            case "Light Blue":
                 return "bleu clair";
-            case "lime":
+            case "Lime":
                 return "vert clair";
-            case "magenta":
+            case "Magenta":
                 return "magenta";
-            case "orange":
+            case "Orange":
                 return "orange";
-            case "purple":
+            case "Purple":
                 return "violet";
-            case "pink":
+            case "Pink":
                 return "rose";
-            case "red":
+            case "Red":
                 return "rouge";
-            case "white":
+            case "White":
                 return "blanc";
-            case "yellow":
+            case "Yellow":
                 return "jaune";
-            case "green":
+            case "Green":
                 return "vert";
             default:
                 return "error";

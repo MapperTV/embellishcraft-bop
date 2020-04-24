@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "wood": {
+    "has_willow_planks": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "wood",
+      "has_willow_planks",
       "has_the_recipe"
     ]
   ]
