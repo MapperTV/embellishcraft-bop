@@ -1,21 +1,21 @@
-modLoader="javafml" #mandatory
+modLoader="javafml"
 loaderVersion="[31,)"
-issueTrackerURL="https://github.com/KillerMapper/embellishcraft/issues" #optional
-logoFile="embellishcraft-bop_logo.png" #optional
-[[mods]] #mandatory
-modId="embellishcraft-bop" #mandatory
-version="${file.jarVersion}" #mandatory
-displayName="EmbellishCraft BoP Addon" #mandatory
+issueTrackerURL="https://github.com/KillerMapper/embellishcraft/issues"
+logoFile="embellishcraft-bop_logo.png"
+[[mods]]
+modId="embellishcraft-bop"
+version="${file.jarVersion}"
+displayName="EmbellishCraft BoP Addon"
 #updateJSONURL="http://myurl.me/" #optional
-displayURL="http://mapper.tv/embellishcraft/" #optional
-credits="Thanks for Forge devs and modders that let their mods open-source." #optional
-authors="Mapper" #optional
+displayURL="http://mapper.tv/embellishcraft/"
+credits="Thanks for Forge devs and modders that let their mods open-source."
+authors="Mapper"
 description='''EmbellishCraft BOP Addon is an Embellishcraft addon that adds Biomes O'Plenty wood variants to EmbellishCraft's furniture.'''
 
-[[dependencies.embellishcraft-bop]] #optional
-    modId="forge" #mandatory
-    mandatory=true #mandatory
-    versionRange="[31,)" #mandatory
+[[dependencies.embellishcraft-bop]]
+    modId="forge"
+    mandatory=true
+    versionRange="[31,)"
     ordering="NONE"
     side="BOTH"
 
@@ -36,6 +36,6 @@ description='''EmbellishCraft BOP Addon is an Embellishcraft addon that adds Bio
 [[dependencies.embellishcraft-bop]]
     modId="embellishcraft"
     mandatory=true
-    versionRange="[1.15.2-2.1.1,)"
+    versionRange="[1.15.2-2.2,)"
     ordering="NONE"
     side="BOTH"

@@ -20,6 +20,7 @@ import tv.mapper.embellishcraft.block.ChairBlock;
 import tv.mapper.embellishcraft.block.CrateBlock;
 import tv.mapper.embellishcraft.block.CustomBedBlock;
 import tv.mapper.embellishcraft.block.CustomChestBlock;
+import tv.mapper.embellishcraft.block.ECBlockRegistry;
 import tv.mapper.embellishcraft.block.FancyTableBlock;
 import tv.mapper.embellishcraft.block.SuspendedStairsBlock;
 import tv.mapper.embellishcraft.block.TableBlock;
@@ -128,5 +129,31 @@ public class ECBoPBlocks
     public static void init()
     {
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+    }
+
+    public static void postInit()
+    {
+        for(int i = 0; i < 11; i++)
+        {
+            ECBlockRegistry.FANCY_CHESTS.add(BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(i)));
+            ECBlockRegistry.CUTOUT_BLOCKS.add(BOP_TERRACE_CHAIR_BLOCKS.get(BoPWoods.byId(i)));
+            ECBlockRegistry.CUTOUT_BLOCKS.add(BOP_TERRACE_TABLE_BLOCKS.get(BoPWoods.byId(i)));
+            ECBlockRegistry.CRATES.add(BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(i)));
+        }
+
+        for(int i = 0; i < Arrays.stream(DyeColor.values()).count(); i++)
+        {
+            ECBlockRegistry.FANCY_BEDS.add(CHERRY_FANCY_BED_BLOCKS.get(DyeColor.byId(i)));
+            ECBlockRegistry.FANCY_BEDS.add(DEAD_FANCY_BED_BLOCKS.get(DyeColor.byId(i)));
+            ECBlockRegistry.FANCY_BEDS.add(FIR_FANCY_BED_BLOCKS.get(DyeColor.byId(i)));
+            ECBlockRegistry.FANCY_BEDS.add(HELLBARK_FANCY_BED_BLOCKS.get(DyeColor.byId(i)));
+            ECBlockRegistry.FANCY_BEDS.add(JACARANDA_FANCY_BED_BLOCKS.get(DyeColor.byId(i)));
+            ECBlockRegistry.FANCY_BEDS.add(MAGIC_FANCY_BED_BLOCKS.get(DyeColor.byId(i)));
+            ECBlockRegistry.FANCY_BEDS.add(MAHOGANY_FANCY_BED_BLOCKS.get(DyeColor.byId(i)));
+            ECBlockRegistry.FANCY_BEDS.add(PALM_FANCY_BED_BLOCKS.get(DyeColor.byId(i)));
+            ECBlockRegistry.FANCY_BEDS.add(REDWOOD_FANCY_BED_BLOCKS.get(DyeColor.byId(i)));
+            ECBlockRegistry.FANCY_BEDS.add(UMBRAN_FANCY_BED_BLOCKS.get(DyeColor.byId(i)));
+            ECBlockRegistry.FANCY_BEDS.add(WILLOW_FANCY_BED_BLOCKS.get(DyeColor.byId(i)));
+        }
     }
 }

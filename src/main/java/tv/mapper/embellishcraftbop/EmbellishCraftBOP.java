@@ -20,6 +20,7 @@ public class EmbellishCraftBOP
     public EmbellishCraftBOP()
     {
         ECBoPBlocks.init();
+        ECBoPBlocks.postInit();
         ECBoPItems.init();
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
