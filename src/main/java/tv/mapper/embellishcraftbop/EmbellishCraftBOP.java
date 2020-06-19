@@ -19,6 +19,8 @@ public class EmbellishCraftBOP
 
     public EmbellishCraftBOP()
     {
+        EmbellishCraftBOP.LOGGER.info("◘ Message 20 ◘");
+
         ECBoPBlocks.init();
         ECBoPBlocks.postInit();
         ECBoPItems.init();

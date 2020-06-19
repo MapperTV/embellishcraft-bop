@@ -35,7 +35,7 @@ import tv.mapper.mapperbase.block.CustomDoorBlock;
 
 public class ECBoPBlocks
 {
-    private static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, EmbellishCraftBOP.MODID);
+    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, EmbellishCraftBOP.MODID);
 
     public static final Map<BoPWoods, RegistryObject<ChairBlock>> BOP_CHAIR_BLOCKS = Arrays.stream(BoPWoods.values()).map(type -> Pair.of(type,
         BLOCKS.register(type.getName() + "_chair",
@@ -128,11 +128,13 @@ public class ECBoPBlocks
 
     public static void init()
     {
+        EmbellishCraftBOP.LOGGER.info("◘ Message 2A ◘");
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
     public static void postInit()
     {
+        EmbellishCraftBOP.LOGGER.info("◘ Message 2B ◘");
         for(int i = 0; i < 11; i++)
         {
             ECBlockRegistry.FANCY_CHESTS.add(BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(i)));

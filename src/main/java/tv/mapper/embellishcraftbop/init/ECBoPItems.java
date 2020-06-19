@@ -21,7 +21,7 @@ import tv.mapper.embellishcraftbop.util.BoPWoods;
 
 public class ECBoPItems
 {
-    private static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, EmbellishCraftBOP.MODID);
+    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, EmbellishCraftBOP.MODID);
 
     public static final Map<BoPWoods, RegistryObject<FuelBlockItem>> BOP_CHAIRS_ITEMS = Arrays.stream(BoPWoods.values()).map(type -> Pair.of(type,
         ITEMS.register(type.getName() + "_chair",
