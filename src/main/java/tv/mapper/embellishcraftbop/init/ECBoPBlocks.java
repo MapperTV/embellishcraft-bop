@@ -67,6 +67,11 @@ public class ECBoPBlocks
             () -> new CustomDoorBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD), ToolType.AXE)))).collect(
                 Collectors.toMap(Pair::getKey, Pair::getValue));
 
+    public static final Map<BoPWoods, RegistryObject<CustomDoorBlock>> BOP_PLAIN_DOOR_BLOCKS = Arrays.stream(BoPWoods.values()).map(type -> Pair.of(type,
+        BLOCKS.register(type.getName() + "_plain_door",
+            () -> new CustomDoorBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD), ToolType.AXE)))).collect(
+                Collectors.toMap(Pair::getKey, Pair::getValue));
+
     public static final Map<BoPWoods, RegistryObject<SuspendedStairsBlock>> BOP_SUSPENDED_STAIRS_BLOCKS = Arrays.stream(BoPWoods.values()).map(type -> Pair.of(type,
         BLOCKS.register(type.getName() + "_suspended_stairs",
             () -> new SuspendedStairsBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD), ToolType.AXE)))).collect(
@@ -128,13 +133,13 @@ public class ECBoPBlocks
 
     public static void init()
     {
-        EmbellishCraftBOP.LOGGER.info("◘ Message 2A ◘");
+        EmbellishCraftBOP.LOGGER.info("2.1- Embellishcraft-BoP: block registering.");
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
 
     public static void postInit()
     {
-        EmbellishCraftBOP.LOGGER.info("◘ Message 2B ◘");
+        EmbellishCraftBOP.LOGGER.info("2.2- Embellishcraft-BoP: block listing.");
         for(int i = 0; i < 11; i++)
         {
             ECBlockRegistry.FANCY_CHESTS.add(BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(i)));

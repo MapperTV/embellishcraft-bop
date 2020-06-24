@@ -40,6 +40,7 @@ public class ECBoPLang extends LanguageProvider
                     addBlock(ECBoPBlocks.BOP_FANCY_TABLE_BLOCKS.get(BoPWoods.byId(j)), name + " Fancy Table");
                     addBlock(ECBoPBlocks.BOP_TERRACE_TABLE_BLOCKS.get(BoPWoods.byId(j)), name + " Terrace Table");
                     addBlock(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)), name + " Fancy Door");
+                    addBlock(ECBoPBlocks.BOP_PLAIN_DOOR_BLOCKS.get(BoPWoods.byId(j)), name + " Plain Door");
                     addBlock(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)), name + " Suspended Stairs");
                     addBlock(ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)), name + " Wooden Crate");
                     addBlock(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)), name + " Fancy Chest");
@@ -76,7 +77,8 @@ public class ECBoPLang extends LanguageProvider
                     addBlock(ECBoPBlocks.BOP_TABLE_BLOCKS.get(BoPWoods.byId(j)), "Table en " + name);
                     addBlock(ECBoPBlocks.BOP_FANCY_TABLE_BLOCKS.get(BoPWoods.byId(j)), "Table massive en " + name);
                     addBlock(ECBoPBlocks.BOP_TERRACE_TABLE_BLOCKS.get(BoPWoods.byId(j)), "Table de terrasse en " + name);
-                    addBlock(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)), "Porte massive en " + name);
+                    addBlock(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)), "Porte ornementale en " + name);
+                    addBlock(ECBoPBlocks.BOP_PLAIN_DOOR_BLOCKS.get(BoPWoods.byId(j)), "Porte massive en " + name);
                     addBlock(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)), "Escaliers suspendus en " + name);
                     addBlock(ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)), "Caisse en " + name);
                     addBlock(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)), "Coffre massif en " + name);

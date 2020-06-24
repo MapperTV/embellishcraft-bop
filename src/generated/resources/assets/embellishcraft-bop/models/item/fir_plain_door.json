@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "embellishcraft-bop:item/fir_plain_door"
+  }
+}

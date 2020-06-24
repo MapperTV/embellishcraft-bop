@@ -29,7 +29,9 @@ public class ECBoPBlockTags extends BlockTagsProvider
             this.getBuilder(ECTags.ForgeBlocks.TABLES).add(ECBoPBlocks.BOP_FANCY_TABLE_BLOCKS.get(BoPWoods.byId(j)).get());
             this.getBuilder(ECTags.ForgeBlocks.TABLES).add(ECBoPBlocks.BOP_TERRACE_TABLE_BLOCKS.get(BoPWoods.byId(j)).get());
             this.getBuilder(ECTags.Blocks.WOODEN_DOORS).add(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)).get());
+            this.getBuilder(ECTags.Blocks.WOODEN_DOORS).add(ECBoPBlocks.BOP_PLAIN_DOOR_BLOCKS.get(BoPWoods.byId(j)).get());
             this.getBuilder(BlockTags.DOORS).add(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)).get());
+            this.getBuilder(BlockTags.DOORS).add(ECBoPBlocks.BOP_PLAIN_DOOR_BLOCKS.get(BoPWoods.byId(j)).get());
             this.getBuilder(ECTags.Blocks.WOODEN_CRATES).add(ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)).get());
             this.getBuilder(Tags.Blocks.CHESTS).add(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get());
             this.getBuilder(Tags.Blocks.CHESTS_WOODEN).add(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get());

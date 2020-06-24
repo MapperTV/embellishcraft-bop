@@ -36,6 +36,8 @@ public class ECBoPBlockStates extends ECBlockStates
                 0);
             doorBlock(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getName() + "_fancy_door_bottom"),
                 new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getName() + "_fancy_door_top"));
+            doorBlock(ECBoPBlocks.BOP_PLAIN_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getName() + "_plain_door_bottom"),
+                new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getName() + "_plain_door_top"));
         }
 
         for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)

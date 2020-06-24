@@ -44,6 +44,8 @@ public class ECBoPRecipes extends RecipeProvider
                 "WWW").patternLine("S S").patternLine("S S").setGroup("fancy_tables").addCriterion("has_" + BoPWoods.byId(j).getName() + "_planks", this.hasItem(ECBoPBlockUtils.bopPlanks[j])).build(consumer);
             ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), 3).key('P', ECBoPBlockUtils.bopPlanks[j]).key('B', ECBoPBlockUtils.bopButtons[j]).patternLine(
                 "PP").patternLine("PB").patternLine("PP").setGroup("fancy_doors").addCriterion("has_" + BoPWoods.byId(j).getName() + "_planks", this.hasItem(ECBoPBlockUtils.bopPlanks[j])).build(consumer);
+            ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.BOP_PLAIN_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), 3).key('P', ECBoPBlockUtils.bopLogs[j]).key('B', ECBoPBlockUtils.bopButtons[j]).patternLine(
+                "PP").patternLine("PB").patternLine("PP").setGroup("plain_doors").addCriterion("has_" + BoPWoods.byId(j).getName() + "_log", this.hasItem(ECBoPBlockUtils.bopLogs[j])).build(consumer);
             ShapedRecipeBuilder.shapedRecipe(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get(), 6).key('P', ECBoPBlockUtils.bopPlanks[j]).key('S', Tags.Items.RODS_WOODEN).patternLine(
                 "  P").patternLine(" PS").patternLine("PS ").setGroup("suspended_stairs").addCriterion("has_" + BoPWoods.byId(j).getName() + "_planks", this.hasItem(ECBoPBlockUtils.bopPlanks[j])).build(
                     consumer);

@@ -27,6 +27,7 @@ public class ECBoPLootTables extends ECLootTables
             lootTables.put(ECBoPBlocks.BOP_TABLE_BLOCKS.get(BoPWoods.byId(j)).get(), createStandardTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_TABLE_BLOCKS.get(BoPWoods.byId(j)).get()));
             lootTables.put(ECBoPBlocks.BOP_FANCY_TABLE_BLOCKS.get(BoPWoods.byId(j)).get(), createStandardTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_FANCY_TABLE_BLOCKS.get(BoPWoods.byId(j)).get()));
             lootTables.put(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), createDoorTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)).get()));
+            lootTables.put(ECBoPBlocks.BOP_PLAIN_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), createDoorTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_PLAIN_DOOR_BLOCKS.get(BoPWoods.byId(j)).get()));
             lootTables.put(ECBoPBlocks.BOP_TERRACE_TABLE_BLOCKS.get(BoPWoods.byId(j)).get(), createStandardTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_TERRACE_TABLE_BLOCKS.get(BoPWoods.byId(j)).get()));
             lootTables.put(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get(),
                 createStandardTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get()));
@@ -51,7 +52,7 @@ public class ECBoPLootTables extends ECLootTables
             lootTables.put(ECBoPBlocks.WILLOW_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), createBedTable(EmbellishCraftBOP.MODID, ECBoPBlocks.WILLOW_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get()));
         }
     }
-    
+
     @Override
     public String getName()
     {

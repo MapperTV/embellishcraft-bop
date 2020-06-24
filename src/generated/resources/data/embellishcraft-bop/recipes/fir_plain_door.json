@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "plain_doors",
+  "pattern": [
+    "PP",
+    "PB",
+    "PP"
+  ],
+  "key": {
+    "P": {
+      "item": "biomesoplenty:fir_log"
+    },
+    "B": {
+      "item": "biomesoplenty:fir_button"
+    }
+  },
+  "result": {
+    "item": "embellishcraft-bop:fir_plain_door",
+    "count": 3
+  }
+}

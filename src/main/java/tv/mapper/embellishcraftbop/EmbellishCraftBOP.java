@@ -19,8 +19,6 @@ public class EmbellishCraftBOP
 
     public EmbellishCraftBOP()
     {
-        EmbellishCraftBOP.LOGGER.info("◘ Message 20 ◘");
-
         ECBoPBlocks.init();
         ECBoPBlocks.postInit();
         ECBoPItems.init();
@@ -32,7 +30,7 @@ public class EmbellishCraftBOP
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        LOGGER.info("EmbellishCraft-BOP setup");
+        LOGGER.info("EmbellishCraft-BOP: setup started");
     }
 
     private void clientSetup(final FMLClientSetupEvent event)

@@ -53,6 +53,11 @@ public class ECBoPItems
             () -> new FuelBlockItem(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(type).get(), new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), ECConstants.doorBurnTime)))).collect(
                 Collectors.toMap(Pair::getKey, Pair::getValue));
 
+    public static final Map<BoPWoods, RegistryObject<FuelBlockItem>> BOP_PLAIN_DOOR_ITEMS = Arrays.stream(BoPWoods.values()).map(type -> Pair.of(type,
+        ITEMS.register(type.getName() + "_plain_door",
+            () -> new FuelBlockItem(ECBoPBlocks.BOP_PLAIN_DOOR_BLOCKS.get(type).get(), new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), ECConstants.doorBurnTime)))).collect(
+                Collectors.toMap(Pair::getKey, Pair::getValue));
+
     public static final Map<BoPWoods, RegistryObject<FuelBlockItem>> BOP_SUSPENDED_STAIRS_ITEMS = Arrays.stream(BoPWoods.values()).map(type -> Pair.of(type,
         ITEMS.register(type.getName() + "_suspended_stairs",
             () -> new FuelBlockItem(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(type).get(), new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), ECConstants.suspendedStairBurnTime)))).collect(
