@@ -32,7 +32,7 @@ public class ECBoPLootTables extends ECLootTables
             lootTables.put(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get(),
                 createStandardTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get()));
             lootTables.put(ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)).get(),
-                createCrateTable(BoPWoods.byId(j).getName() + "_wooden_crate", ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get()));
+                createCrateTable(BoPWoods.byId(j).getName() + "_wooden_crate", ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)).get()));
             lootTables.put(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get(),
                 createChestTable(BoPWoods.byId(j).getName() + "_wooden_chest", ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get()));
         }
