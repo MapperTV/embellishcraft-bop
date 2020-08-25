@@ -1,5 +1,5 @@
 {
-  "parent": "block/door_top",
+  "parent": "minecraft:block/door_top",
   "textures": {
     "bottom": "embellishcraft-bop:block/jacaranda_plain_door_bottom",
     "top": "embellishcraft-bop:block/jacaranda_plain_door_top"

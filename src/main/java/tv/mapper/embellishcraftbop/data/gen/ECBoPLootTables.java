@@ -32,9 +32,9 @@ public class ECBoPLootTables extends ECLootTables
             lootTables.put(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get(),
                 createStandardTable(EmbellishCraftBOP.MODID, ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get()));
             lootTables.put(ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)).get(),
-                createCrateTable(BoPWoods.byId(j).getName() + "_wooden_crate", ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)).get()));
+                createCrateTable(BoPWoods.byId(j).getString() + "_wooden_crate", ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)).get()));
             lootTables.put(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get(),
-                createChestTable(BoPWoods.byId(j).getName() + "_wooden_chest", ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get()));
+                createChestTable(BoPWoods.byId(j).getString() + "_wooden_chest", ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get()));
         }
 
         for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)

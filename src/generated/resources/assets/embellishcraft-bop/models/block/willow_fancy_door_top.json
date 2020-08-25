@@ -1,5 +1,5 @@
 {
-  "parent": "block/door_top",
+  "parent": "minecraft:block/door_top",
   "textures": {
     "bottom": "embellishcraft-bop:block/willow_fancy_door_bottom",
     "top": "embellishcraft-bop:block/willow_fancy_door_top"

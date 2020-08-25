@@ -39,8 +39,10 @@ public class ECBoPGenerators
         generator.addProvider(new ECBoPBlockModels(generator, EmbellishCraftBOP.MODID, helper));
         generator.addProvider(new ECBoPItemModels(generator, EmbellishCraftBOP.MODID, helper));
 
-        generator.addProvider(new ECBoPBlockTags(generator));
-        generator.addProvider(new ECBoPItemTags(generator));
+        ECBoPBlockTags ecBlockTagProvider = new ECBoPBlockTags(generator);
+
+        generator.addProvider(ecBlockTagProvider);
+        generator.addProvider(new ECBoPItemTags(generator, ecBlockTagProvider));
 
         generator.addProvider(new ECBoPLang(generator, "en_us"));
         generator.addProvider(new ECBoPLang(generator, "fr_fr"));

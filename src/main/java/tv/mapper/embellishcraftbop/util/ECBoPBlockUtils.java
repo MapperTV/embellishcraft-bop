@@ -5,7 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
-import net.minecraft.tags.Tag;
+import net.minecraft.tags.ITag.INamedTag;
 import net.minecraftforge.common.Tags;
 import tv.mapper.embellishcraft.util.WoodsType;
 import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
@@ -88,7 +88,7 @@ public class ECBoPBlockUtils
         }
     }
 
-    public static Tag<Item> getDyeTagFromColor(DyeColor color)
+    public static INamedTag<Item> getDyeTagFromColor(DyeColor color)
     {
         switch(color)
         {

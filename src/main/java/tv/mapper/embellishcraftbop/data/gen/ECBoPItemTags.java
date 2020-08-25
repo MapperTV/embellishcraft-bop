@@ -10,9 +10,9 @@ import tv.mapper.embellishcraft.data.ECTags;
 public class ECBoPItemTags extends ItemTagsProvider
 {
 
-    public ECBoPItemTags(DataGenerator generatorIn)
+    public ECBoPItemTags(DataGenerator generatorIn, ECBoPBlockTags provider)
     {
-        super(generatorIn);
+        super(generatorIn, provider);
     }
 
     public void registerTags()

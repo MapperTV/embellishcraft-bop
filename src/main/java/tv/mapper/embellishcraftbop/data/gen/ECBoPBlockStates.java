@@ -23,21 +23,20 @@ public class ECBoPBlockStates extends ECBlockStates
     {
         for(int j = 0; j < Arrays.stream(BoPWoods.values()).count(); j++)
         {
-            horizontalBlock(ECBoPBlocks.BOP_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get(), new UncheckedModelFile(mod_id + ":block/" + BoPWoods.byId(j).getName() + "_chair"), 0);
-            horizontalBlock(ECBoPBlocks.BOP_TERRACE_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get(), new UncheckedModelFile(mod_id + ":block/" + BoPWoods.byId(j).getName() + "_terrace_chair"), 0);
+            horizontalBlock(ECBoPBlocks.BOP_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get(), new UncheckedModelFile(mod_id + ":block/" + BoPWoods.byId(j).getString() + "_chair"), 0);
+            horizontalBlock(ECBoPBlocks.BOP_TERRACE_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get(), new UncheckedModelFile(mod_id + ":block/" + BoPWoods.byId(j).getString() + "_terrace_chair"), 0);
             tableBlock(ECBoPBlocks.BOP_TABLE_BLOCKS.get(BoPWoods.byId(j)).get());
             tableBlock(ECBoPBlocks.BOP_FANCY_TABLE_BLOCKS.get(BoPWoods.byId(j)).get());
             simpleBlock(ECBoPBlocks.BOP_TERRACE_TABLE_BLOCKS.get(BoPWoods.byId(j)).get());
             simpleBlock(ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)).get());
             // getVariantBuilder(ECBoPBlocks.FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get()).partialState().setModels(
-            // new ConfiguredModel(new UncheckedModelFile(mod_id + ":model/" + BoPWoods.byId(j).getName() + "_fancy_chest")));
+            // new ConfiguredModel(new UncheckedModelFile(mod_id + ":model/" + BoPWoods.byId(j).getString() + "_fancy_chest")));
             chestBlock(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get(), 0);
-            horizontalBlock(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get(), new UncheckedModelFile(mod_id + ":block/" + BoPWoods.byId(j).getName() + "_suspended_stairs"),
-                0);
-            doorBlock(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getName() + "_fancy_door_bottom"),
-                new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getName() + "_fancy_door_top"));
-            doorBlock(ECBoPBlocks.BOP_PLAIN_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getName() + "_plain_door_bottom"),
-                new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getName() + "_plain_door_top"));
+            horizontalBlock(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get(), new UncheckedModelFile(mod_id + ":block/" + BoPWoods.byId(j).getString() + "_suspended_stairs"), 0);
+            doorBlock(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getString() + "_fancy_door_bottom"),
+                new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getString() + "_fancy_door_top"));
+            doorBlock(ECBoPBlocks.BOP_PLAIN_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getString() + "_plain_door_bottom"),
+                new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getString() + "_plain_door_top"));
         }
 
         for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)

@@ -38,12 +38,12 @@ public enum BoPWoods implements IStringSerializable
     }
 
     @Override
-    public String getName()
+    public String getString()
     {
         return name;
     }
 
-    public String getName(String lang)
+    public String getString(String lang)
     {
         return lang.equals("fr_fr") ? this.fr_fr : this.en_us;
     }
@@ -68,7 +68,7 @@ public enum BoPWoods implements IStringSerializable
         for(BoPWoods wood : values())
         {
             if(wood.getId() == id)
-                return wood.getName();
+                return wood.getString();
         }
         return null;
     }

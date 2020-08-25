@@ -32,7 +32,7 @@ public class ECBoPLang extends LanguageProvider
             case "en_us":
                 for(int j = 0; j < Arrays.stream(BoPWoods.values()).count(); j++)
                 {
-                    name = BoPWoods.byId(j).getName("en_us");
+                    name = BoPWoods.byId(j).getString("en_us");
 
                     addBlock(ECBoPBlocks.BOP_CHAIR_BLOCKS.get(BoPWoods.byId(j)), name + " Chair");
                     addBlock(ECBoPBlocks.BOP_TERRACE_CHAIR_BLOCKS.get(BoPWoods.byId(j)), name + " Terrace Chair");
@@ -48,7 +48,7 @@ public class ECBoPLang extends LanguageProvider
 
                 for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)
                 {
-                    String raw[] = DyeColor.byId(j).getName().split("_");
+                    String raw[] = DyeColor.byId(j).getString().split("_");
                     if(raw[0].equals("light"))
                         color = StringUtils.capitalise(raw[0]) + " " + StringUtils.capitalise(raw[1]);
                     else
@@ -70,7 +70,7 @@ public class ECBoPLang extends LanguageProvider
             case "fr_fr":
                 for(int j = 0; j < Arrays.stream(BoPWoods.values()).count(); j++)
                 {
-                    name = BoPWoods.byId(j).getName("fr_fr");
+                    name = BoPWoods.byId(j).getString("fr_fr");
 
                     addBlock(ECBoPBlocks.BOP_CHAIR_BLOCKS.get(BoPWoods.byId(j)), "Chaise en " + name);
                     addBlock(ECBoPBlocks.BOP_TERRACE_CHAIR_BLOCKS.get(BoPWoods.byId(j)), "Chaise de terrasse en " + name);
@@ -86,7 +86,7 @@ public class ECBoPLang extends LanguageProvider
 
                 for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)
                 {
-                    String raw[] = DyeColor.byId(j).getName().split("_");
+                    String raw[] = DyeColor.byId(j).getString().split("_");
                     if(raw[0].equals("light"))
                         name = StringUtils.capitalise(raw[0]) + " " + StringUtils.capitalise(raw[1]);
                     else

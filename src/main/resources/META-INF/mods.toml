@@ -1,13 +1,14 @@
 modLoader="javafml"
 loaderVersion="[32,)"
-issueTrackerURL="https://github.com/KillerMapper/embellishcraft/issues"
-logoFile="embellishcraft-bop_logo.png"
+license="MIT License"
+issueTrackerURL="https://github.com/MapperTV/embellishcraft-bop/issues"
 [[mods]]
 modId="embellishcraft-bop"
 version="${file.jarVersion}"
 displayName="EmbellishCraft BoP Addon"
 #updateJSONURL="http://myurl.me/" #optional
 displayURL="http://mapper.tv/embellishcraft/"
+logoFile="embellishcraft-bop_logo.png"
 credits="Thanks for Forge devs and modders that let their mods open-source."
 authors="Mapper"
 description='''EmbellishCraft BOP Addon is an Embellishcraft addon that adds Biomes O'Plenty wood variants to EmbellishCraft's furniture.'''
@@ -29,7 +30,7 @@ description='''EmbellishCraft BOP Addon is an Embellishcraft addon that adds Bio
 [[dependencies.embellishcraft]]
     modId="mapperbase"
     mandatory=true
-    versionRange="[1.16.1-2.0,)"
+    versionRange="[1.16.1-2.0.,)"
     ordering="AFTER"
     side="BOTH"
     
