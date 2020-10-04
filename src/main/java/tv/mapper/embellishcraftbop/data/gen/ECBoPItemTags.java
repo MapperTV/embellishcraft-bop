@@ -5,14 +5,16 @@ import net.minecraft.data.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import tv.mapper.embellishcraft.data.ECTags;
+import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
 
 public class ECBoPItemTags extends ItemTagsProvider
 {
 
-    public ECBoPItemTags(DataGenerator generatorIn, ECBoPBlockTags provider)
+    public ECBoPItemTags(DataGenerator generatorIn, ECBoPBlockTags provider, ExistingFileHelper existingFileHelper)
     {
-        super(generatorIn, provider);
+        super(generatorIn, provider, EmbellishCraftBOP.MODID, existingFileHelper);
     }
 
     public void registerTags()

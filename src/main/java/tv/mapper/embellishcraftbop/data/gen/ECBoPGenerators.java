@@ -5,7 +5,7 @@ import java.util.Collections;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourcePackType;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.model.generators.ExistingFileHelper;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
@@ -39,10 +39,10 @@ public class ECBoPGenerators
         generator.addProvider(new ECBoPBlockModels(generator, EmbellishCraftBOP.MODID, helper));
         generator.addProvider(new ECBoPItemModels(generator, EmbellishCraftBOP.MODID, helper));
 
-        ECBoPBlockTags ecBlockTagProvider = new ECBoPBlockTags(generator);
+        ECBoPBlockTags ecBlockTagProvider = new ECBoPBlockTags(generator, helper);
 
         generator.addProvider(ecBlockTagProvider);
-        generator.addProvider(new ECBoPItemTags(generator, ecBlockTagProvider));
+        generator.addProvider(new ECBoPItemTags(generator, ecBlockTagProvider, helper));
 
         generator.addProvider(new ECBoPLang(generator, "en_us"));
         generator.addProvider(new ECBoPLang(generator, "fr_fr"));

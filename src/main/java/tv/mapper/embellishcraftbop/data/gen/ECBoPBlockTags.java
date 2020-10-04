@@ -7,16 +7,18 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.item.DyeColor;
 import net.minecraft.tags.BlockTags;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import tv.mapper.embellishcraft.data.ECTags;
+import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
 import tv.mapper.embellishcraftbop.init.ECBoPBlocks;
 import tv.mapper.embellishcraftbop.util.BoPWoods;
 
 public class ECBoPBlockTags extends BlockTagsProvider
 {
 
-    public ECBoPBlockTags(DataGenerator generatorIn)
+    public ECBoPBlockTags(DataGenerator generatorIn, ExistingFileHelper existingFileHelper)
     {
-        super(generatorIn);
+        super(generatorIn, EmbellishCraftBOP.MODID, existingFileHelper);
     }
 
     public void registerTags()
