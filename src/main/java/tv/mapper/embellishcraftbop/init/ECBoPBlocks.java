@@ -28,6 +28,7 @@ import tv.mapper.embellishcraft.block.TerraceChairBlock;
 import tv.mapper.embellishcraft.block.TerraceTableBlock;
 import tv.mapper.embellishcraft.tileentity.ModTileEntityTypes;
 import tv.mapper.embellishcraft.util.CustomChestType;
+import tv.mapper.embellishcraft.util.McWoods;
 import tv.mapper.embellishcraft.util.WoodsType;
 import tv.mapper.embellishcraftbop.EmbellishCraftBOP;
 import tv.mapper.embellishcraftbop.util.BoPWoods;
@@ -131,7 +132,7 @@ public class ECBoPBlocks
         BLOCKS.register(type.getString() + "_fancy_chest", () -> new CustomChestBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.5F).sound(SoundType.WOOD), () ->
         {
             return ModTileEntityTypes.CUSTOM_CHEST;
-        }, CustomChestType.OAK_FANCY, WoodsType.byId(type.getId() + 6))))).collect(Collectors.toMap(Pair::getKey, Pair::getValue));
+        }, CustomChestType.OAK_FANCY, WoodsType.byId(type.getId() + McWoods.values().length))))).collect(Collectors.toMap(Pair::getKey, Pair::getValue));
 
     public static void init()
     {
@@ -142,7 +143,7 @@ public class ECBoPBlocks
     public static void postInit()
     {
         EmbellishCraftBOP.LOGGER.info("2.2- Embellishcraft-BoP: block listing.");
-        for(int i = 0; i < 11; i++)
+        for(int i = 0; i < BoPWoods.values().length; i++)
         {
             ECBlockRegistry.FANCY_CHESTS.add(BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(i)));
             ECBlockRegistry.CUTOUT_BLOCKS.add(BOP_TERRACE_CHAIR_BLOCKS.get(BoPWoods.byId(i)));
@@ -150,7 +151,7 @@ public class ECBoPBlocks
             ECBlockRegistry.CRATES.add(BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(i)));
         }
 
-        for(int i = 0; i < Arrays.stream(DyeColor.values()).count(); i++)
+        for(int i = 0; i < DyeColor.values().length; i++)
         {
             ECBlockRegistry.FANCY_BEDS.add(CHERRY_FANCY_BED_BLOCKS.get(DyeColor.byId(i)));
             ECBlockRegistry.FANCY_BEDS.add(DEAD_FANCY_BED_BLOCKS.get(DyeColor.byId(i)));

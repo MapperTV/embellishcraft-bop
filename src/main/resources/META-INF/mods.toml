@@ -30,7 +30,7 @@ description='''EmbellishCraft BOP Addon is an Embellishcraft addon that adds Bio
 [[dependencies.embellishcraft]]
     modId="mapperbase"
     mandatory=true
-    versionRange="[1.16.3-2.1.,)"
+    versionRange="[1.16.3-2.2.,)"
     ordering="AFTER"
     side="BOTH"
     
