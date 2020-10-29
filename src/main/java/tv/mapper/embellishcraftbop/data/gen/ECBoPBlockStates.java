@@ -1,7 +1,5 @@
 package tv.mapper.embellishcraftbop.data.gen;
 
-import java.util.Arrays;
-
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.DyeColor;
 import net.minecraft.util.ResourceLocation;
@@ -21,7 +19,7 @@ public class ECBoPBlockStates extends ECBlockStates
     @Override
     protected void registerStatesAndModels()
     {
-        for(int j = 0; j < Arrays.stream(BoPWoods.values()).count(); j++)
+        for(int j = 0; j < BoPWoods.values().length; j++)
         {
             horizontalBlock(ECBoPBlocks.BOP_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get(), new UncheckedModelFile(mod_id + ":block/" + BoPWoods.byId(j).getString() + "_chair"), 0);
             horizontalBlock(ECBoPBlocks.BOP_TERRACE_CHAIR_BLOCKS.get(BoPWoods.byId(j)).get(), new UncheckedModelFile(mod_id + ":block/" + BoPWoods.byId(j).getString() + "_terrace_chair"), 0);
@@ -39,7 +37,7 @@ public class ECBoPBlockStates extends ECBlockStates
                 new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getString() + "_plain_door_top"));
         }
 
-        for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)
+        for(int j = 0; j < DyeColor.values().length; j++)
         {
             bedBlock(ECBoPBlocks.CHERRY_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), 180);
             bedBlock(ECBoPBlocks.DEAD_FANCY_BED_BLOCKS.get(DyeColor.byId(j)).get(), 180);

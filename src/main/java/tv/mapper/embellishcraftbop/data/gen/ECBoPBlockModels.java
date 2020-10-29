@@ -1,7 +1,5 @@
 package tv.mapper.embellishcraftbop.data.gen;
 
-import java.util.Arrays;
-
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.DyeColor;
 import net.minecraft.util.ResourceLocation;
@@ -27,7 +25,7 @@ public class ECBoPBlockModels extends ECBlockModels
     @Override
     protected void registerModels()
     {
-        for(int i = 0; i < Arrays.stream(BoPWoods.values()).count(); i++)
+        for(int i = 0; i < BoPWoods.values().length; i++)
         {
             getBuilder(BoPWoods.byId(i).getString() + "_chair").parent(getExistingFile(new ResourceLocation("embellishcraft", "block/chair"))).texture("material",
                 new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(i).getString() + "_planks")).texture("particle",
@@ -85,8 +83,9 @@ public class ECBoPBlockModels extends ECBlockModels
                             new ResourceLocation(modid, "block/" + BoPWoods.byId(i).getString() + "_fancy_chest_top_left")).texture("bottom",
                                 new ResourceLocation(modid, "block/" + BoPWoods.byId(i).getString() + "_fancy_chest_bottom_left")).texture("back",
                                     new ResourceLocation(modid, "block/" + BoPWoods.byId(i).getString() + "_fancy_chest_side_right")).texture("lock", new ResourceLocation(ECConstants.MODID, "block/air_duct"));
+            cubeColumn(BoPWoods.byId(i).getString() + "_wooden_crate", modLoc("block/" + BoPWoods.byId(i).getString() + "_wooden_crate"), modLoc("block/" + BoPWoods.byId(i).getString() + "_wooden_crate_top"));
 
-            for(int j = 0; j < Arrays.stream(DyeColor.values()).count(); j++)
+            for(int j = 0; j < DyeColor.values().length; j++)
             {
                 buildBed(DyeColor.byId(j).getString(), BoPWoods.byId(i).getString(), "fancy_bed", "biomesoplenty");
             }
