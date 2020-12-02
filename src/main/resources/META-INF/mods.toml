@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[34,)"
+loaderVersion="[35,)"
 license="MIT License"
 issueTrackerURL="https://github.com/MapperTV/embellishcraft-bop/issues"
 [[mods]]
@@ -16,34 +16,34 @@ description='''EmbellishCraft BOP Addon is an Embellishcraft addon that adds Bio
 [[dependencies.embellishcraft-bop]]
     modId="forge"
     mandatory=true
-    versionRange="[34.1.34,)"
+    versionRange="[35.1.4,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.embellishcraft-bop]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.3]"
+    versionRange="[1.16.4]"
     ordering="NONE"
     side="BOTH"
     
 [[dependencies.embellishcraft]]
     modId="mapperbase"
     mandatory=true
-    versionRange="[1.16.3-2.2.,)"
+    versionRange="[1.16.4-2.3.,)"
     ordering="AFTER"
     side="BOTH"
     
 [[dependencies.embellishcraft-bop]]
     modId="biomesoplenty"
     mandatory=true
-    versionRange="[1.16.3-12.0.0.414,)"
+    versionRange="[1.16.4-13.0.0.418,)"
     ordering="AFTER"
     side="BOTH"
     
 [[dependencies.embellishcraft-bop]]
     modId="embellishcraft"
     mandatory=true
-    versionRange="[1.16.3-3.1,)"
+    versionRange="[1.16.4-3.2,)"
     ordering="AFTER"
     side="BOTH"
