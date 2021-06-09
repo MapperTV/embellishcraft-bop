@@ -89,14 +89,14 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
-    compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${jei_mc_version}:${jei_version}:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-${jei_mc_version}:${jei_version}")
     
     implementation(fg.deobf("curse.maven:biomes-o-plenty:${bop_version}"))
     implementation(fg.deobf("curse.maven:biomes-o-plenty-source:${bop_sources_version}"))
 
-    deobf files("dep/mapperbase-${mc_version}-${base_version}-deobf.jar")
-    deobf files("dep/embellishcraft-${mc_version}-${ec_version}-deobf.jar")
+    deobf files("dep/mapperbase-${base_mc_version}-${base_version}-deobf.jar")
+    deobf files("dep/embellishcraft-${ec_mc_version}-${ec_version}-deobf.jar")
     
 }
 
