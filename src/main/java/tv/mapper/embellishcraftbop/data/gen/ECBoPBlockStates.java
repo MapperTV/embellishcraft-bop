@@ -31,6 +31,7 @@ public class ECBoPBlockStates extends ECBlockStates
             // new ConfiguredModel(new UncheckedModelFile(mod_id + ":model/" + BoPWoods.byId(j).getString() + "_fancy_chest")));
             chestBlock(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get(), 0);
             horizontalBlock(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get(), new UncheckedModelFile(mod_id + ":block/" + BoPWoods.byId(j).getString() + "_suspended_stairs"), 0);
+            horizontalBlock(ECBoPBlocks.BOP_LARGE_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get(), new UncheckedModelFile(mod_id + ":block/" + BoPWoods.byId(j).getString() + "_large_suspended_stairs"), 0);
             doorBlock(ECBoPBlocks.BOP_FANCY_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getString() + "_fancy_door_bottom"),
                 new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getString() + "_fancy_door_top"));
             doorBlock(ECBoPBlocks.BOP_PLAIN_DOOR_BLOCKS.get(BoPWoods.byId(j)).get(), new ResourceLocation(mod_id, "block/" + BoPWoods.byId(j).getString() + "_plain_door_bottom"),

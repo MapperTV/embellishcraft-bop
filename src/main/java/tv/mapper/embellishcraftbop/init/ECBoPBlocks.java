@@ -74,9 +74,14 @@ public class ECBoPBlocks
                 Collectors.toMap(Pair::getKey, Pair::getValue));
 
     public static final Map<BoPWoods, RegistryObject<SuspendedStairsBlock>> BOP_SUSPENDED_STAIRS_BLOCKS = Arrays.stream(BoPWoods.values()).map(type -> Pair.of(type,
-        BLOCKS.register(type.getString() + "_suspended_stairs",
-            () -> new SuspendedStairsBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD), ToolType.AXE)))).collect(
-                Collectors.toMap(Pair::getKey, Pair::getValue));
+            BLOCKS.register(type.getString() + "_suspended_stairs",
+                () -> new SuspendedStairsBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD), ToolType.AXE, false)))).collect(
+                    Collectors.toMap(Pair::getKey, Pair::getValue));
+    
+    public static final Map<BoPWoods, RegistryObject<SuspendedStairsBlock>> BOP_LARGE_SUSPENDED_STAIRS_BLOCKS = Arrays.stream(BoPWoods.values()).map(type -> Pair.of(type,
+            BLOCKS.register(type.getString() + "_large_suspended_stairs",
+                () -> new SuspendedStairsBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(3.0F).sound(SoundType.WOOD), ToolType.AXE, true)))).collect(
+                    Collectors.toMap(Pair::getKey, Pair::getValue));
 
     public static final Map<BoPWoods, RegistryObject<CrateBlock>> BOP_WOODEN_CRATE_BLOCKS = Arrays.stream(BoPWoods.values()).map(type -> Pair.of(type,
         BLOCKS.register(type.getString() + "_wooden_crate", () -> new CrateBlock(Block.Properties.create(Material.WOOD, MaterialColor.WOOD).hardnessAndResistance(2.5F).sound(SoundType.WOOD))))).collect(

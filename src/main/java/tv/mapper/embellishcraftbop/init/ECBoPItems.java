@@ -62,6 +62,11 @@ public class ECBoPItems
         ITEMS.register(type.getString() + "_suspended_stairs",
             () -> new FuelBlockItem(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(type).get(), new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), ECConstants.suspendedStairBurnTime)))).collect(
                 Collectors.toMap(Pair::getKey, Pair::getValue));
+    
+    public static final Map<BoPWoods, RegistryObject<FuelBlockItem>> BOP_LARGE_SUSPENDED_STAIRS_ITEMS = Arrays.stream(BoPWoods.values()).map(type -> Pair.of(type,
+            ITEMS.register(type.getString() + "_large_suspended_stairs",
+                () -> new FuelBlockItem(ECBoPBlocks.BOP_LARGE_SUSPENDED_STAIRS_BLOCKS.get(type).get(), new Item.Properties().group(ModItemGroups.EMBELLISHCRAFT), ECConstants.largeSuspendedStairBurnTime)))).collect(
+                    Collectors.toMap(Pair::getKey, Pair::getValue));
 
     public static final Map<BoPWoods, RegistryObject<BlockItem>> BOP_WOODEN_CRATE_ITEMS = Arrays.stream(BoPWoods.values()).map(type -> Pair.of(type,
         ITEMS.register(type.getString() + "_wooden_crate",

@@ -2,7 +2,7 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "embellishcraft-bop:hellbark_fancy_chest",
+      "name": "hellbark_fancy_chest",
       "rolls": 1,
       "entries": [
         {

@@ -8,7 +8,7 @@
   ],
   "key": {
     "P": {
-      "item": "biomesoplenty:umbran_planks"
+      "item": "biomesoplenty:umbran_slab"
     },
     "S": {
       "tag": "forge:rods/wooden"
@@ -16,6 +16,6 @@
   },
   "result": {
     "item": "embellishcraft-bop:umbran_suspended_stairs",
-    "count": 6
+    "count": 4
   }
 }

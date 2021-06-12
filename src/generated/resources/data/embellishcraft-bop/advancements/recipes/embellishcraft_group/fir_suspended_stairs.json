@@ -6,12 +6,12 @@
     ]
   },
   "criteria": {
-    "has_fir_planks": {
+    "has_fir_slabs": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "biomesoplenty:fir_planks"
+            "item": "biomesoplenty:fir_slab"
           }
         ]
       }
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "has_fir_planks",
+      "has_fir_slabs",
       "has_the_recipe"
     ]
   ]

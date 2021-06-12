@@ -58,7 +58,7 @@ minecraft {
             property 'forge.logging.markers', ''
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'embellishcraft-bop', '--all', '--output', file('src/generated/resources/'), '--existing', sourceSets.main.resources.srcDirs[0], '--input', file('src/main/resources')
+            args '--mod', 'embellishcraft-bop', '--all', '--output', file('src/generated/resources/'), '--existing', sourceSets.main.resources.srcDirs[0], '--existing-mod', 'mapperbase', '--existing-mod', 'embellishcraft', '--existing-mod', 'biomesoplenty', '--input', file('src/main/resources')
             source sourceSets.main
         }
     }

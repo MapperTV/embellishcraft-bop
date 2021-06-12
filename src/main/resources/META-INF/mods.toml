@@ -16,34 +16,34 @@ description='''EmbellishCraft BOP Addon is an Embellishcraft addon that adds Bio
 [[dependencies.embellishcraft-bop]]
     modId="forge"
     mandatory=true
-    versionRange="[35.1.4,)"
+    versionRange="[36.1.0,)"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.embellishcraft-bop]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.4]"
+    versionRange="[1.16.5]"
     ordering="NONE"
     side="BOTH"
     
 [[dependencies.embellishcraft]]
     modId="mapperbase"
     mandatory=true
-    versionRange="[1.16.4-2.3.,)"
+    versionRange="[1.16.5-2.4.,)"
     ordering="AFTER"
     side="BOTH"
     
 [[dependencies.embellishcraft-bop]]
     modId="biomesoplenty"
     mandatory=true
-    versionRange="[1.16.4-13.0.0.418,)"
+    versionRange="[1.16.5-13.1.0.471,)"
     ordering="AFTER"
     side="BOTH"
     
 [[dependencies.embellishcraft-bop]]
     modId="embellishcraft"
     mandatory=true
-    versionRange="[1.16.4-3.2,)"
+    versionRange="[1.16.5-3.4,)"
     ordering="AFTER"
     side="BOTH"

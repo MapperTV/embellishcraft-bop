@@ -8,7 +8,7 @@
   ],
   "key": {
     "P": {
-      "item": "biomesoplenty:fir_planks"
+      "item": "biomesoplenty:fir_slab"
     },
     "S": {
       "tag": "forge:rods/wooden"
@@ -16,6 +16,6 @@
   },
   "result": {
     "item": "embellishcraft-bop:fir_suspended_stairs",
-    "count": 6
+    "count": 4
   }
 }

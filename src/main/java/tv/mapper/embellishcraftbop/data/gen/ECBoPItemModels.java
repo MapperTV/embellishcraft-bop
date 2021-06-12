@@ -33,6 +33,7 @@ public class ECBoPItemModels extends ItemModelProvider
             getBuilder(BoPWoods.byId(j).getString() + "_table").parent(new UncheckedModelFile(modid + ":block/" + BoPWoods.byId(j).getString() + "_table_inventory"));
             getBuilder(BoPWoods.byId(j).getString() + "_fancy_table").parent(new UncheckedModelFile(modid + ":block/" + BoPWoods.byId(j).getString() + "_fancy_table_inventory"));
             getBuilder(BoPWoods.byId(j).getString() + "_suspended_stairs").parent(new UncheckedModelFile(modid + ":block/" + BoPWoods.byId(j).getString() + "_suspended_stairs"));
+            getBuilder(BoPWoods.byId(j).getString() + "_large_suspended_stairs").parent(new UncheckedModelFile(modid + ":block/" + BoPWoods.byId(j).getString() + "_large_suspended_stairs"));
             getBuilder(BoPWoods.byId(j).getString() + "_fancy_door").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/" + BoPWoods.byId(j).getString() + "_fancy_door"));
             getBuilder(BoPWoods.byId(j).getString() + "_plain_door").parent(new UncheckedModelFile("item/generated")).texture("layer0", modLoc("item/" + BoPWoods.byId(j).getString() + "_plain_door"));
             getBuilder(BoPWoods.byId(j).getString() + "_wooden_crate").parent(new UncheckedModelFile(modid + ":block/" + BoPWoods.byId(j).getString() + "_wooden_crate"));

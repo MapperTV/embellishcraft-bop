@@ -59,7 +59,9 @@ public class ECBoPBlockModels extends ECBlockModels
                         new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(i).getString() + "_planks"));
 
             getBuilder(BoPWoods.byId(i).getString() + "_suspended_stairs").parent(getExistingFile(new ResourceLocation("embellishcraft", "block/suspended_stairs"))).texture("all",
-                new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(i).getString() + "_planks"));
+                    new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(i).getString() + "_planks"));
+            getBuilder(BoPWoods.byId(i).getString() + "_large_suspended_stairs").parent(getExistingFile(new ResourceLocation("embellishcraft", "block/large_suspended_stairs"))).texture("all",
+                    new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(i).getString() + "_planks"));
 
             // getBuilder(BoPWoods.byId(j).getString() + "_fancy_chest").texture("particle", new ResourceLocation("biomesoplenty", "block/" + BoPWoods.byId(j).getString() + "_planks"));
             getBuilder(BoPWoods.byId(i).getString() + "_fancy_chest").parent(getExistingFile(new ResourceLocation("embellishcraft", "block/chest"))).texture("particle",

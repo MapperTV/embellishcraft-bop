@@ -37,6 +37,8 @@ public class ECBoPBlockTags extends BlockTagsProvider
             this.getOrCreateBuilder(ECTags.Blocks.WOODEN_CRATES).add(ECBoPBlocks.BOP_WOODEN_CRATE_BLOCKS.get(BoPWoods.byId(j)).get());
             this.getOrCreateBuilder(Tags.Blocks.CHESTS).add(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get());
             this.getOrCreateBuilder(Tags.Blocks.CHESTS_WOODEN).add(ECBoPBlocks.BOP_FANCY_CHEST_BLOCKS.get(BoPWoods.byId(j)).get());
+            this.getOrCreateBuilder(ECTags.Blocks.SUSPENDED_STAIRS).add(ECBoPBlocks.BOP_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get());
+            this.getOrCreateBuilder(ECTags.Blocks.SUSPENDED_STAIRS).add(ECBoPBlocks.BOP_LARGE_SUSPENDED_STAIRS_BLOCKS.get(BoPWoods.byId(j)).get());
         }
 
         for(int i = 0; i < Arrays.stream(DyeColor.values()).count(); i++)

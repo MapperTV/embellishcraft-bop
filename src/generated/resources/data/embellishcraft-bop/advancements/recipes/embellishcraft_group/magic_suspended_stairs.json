@@ -6,12 +6,12 @@
     ]
   },
   "criteria": {
-    "has_magic_planks": {
+    "has_magic_slabs": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "biomesoplenty:magic_planks"
+            "item": "biomesoplenty:magic_slab"
           }
         ]
       }
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "has_magic_planks",
+      "has_magic_slabs",
       "has_the_recipe"
     ]
   ]

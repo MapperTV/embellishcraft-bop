@@ -6,12 +6,12 @@
     ]
   },
   "criteria": {
-    "has_redwood_planks": {
+    "has_redwood_slabs": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "biomesoplenty:redwood_planks"
+            "item": "biomesoplenty:redwood_slab"
           }
         ]
       }
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "has_redwood_planks",
+      "has_redwood_slabs",
       "has_the_recipe"
     ]
   ]

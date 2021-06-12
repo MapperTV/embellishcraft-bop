@@ -28,6 +28,7 @@ public class ECBoPItemTags extends ItemTagsProvider
 
         copy(ECTags.Blocks.WOODEN_CRATES, ECTags.Items.WOODEN_CRATES);
         copy(ECTags.ForgeBlocks.CRATES, ECTags.ForgeItems.CRATES);
+        copy(ECTags.Blocks.SUSPENDED_STAIRS, ECTags.Items.SUSPENDED_STAIRS);
 
         copy(ECTags.Blocks.FANCY_BEDS, ECTags.Items.FANCY_BEDS);
         copy(BlockTags.BEDS, ItemTags.BEDS);

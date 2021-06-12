@@ -8,7 +8,7 @@
   ],
   "key": {
     "P": {
-      "item": "biomesoplenty:jacaranda_planks"
+      "item": "biomesoplenty:jacaranda_slab"
     },
     "S": {
       "tag": "forge:rods/wooden"
@@ -16,6 +16,6 @@
   },
   "result": {
     "item": "embellishcraft-bop:jacaranda_suspended_stairs",
-    "count": 6
+    "count": 4
   }
 }

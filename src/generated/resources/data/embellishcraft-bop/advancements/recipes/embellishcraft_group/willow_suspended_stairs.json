@@ -6,12 +6,12 @@
     ]
   },
   "criteria": {
-    "has_willow_planks": {
+    "has_willow_slabs": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "biomesoplenty:willow_planks"
+            "item": "biomesoplenty:willow_slab"
           }
         ]
       }
@@ -25,7 +25,7 @@
   },
   "requirements": [
     [
-      "has_willow_planks",
+      "has_willow_slabs",
       "has_the_recipe"
     ]
   ]
