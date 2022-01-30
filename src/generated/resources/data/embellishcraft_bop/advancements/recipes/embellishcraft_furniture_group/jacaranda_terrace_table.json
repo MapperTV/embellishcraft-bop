@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:jacaranda_terrace_table"
+    ]
+  },
+  "criteria": {
+    "has_jacaranda_pressure_plate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:jacaranda_pressure_plate"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:jacaranda_terrace_table"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_jacaranda_pressure_plate",
+      "has_the_recipe"
+    ]
+  ]
+}

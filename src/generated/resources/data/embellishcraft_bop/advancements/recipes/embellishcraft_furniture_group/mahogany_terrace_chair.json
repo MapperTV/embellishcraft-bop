@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:mahogany_terrace_chair"
+    ]
+  },
+  "criteria": {
+    "has_mahogany_pressure_plate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:mahogany_pressure_plate"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:mahogany_terrace_chair"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_mahogany_pressure_plate",
+      "has_the_recipe"
+    ]
+  ]
+}

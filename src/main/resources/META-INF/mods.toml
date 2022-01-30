@@ -1,49 +1,49 @@
 modLoader="javafml"
-loaderVersion="[35,)"
+loaderVersion="[39,)"
 license="MIT License"
-issueTrackerURL="https://github.com/MapperTV/embellishcraft-bop/issues"
+issueTrackerURL="https://github.com/MapperTV/embellishcraft_bop/issues"
 [[mods]]
-modId="embellishcraft-bop"
+modId="embellishcraft_bop"
 version="${file.jarVersion}"
 displayName="EmbellishCraft BoP Addon"
 #updateJSONURL="http://myurl.me/" #optional
 displayURL="http://mapper.tv/embellishcraft/"
-logoFile="embellishcraft-bop_logo.png"
+logoFile="embellishcraft_bop_logo.png"
 credits="Thanks for Forge devs and modders that let their mods open-source."
 authors="Mapper"
 description='''EmbellishCraft BOP Addon is an Embellishcraft addon that adds Biomes O'Plenty wood variants to EmbellishCraft's furniture.'''
 
-[[dependencies.embellishcraft-bop]]
+[[dependencies.embellishcraft_bop]]
     modId="forge"
     mandatory=true
-    versionRange="[36.1.0,)"
+    versionRange="[39,)"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.embellishcraft-bop]]
+[[dependencies.embellishcraft_bop]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.5]"
+    versionRange="[1.18.1]"
     ordering="NONE"
     side="BOTH"
     
-[[dependencies.embellishcraft]]
-    modId="mapperbase"
-    mandatory=true
-    versionRange="[1.16.5-2.4.,)"
-    ordering="AFTER"
-    side="BOTH"
+#[[dependencies.embellishcraft_bop]]
+#    modId="mapperbase"
+#    mandatory=true
+#    versionRange="[1.18.1-4.0,)"
+#    ordering="AFTER"
+#    side="BOTH"
     
-[[dependencies.embellishcraft-bop]]
+[[dependencies.embellishcraft_bop]]
     modId="biomesoplenty"
     mandatory=true
-    versionRange="[1.16.5-13.1.0.471,)"
+    versionRange="[1.18.1-15.0,)"
     ordering="AFTER"
     side="BOTH"
     
-[[dependencies.embellishcraft-bop]]
+[[dependencies.embellishcraft_bop]]
     modId="embellishcraft"
     mandatory=true
-    versionRange="[1.16.5-3.4,)"
+    versionRange="[1.18.1-5.0,)"
     ordering="AFTER"
     side="BOTH"

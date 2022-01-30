@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "plain_doors",
+  "pattern": [
+    "PP",
+    "PB",
+    "PP"
+  ],
+  "key": {
+    "P": {
+      "item": "biomesoplenty:jacaranda_log"
+    },
+    "B": {
+      "item": "biomesoplenty:jacaranda_button"
+    }
+  },
+  "result": {
+    "item": "embellishcraft_bop:jacaranda_plain_door",
+    "count": 3
+  }
+}

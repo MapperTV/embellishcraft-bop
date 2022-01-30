@@ -1,0 +1,11 @@
+{
+  "parent": "embellishcraft:block/chest",
+  "textures": {
+    "particle": "biomesoplenty:block/dead_planks",
+    "front": "embellishcraft_bop:block/dead_fancy_chest_front",
+    "side": "embellishcraft_bop:block/dead_fancy_chest_side",
+    "top": "embellishcraft_bop:block/dead_fancy_chest_top",
+    "bottom": "embellishcraft_bop:block/dead_fancy_chest_bottom",
+    "lock": "embellishcraft:block/air_duct"
+  }
+}

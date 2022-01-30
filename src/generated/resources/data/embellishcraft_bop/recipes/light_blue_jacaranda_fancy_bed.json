@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "fancy_beds",
+  "pattern": [
+    "P P",
+    "WWW",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "biomesoplenty:jacaranda_planks"
+    },
+    "W": {
+      "item": "minecraft:light_blue_wool"
+    }
+  },
+  "result": {
+    "item": "embellishcraft_bop:light_blue_jacaranda_fancy_bed"
+  }
+}

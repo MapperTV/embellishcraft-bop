@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:palm_suspended_stairs"
+    ]
+  },
+  "criteria": {
+    "has_palm_slabs": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:palm_slab"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:palm_suspended_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_palm_slabs",
+      "has_the_recipe"
+    ]
+  ]
+}

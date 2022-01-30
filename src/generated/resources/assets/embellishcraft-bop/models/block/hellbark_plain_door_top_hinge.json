@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_top_rh",
-  "textures": {
-    "bottom": "embellishcraft-bop:block/hellbark_plain_door_bottom",
-    "top": "embellishcraft-bop:block/hellbark_plain_door_top"
-  }
-}

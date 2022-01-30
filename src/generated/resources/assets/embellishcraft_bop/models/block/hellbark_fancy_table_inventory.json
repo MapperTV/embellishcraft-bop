@@ -1,0 +1,7 @@
+{
+  "parent": "embellishcraft:block/fancy_table_inventory",
+  "textures": {
+    "side": "embellishcraft_bop:block/hellbark_fancy_table_side",
+    "top": "embellishcraft_bop:block/hellbark_fancy_table_top"
+  }
+}

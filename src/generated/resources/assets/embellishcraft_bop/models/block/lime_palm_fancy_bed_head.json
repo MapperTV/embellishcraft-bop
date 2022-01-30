@@ -1,0 +1,10 @@
+{
+  "parent": "embellishcraft:block/fancy_bed_head",
+  "textures": {
+    "head": "embellishcraft_bop:block/lime_palm_fancy_bed_head",
+    "head_side": "embellishcraft_bop:block/lime_palm_fancy_bed_head_side",
+    "head_end": "embellishcraft_bop:block/palm_fancy_bed_head_end",
+    "under": "biomesoplenty:block/palm_planks",
+    "particle": "biomesoplenty:block/palm_planks"
+  }
+}

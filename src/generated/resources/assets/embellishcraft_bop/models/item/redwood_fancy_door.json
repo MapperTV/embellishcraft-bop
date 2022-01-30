@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "embellishcraft_bop:item/redwood_fancy_door"
+  }
+}

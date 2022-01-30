@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:black_willow_fancy_bed"
+    ]
+  },
+  "criteria": {
+    "has_WILLOW_PLANKS": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:willow_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:black_willow_fancy_bed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_WILLOW_PLANKS",
+      "has_the_recipe"
+    ]
+  ]
+}

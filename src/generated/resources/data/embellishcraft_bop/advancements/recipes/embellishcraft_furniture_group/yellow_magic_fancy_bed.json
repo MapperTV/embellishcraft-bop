@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:yellow_magic_fancy_bed"
+    ]
+  },
+  "criteria": {
+    "has_MAGIC_PLANKS": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:magic_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:yellow_magic_fancy_bed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_MAGIC_PLANKS",
+      "has_the_recipe"
+    ]
+  ]
+}

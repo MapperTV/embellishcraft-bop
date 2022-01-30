@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:redwood_fancy_door"
+    ]
+  },
+  "criteria": {
+    "has_redwood_PLANKS": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:redwood_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:redwood_fancy_door"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_redwood_PLANKS",
+      "has_the_recipe"
+    ]
+  ]
+}

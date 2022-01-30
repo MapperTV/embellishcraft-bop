@@ -1,8 +1,0 @@
-{
-  "parent": "embellishcraft:block/fancy_bed_inventory",
-  "textures": {
-    "bed": "embellishcraft-bop:block/yellow_mahogany_fancy_bed_head",
-    "end": "embellishcraft-bop:block/mahogany_fancy_bed_head_end",
-    "under": "biomesoplenty:block/mahogany_planks"
-  }
-}

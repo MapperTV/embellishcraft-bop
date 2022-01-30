@@ -1,0 +1,8 @@
+{
+  "parent": "embellishcraft:block/fancy_bed_inventory",
+  "textures": {
+    "bed": "embellishcraft_bop:block/red_palm_fancy_bed_head",
+    "end": "embellishcraft_bop:block/palm_fancy_bed_head_end",
+    "under": "biomesoplenty:block/palm_planks"
+  }
+}

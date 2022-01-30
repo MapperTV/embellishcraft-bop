@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:light_blue_dead_fancy_bed"
+    ]
+  },
+  "criteria": {
+    "has_DEAD_PLANKS": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:dead_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:light_blue_dead_fancy_bed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_DEAD_PLANKS",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "fancy_tables",
+  "pattern": [
+    "WWW",
+    "S S",
+    "S S"
+  ],
+  "key": {
+    "W": {
+      "item": "biomesoplenty:palm_planks"
+    },
+    "S": {
+      "item": "biomesoplenty:palm_log"
+    }
+  },
+  "result": {
+    "item": "embellishcraft_bop:palm_fancy_table",
+    "count": 2
+  }
+}

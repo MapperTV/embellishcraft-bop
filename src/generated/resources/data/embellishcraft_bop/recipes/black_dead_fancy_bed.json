@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "fancy_beds",
+  "pattern": [
+    "P P",
+    "WWW",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "biomesoplenty:dead_planks"
+    },
+    "W": {
+      "item": "minecraft:black_wool"
+    }
+  },
+  "result": {
+    "item": "embellishcraft_bop:black_dead_fancy_bed"
+  }
+}

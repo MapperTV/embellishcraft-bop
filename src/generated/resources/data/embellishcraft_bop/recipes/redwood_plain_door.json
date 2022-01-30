@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "plain_doors",
+  "pattern": [
+    "PP",
+    "PB",
+    "PP"
+  ],
+  "key": {
+    "P": {
+      "item": "biomesoplenty:redwood_log"
+    },
+    "B": {
+      "item": "biomesoplenty:redwood_button"
+    }
+  },
+  "result": {
+    "item": "embellishcraft_bop:redwood_plain_door",
+    "count": 3
+  }
+}

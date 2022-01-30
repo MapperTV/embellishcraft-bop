@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:magic_terrace_chair"
+    ]
+  },
+  "criteria": {
+    "has_magic_pressure_plate": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:magic_pressure_plate"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:magic_terrace_chair"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_magic_pressure_plate",
+      "has_the_recipe"
+    ]
+  ]
+}

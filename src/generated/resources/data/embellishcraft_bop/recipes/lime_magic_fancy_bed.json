@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "fancy_beds",
+  "pattern": [
+    "P P",
+    "WWW",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "biomesoplenty:magic_planks"
+    },
+    "W": {
+      "item": "minecraft:lime_wool"
+    }
+  },
+  "result": {
+    "item": "embellishcraft_bop:lime_magic_fancy_bed"
+  }
+}

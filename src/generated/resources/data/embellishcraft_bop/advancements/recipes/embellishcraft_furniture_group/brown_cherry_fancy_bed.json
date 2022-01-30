@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:brown_cherry_fancy_bed"
+    ]
+  },
+  "criteria": {
+    "has_CHERRY_PLANKS": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:cherry_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:brown_cherry_fancy_bed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_CHERRY_PLANKS",
+      "has_the_recipe"
+    ]
+  ]
+}

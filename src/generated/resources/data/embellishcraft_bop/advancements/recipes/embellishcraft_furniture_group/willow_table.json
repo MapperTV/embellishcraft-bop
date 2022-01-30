@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:willow_table"
+    ]
+  },
+  "criteria": {
+    "has_willow_slab": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:willow_slab"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:willow_table"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_willow_slab",
+      "has_the_recipe"
+    ]
+  ]
+}

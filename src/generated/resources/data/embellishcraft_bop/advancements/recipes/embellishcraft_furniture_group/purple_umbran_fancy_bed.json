@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:purple_umbran_fancy_bed"
+    ]
+  },
+  "criteria": {
+    "has_UMBRAN_PLANKS": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:umbran_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:purple_umbran_fancy_bed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_UMBRAN_PLANKS",
+      "has_the_recipe"
+    ]
+  ]
+}

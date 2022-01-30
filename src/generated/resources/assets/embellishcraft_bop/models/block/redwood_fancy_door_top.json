@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top",
+  "textures": {
+    "bottom": "embellishcraft_bop:block/redwood_fancy_door_bottom",
+    "top": "embellishcraft_bop:block/redwood_fancy_door_top"
+  }
+}

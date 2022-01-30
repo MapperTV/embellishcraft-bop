@@ -1,8 +1,0 @@
-{
-  "parent": "embellishcraft:block/fancy_table_top",
-  "textures": {
-    "side": "embellishcraft-bop:block/magic_fancy_table_side",
-    "top": "embellishcraft-bop:block/magic_fancy_table_top",
-    "particle": "biomesoplenty:block/magic_planks"
-  }
-}

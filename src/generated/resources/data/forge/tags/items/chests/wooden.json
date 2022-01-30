@@ -1,16 +1,4 @@
 {
   "replace": false,
-  "values": [
-    "embellishcraft-bop:cherry_fancy_chest",
-    "embellishcraft-bop:dead_fancy_chest",
-    "embellishcraft-bop:fir_fancy_chest",
-    "embellishcraft-bop:hellbark_fancy_chest",
-    "embellishcraft-bop:jacaranda_fancy_chest",
-    "embellishcraft-bop:magic_fancy_chest",
-    "embellishcraft-bop:mahogany_fancy_chest",
-    "embellishcraft-bop:palm_fancy_chest",
-    "embellishcraft-bop:redwood_fancy_chest",
-    "embellishcraft-bop:umbran_fancy_chest",
-    "embellishcraft-bop:willow_fancy_chest"
-  ]
+  "values": []
 }

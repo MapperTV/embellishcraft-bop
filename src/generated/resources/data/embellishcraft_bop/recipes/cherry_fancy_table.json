@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "fancy_tables",
+  "pattern": [
+    "WWW",
+    "S S",
+    "S S"
+  ],
+  "key": {
+    "W": {
+      "item": "biomesoplenty:cherry_planks"
+    },
+    "S": {
+      "item": "biomesoplenty:cherry_log"
+    }
+  },
+  "result": {
+    "item": "embellishcraft_bop:cherry_fancy_table",
+    "count": 2
+  }
+}

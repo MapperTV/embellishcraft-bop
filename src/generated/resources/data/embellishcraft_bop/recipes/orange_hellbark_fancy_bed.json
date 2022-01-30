@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "fancy_beds",
+  "pattern": [
+    "P P",
+    "WWW",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "biomesoplenty:hellbark_planks"
+    },
+    "W": {
+      "item": "minecraft:orange_wool"
+    }
+  },
+  "result": {
+    "item": "embellishcraft_bop:orange_hellbark_fancy_bed"
+  }
+}

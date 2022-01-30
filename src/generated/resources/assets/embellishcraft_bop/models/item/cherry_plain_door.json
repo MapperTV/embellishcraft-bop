@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "embellishcraft_bop:item/cherry_plain_door"
+  }
+}

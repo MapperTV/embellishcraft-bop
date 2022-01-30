@@ -1,16 +1,16 @@
 {
   "replace": false,
   "values": [
-    "embellishcraft-bop:cherry_wooden_crate",
-    "embellishcraft-bop:dead_wooden_crate",
-    "embellishcraft-bop:fir_wooden_crate",
-    "embellishcraft-bop:hellbark_wooden_crate",
-    "embellishcraft-bop:jacaranda_wooden_crate",
-    "embellishcraft-bop:magic_wooden_crate",
-    "embellishcraft-bop:mahogany_wooden_crate",
-    "embellishcraft-bop:palm_wooden_crate",
-    "embellishcraft-bop:redwood_wooden_crate",
-    "embellishcraft-bop:umbran_wooden_crate",
-    "embellishcraft-bop:willow_wooden_crate"
+    "embellishcraft_bop:cherry_wooden_crate",
+    "embellishcraft_bop:dead_wooden_crate",
+    "embellishcraft_bop:fir_wooden_crate",
+    "embellishcraft_bop:hellbark_wooden_crate",
+    "embellishcraft_bop:jacaranda_wooden_crate",
+    "embellishcraft_bop:magic_wooden_crate",
+    "embellishcraft_bop:mahogany_wooden_crate",
+    "embellishcraft_bop:palm_wooden_crate",
+    "embellishcraft_bop:redwood_wooden_crate",
+    "embellishcraft_bop:umbran_wooden_crate",
+    "embellishcraft_bop:willow_wooden_crate"
   ]
 }

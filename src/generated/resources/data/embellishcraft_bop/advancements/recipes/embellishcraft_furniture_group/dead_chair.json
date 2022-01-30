@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:dead_chair"
+    ]
+  },
+  "criteria": {
+    "has_dead_slab": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:dead_slab"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:dead_chair"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_dead_slab",
+      "has_the_recipe"
+    ]
+  ]
+}

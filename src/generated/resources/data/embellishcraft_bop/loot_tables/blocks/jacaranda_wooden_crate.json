@@ -1,0 +1,53 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "jacaranda_wooden_crate",
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_name",
+              "source": "block_entity"
+            },
+            {
+              "function": "minecraft:copy_nbt",
+              "source": "block_entity",
+              "ops": [
+                {
+                  "source": "Lock",
+                  "target": "BlockEntityTag.Lock",
+                  "op": "replace"
+                },
+                {
+                  "source": "LootTable",
+                  "target": "BlockEntityTag.LootTable",
+                  "op": "replace"
+                },
+                {
+                  "source": "LootTableSeed",
+                  "target": "BlockEntityTag.LootTableSeed",
+                  "op": "replace"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_contents",
+              "type": "embellishcraft:crate",
+              "entries": [
+                {
+                  "type": "minecraft:dynamic",
+                  "name": "minecraft:contents"
+                }
+              ]
+            }
+          ],
+          "name": "embellishcraft_bop:jacaranda_wooden_crate"
+        }
+      ]
+    }
+  ]
+}

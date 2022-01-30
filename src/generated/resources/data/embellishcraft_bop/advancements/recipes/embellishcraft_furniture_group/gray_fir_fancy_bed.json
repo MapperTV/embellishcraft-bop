@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:gray_fir_fancy_bed"
+    ]
+  },
+  "criteria": {
+    "has_FIR_PLANKS": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:fir_planks"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:gray_fir_fancy_bed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_FIR_PLANKS",
+      "has_the_recipe"
+    ]
+  ]
+}

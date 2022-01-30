@@ -1,0 +1,10 @@
+{
+  "parent": "embellishcraft:block/fancy_bed_foot",
+  "textures": {
+    "foot": "embellishcraft_bop:block/lime_mahogany_fancy_bed_foot",
+    "foot_side": "embellishcraft_bop:block/lime_mahogany_fancy_bed_foot_side",
+    "foot_end": "embellishcraft_bop:block/mahogany_fancy_bed_foot_end",
+    "under": "biomesoplenty:block/mahogany_planks",
+    "particle": "biomesoplenty:block/mahogany_planks"
+  }
+}

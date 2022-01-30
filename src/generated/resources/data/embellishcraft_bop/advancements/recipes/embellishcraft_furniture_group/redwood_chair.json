@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "embellishcraft_bop:redwood_chair"
+    ]
+  },
+  "criteria": {
+    "has_redwood_slab": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "biomesoplenty:redwood_slab"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "embellishcraft_bop:redwood_chair"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_redwood_slab",
+      "has_the_recipe"
+    ]
+  ]
+}

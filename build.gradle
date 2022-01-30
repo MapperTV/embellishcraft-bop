@@ -1,17 +1,19 @@
 buildscript {
     repositories {
-        maven { url = 'https://files.minecraftforge.net/maven' }
-        maven { url "https://plugins.gradle.org/m2/" }
-        jcenter()
+        maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://maven.parchmentmc.org' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
-        classpath group: 'com.wynprice.cursemaven', name: 'CurseMaven', version: '2.1.1'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.parchmentmc:librarian:1.+'
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'com.wynprice.cursemaven'
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
+apply plugin: 'org.spongepowered.mixin'
 
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
@@ -20,14 +22,17 @@ version = "${mc_version}-${mod_version}"
 group = "tv.mapper.${mod_name}"
 archivesBaseName = "${mod_name}"
 
-sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 
 minecraft {
-    mappings channel: 'snapshot', version: "${mcp_mappings}"
+    mappings channel: 'parchment', version: '2021.12.19-1.18.1'
 
     runs {
         client {
             workingDirectory project.file('run')
+            taskName "$project.name-client"
 
             property 'forge.logging.markers', ''
             property 'forge.logging.console.level', 'debug'
@@ -41,7 +46,8 @@ minecraft {
 
         server {
             workingDirectory project.file('run')
-            
+            taskName "$project.name-server"
+
             property 'forge.logging.markers', ''
             property 'forge.logging.console.level', 'debug'
 
@@ -51,53 +57,68 @@ minecraft {
                 }
             }
         }
-        
+
         data {
-            workingDirectory project.file('run').canonicalPath
+            workingDirectory project.file('run')
+            taskName "$project.name-data"
 
             property 'forge.logging.markers', ''
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'embellishcraft-bop', '--all', '--output', file('src/generated/resources/'), '--existing', sourceSets.main.resources.srcDirs[0], '--existing-mod', 'mapperbase', '--existing-mod', 'embellishcraft', '--existing-mod', 'biomesoplenty', '--input', file('src/main/resources')
-            source sourceSets.main
+            args '--mod', 'embellishcraft_bop', '--all', '--output', file('src/generated/resources/'), '--existing', sourceSets.main.resources.srcDirs[0], '--existing-mod', 'mapperbase', '--existing-mod', 'embellishcraft', '--existing-mod', 'biomesoplenty', '--input', '--input', file('src/main/resources')
+
+            mods {
+                "${mod_name}" {
+                    source sourceSets.main
+                }
+            }
         }
     }
 }
 
-sourceSets.main.resources {
-    srcDir 'src/generated/resources'
-}
+sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    // Put repositories for dependencies here
+    // ForgeGradle automatically adds the Forge maven and Maven Central for you
+
+    // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
+    // flatDir {
+    //     dir 'libs'
+    // }
+    
     maven {
-       name = "Progwml6 maven"
+        // location of the maven that hosts JEI files
+        name = "Progwml6 maven"
         url = "https://dvs1.progwml6.com/files/maven/"
     }
     maven {
+        // location of a maven mirror for JEI files, as a fallback
         name = "ModMaven"
         url = "https://modmaven.k-4u.nl"
     }
+    
     maven {
-		name "CurseForge"
-		url "https://minecraft.curseforge.com/api/maven/"
-	}
-    maven {
-        url 'https://www.dogforce-games.com/maven/'
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
     }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
-
-    compileOnly fg.deobf("mezz.jei:jei-${jei_mc_version}:${jei_version}:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-${jei_mc_version}:${jei_version}")
     
-    implementation(fg.deobf("curse.maven:biomes-o-plenty:${bop_version}"))
-    implementation(fg.deobf("curse.maven:biomes-o-plenty-source:${bop_sources_version}"))
-
-    deobf files("dep/mapperbase-${base_mc_version}-${base_version}-deobf.jar")
-    deobf files("dep/embellishcraft-${ec_mc_version}-${ec_version}-deobf.jar")
+    // JEI
+    compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
     
+    implementation(fg.deobf("curse.maven:terrablender-563928:${terrablender_version}"))
+    //implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:x.x.x-y.y.y.y')
+    implementation(fg.deobf("curse.maven:biomes-o-plenty-220318:${bop_version}"))
+    
+    implementation files("dep/mapperbase-${mc_version}-${base_version}-deobf.jar")
+    implementation files("dep/embellishcraft-${mc_version}-${ec_version}-deobf.jar")
 }
 
 jar {
@@ -114,20 +135,17 @@ jar {
     }
 }
 
-def reobfFile = file("$buildDir/reobfJar/output.jar")
-def reobfArtifact = artifacts.add('default', reobfFile) {
-    type 'jar'
-    builtBy 'reobfJar'
-}
+jar.finalizedBy('reobfJar')
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact reobfArtifact
+            artifact jar
         }
     }
     repositories {
         maven {
-            url "file:///${project.projectDir}/mcmodsrepo"
+            url "file://${project.projectDir}/mcmodsrepo"
         }
     }
 }
